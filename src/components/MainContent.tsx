@@ -11,15 +11,13 @@ export default function MainContent() {
             <h1>
               hi! I'm <span className="animate-text">Joyce Chen.</span>
             </h1>
-            <div className="crop-image">
-              <Image
-                src="/images/pfp.jpg"
-                className="crop"
-                alt="joyce chen"
-                width={250}
-                height={230}
-              />
-            </div>
+            <Image
+              src="/images/pfp.jpg"
+              className="crop"
+              alt="joyce chen"
+              width={230}
+              height={230}
+            />
             <div className="separator"></div>
 
             <ul className="contacts-list">
@@ -93,19 +91,21 @@ export default function MainContent() {
             <div className="frame">
               <h2>intro 👋</h2>
               <p>
-                Greetings and welcome! Aside from being a part-time chaotic
-                mess, I'm also a first-year UCLA student studying{" "}
-                <b>Computer Science</b>. Like any other CS major, I thrive on
-                the <s>seratonin boost</s> satisfaction from getting my code to
-                run successfully, which tragically does not happen that often.
+                Hello hello ~ I'm Joyce, your friendly neighborhood cat-lover
+                and a second-year UCLA undergrad majoring in{" "}
+                <b>computer science</b>! From building full-stack web apps to
+                tackling challenging class projects, I absolutely love coding up
+                products that let my creativity run wild and stimulate my
+                problem solving skills :{`)`} Transforming lines of code into
+                something tangible and impactful - yes, that is one big source
+                of serotonin.
                 <br />
-                In my uni years, I hope to explore fields such as biotech,
-                fintech, and AI — stuff that encompasses both the real world and
-                software, and that is not EE. Currently, I'm still a rookie
-                coder who has barely yet dabbled with the surface of CS. But
-                we're getting down to the ocean floor someday, I hope! As of
-                late, I am more than excited to leave my Bay Area bubble and
-                nyoom to LA — +1 for traffic & calves.
+                Beyond just coding, I hope to build technology that touches
+                lives and sparks positive change in the world~ Whether it's
+                developing a simple app that simplifies daily tasks, or building
+                a beautiful full-fledged project, I desire to leave a lasting
+                mark that matters. Now enough with this cheesy intro, let's keep
+                scrolling! 🌎 🫶
               </p>
             </div>
             <div className="frame">
@@ -113,31 +113,44 @@ export default function MainContent() {
                 <em>currently...</em>
               </h2>
               <ul>
+                <li className="flower-item"></li>
                 <li className="flower-item">
-                  learning C++, fullstack dev, DS/Algorithms
-                </li>
-                <li className="flower-item">
-                  listening to cool artists: dpr ian, enhypen, iu, vaundy 🎵
-                </li>
-                <li className="flower-item">
-                  studying Korean through Drops, TTMIK, and howtostudykorean
-                </li>
-                <li className="flower-item">
-                  reading webtoons:{" "}
+                  interning as a swe at{" "}
                   <a
-                    href="https://www.webtoons.com/en/romance/seasonsofblossom/list?title_no=2509&page=1"
+                    href="https://www.perfectcorp.com/business"
+                    target="_blank"
+                  >
+                    Perfect Corp
+                  </a>
+                  , an AR beauty tech company based in taipei!
+                </li>
+                <li className="flower-item">
+                  listening to these dope artists - zeph, lyn lapid, le
+                  sserafim, oneheart 🎵
+                </li>
+                <li className="flower-item">
+                  studying operating systems and leetcoding :pp the grind is
+                  real.
+                </li>
+                <li className="flower-item">
+                  reading books:{" "}
+                  <a
+                    href="https://www.goodreads.com/book/show/875983.How_to_Win_Friends_Influence_People#:~:text=How%20to%20Win%20Friends%20and%20Influence%20People%20is%20a%20self,the%20100%20most%20influential%20books."
                     target="_blank"
                   >
                     {" "}
-                    Seasons of Blossom
+                    this
                   </a>
                   ,{" "}
-                  <a href="https://www.webtoons.com/en/fantasy/tower-of-god/list?title_no=95">
-                    Tower of God
+                  <a href="https://www.goodreads.com/en/book/show/4069">this</a>
+                  , and{" "}
+                  <a href="https://www.goodreads.com/book/show/56238083-george-orwell-essays?from_search=true&from_srp=true&qid=67uueHGhvH&rank=1">
+                    this
                   </a>
+                  . curious much? yes, GO CLICK. you won't regret.
                 </li>
                 <li className="flower-item">
-                  working on this website ❤️ will be recreating it using react!
+                  working on this website 💖 also open to any fun opportunities!
                 </li>
               </ul>
             </div>
@@ -163,12 +176,7 @@ export default function MainContent() {
                 <ul>
                   <li className="flower-item">
                     <mark>Software Engineer Intern, June '23 - Present</mark>
-                    <p>
-                      Directed multiple free virtual classNamees on web design,
-                      Python, and Java programming. Recruited 15+ high school
-                      volunteers & taught 150+ students across the Fremont
-                      school district.
-                    </p>
+                    <p>Description.</p>
                   </li>
                 </ul>
               </div>
@@ -181,12 +189,7 @@ export default function MainContent() {
                 <ul>
                   <li className="flower-item">
                     <mark>Software Engineer Intern, Sept. '22 - Present</mark>
-                    <p>
-                      Directed multiple free virtual classNamees on web design,
-                      Python, and Java programming. Recruited 15+ high school
-                      volunteers & taught 150+ students across the Fremont
-                      school district.
-                    </p>
+                    <p>Description.</p>
                   </li>
                 </ul>
               </div>
@@ -199,12 +202,7 @@ export default function MainContent() {
                 <ul>
                   <li className="flower-item">
                     <mark>Software Developer, Sept. '22 - Present</mark>
-                    <p>
-                      Directed multiple free virtual classNamees on web design,
-                      Python, and Java programming. Recruited 15+ high school
-                      volunteers & taught 150+ students across the Fremont
-                      school district.
-                    </p>
+                    <p>Description.</p>
                   </li>
                 </ul>
               </div>
@@ -286,7 +284,7 @@ export default function MainContent() {
                   <li className="flower-item">
                     <mark>AHS Chapter President, '21-22</mark>
                     <p>
-                      Directed multiple free virtual classNamees on web design,
+                      Directed multiple free virtual classes on web design,
                       Python, and Java programming. Recruited 15+ high school
                       volunteers & taught 150+ students across the Fremont
                       school district.
@@ -304,9 +302,10 @@ export default function MainContent() {
                 <li>languages: java, javascript, c++, python</li>
                 <li>frontend: html/css, jquery, react</li>
                 <li>
-                  backend: nodejs, express, sql, nextjs, hibernate, stripe
+                  backend: nodejs, express, mysql, nextjs, hibernate, stripe,
+                  spring
                 </li>
-                <li>other technologies: git/github, rest api's, firebase</li>
+                <li>other technologies: rest api's, firebase, git/github</li>
               </ul>
             </div>
 
@@ -314,25 +313,10 @@ export default function MainContent() {
               <h3>coursework 📚</h3>
               <div className="flex-row courses">
                 <div className="">
-                  <a href="#">CS 1</a>
-                </div>
-                <div className="">
                   <a href="/cs31">CS 31</a>
                 </div>
                 <div className="">
-                  <a href="#">Geog 5</a>
-                </div>
-                <div className="">
-                  <a href="#">Math 32A</a>
-                </div>
-                <div className="">
                   <a href="#">CS 32</a>
-                </div>
-                <div className="">
-                  <a href="#">Math 32B</a>
-                </div>
-                <div className="">
-                  <a href="#">Physics 1B</a>
                 </div>
                 <div className="">
                   <a href="#">CS 33</a>
@@ -341,10 +325,22 @@ export default function MainContent() {
                   <a href="#">CS 35L</a>
                 </div>
                 <div className="">
-                  <a href="#">Math 61</a>
+                  <a href="#">Math 32A</a>
+                </div>
+                <div className="">
+                  <a href="#">Math 32B</a>
                 </div>
                 <div className="">
                   <a href="#">Math 33A</a>
+                </div>
+                <div className="">
+                  <a href="#">Math 61</a>
+                </div>
+                <div className="">
+                  <a href="#">Physics 1B</a>
+                </div>
+                <div className="">
+                  <a href="#">Geog 5</a>
                 </div>
               </div>
 
@@ -428,7 +424,7 @@ export default function MainContent() {
               </div>
               <div className="card" id="2">
                 <img src="images/terris.png" alt="" />
-                <h3>websites</h3>
+                <h3>Other Miscellaneous</h3>
                 <p>
                   Developed websites for a couple different organizations and
                   events over the past few years.
@@ -622,7 +618,9 @@ export default function MainContent() {
                   <li>cats & corgis. samoyeds too.</li>
                   <li>apps: notion, todoist, dream</li>
                   <li>kaomoji: Fooooood…ԅ(¯﹃¯ԅ)</li>
-                  <li>kpop: stray kids, sunoo (daily dose of ☀️), mamamoo</li>
+                  <li>
+                    kpop: enhypen (ddeonuu!), le sserafim, newjeans, gidle
+                  </li>
                   <li>youtubers: linh truong, dustin vuong, leahsfieldnotes</li>
                 </ul>
               </div>
