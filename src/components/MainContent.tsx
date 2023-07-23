@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+import Image from "next/image";
 
 export default function MainContent() {
   return (
@@ -11,17 +12,25 @@ export default function MainContent() {
               hi! I'm <span className="animate-text">Joyce Chen.</span>
             </h1>
             <div className="crop-image">
-              <img src="images/pfp.jpg" className="crop" alt="joyce chen" />
+              <Image
+                src="/images/pfp.jpg"
+                className="crop"
+                alt="joyce chen"
+                width={250}
+                height={230}
+              />
             </div>
             <div className="separator"></div>
 
             <ul className="contacts-list">
               <li className="contact-item">
                 <div className="icon-box">
-                  <img
-                    src="images/mail.png"
+                  <Image
+                    src="/images/mail.png"
                     className="crop2"
                     alt="email-icon"
+                    width={30}
+                    height={30}
                   />
                 </div>
                 <div className="contact-info">
@@ -37,10 +46,12 @@ export default function MainContent() {
 
               <li className="contact-item">
                 <div className="icon-box">
-                  <img
-                    src="images/laptop.png"
+                  <Image
+                    src="/images/laptop.png"
                     className="crop2"
-                    alt="laptop-icon"
+                    alt="email-icon"
+                    width={30}
+                    height={30}
                   />
                 </div>
                 <div className="contact-info">
