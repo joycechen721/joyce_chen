@@ -961,7 +961,7 @@ table {
 
 /* FOOTER */
 .footer {
-  background-color: var(--silver);
+  /* background-color: var(--silver); */
   /* background: url('https://wallpaperforu.com/wp-content/uploads/2021/04/Retro-Anime-Aesthetic-Desktop-Wallpapers162048x1152.jpg'); */
   background: var(--pinkgradient);
   position: relative;
@@ -979,7 +979,7 @@ table {
   position: absolute;
   bottom: 0;
   right: 70px;
-  width: 240px;
+  width: 200px;
 }
 
 .footer-main {
