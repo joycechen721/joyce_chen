@@ -1,10 +1,13 @@
 export default function Footer() {
+  const currDate: Date = new Date();
+  const year: number = currDate.getFullYear();
+
   return (
     <>
       <div className="footer">
         <div className="main-footer">
           <p>
-            <b>© by Joyce Chen 💛 </b>
+            <b>© {year} Joyce Chen 💛 </b>
             <em>~decide to be extra(ordinary)~</em>
           </p>
           <div className="footer-links">
