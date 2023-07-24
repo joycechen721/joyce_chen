@@ -1,4 +1,4 @@
-export default function NavBar() {
+const NavBar = () => {
   return (
     <div className="nav-bar">
       <ul className="nav-list" id="topNav">
@@ -26,3 +26,5 @@ export default function NavBar() {
     </div>
   );
 }
+
+export default NavBar;
