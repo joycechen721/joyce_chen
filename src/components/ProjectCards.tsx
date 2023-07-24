@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 const ProjectCards = () => {
   const gui = (
     <div className="" id="1">
