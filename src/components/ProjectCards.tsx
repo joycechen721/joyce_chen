@@ -102,7 +102,19 @@ const ProjectCards = () => {
     </div>
   );
 
-  return [fotc, bruinshare, mapify, gui, peachparty, misc, universify];
+  const pnetphlix = (
+    <div className="" id="8">
+      <img src="images/peachparty.png" alt="" />
+      <h3>PnetPhlix</h3>
+      <p>
+        A web app that serves as a resource bank for Friends of the Children
+        (Los Angeles).
+        <a href="https://bit.ly/joycec_universifyprototype">GitHub</a>.
+      </p>
+    </div>
+  );
+
+  return [fotc, bruinshare, mapify, gui, peachparty, misc, universify, pnetphlix];
 };
 
 export default ProjectCards();
