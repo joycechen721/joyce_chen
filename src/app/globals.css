@@ -7,11 +7,9 @@
   --orange-highlight: #f4ae3e;
   --frame: #707989;
 
-  --pinkgradient: linear-gradient(
-    to left,
-    rgba(255, 221, 236, 1),
-    rgba(221, 236, 255, 1)
-  );
+  --pinkgradient: linear-gradient(to left,
+      rgba(255, 221, 236, 1),
+      rgba(221, 236, 255, 1));
 
   --ff-poppins: "Poppins", sans-serif;
 
@@ -27,10 +25,9 @@ body {
   line-height: 1.5;
   background: #faf9f9;
   min-height: 100vh;
-  /* cursor: url(https://cdn.custom-cursor.com/db/8215/32/neon-butterfly-pointer.png) , auto; */
-  /* cursor: url(https://cdn.custom-cursor.com/db/9279/32/neon-hummingbird-and-feather-pointer.png) , auto; */
-  cursor: url(https://cdn.custom-cursor.com/db/10115/32/mochi-mochi-peach-cat-and-bubble-tea-pointer.png),
-    default !important;
+  /* cursor: url(https://cdn.custom-cursor.com/db/8215/32/neon-butterfly-pointer.png) , default !important; */
+  cursor: url(https://cdn.custom-cursor.com/db/9279/32/neon-hummingbird-and-feather-pointer.png), default !important;
+  /* cursor: url(https://cdn.custom-cursor.com/db/10115/32/mochi-mochi-peach-cat-and-bubble-tea-pointer.png), default !important; */
 }
 
 html,
@@ -153,78 +150,99 @@ table {
   .container {
     padding: 10px !important;
   }
+
   .landing-container {
     padding: 0 10px 10px 10px !important;
   }
+
   .icon-box {
     margin-right: 20px !important;
   }
+
   .crop {
     width: 70% !important;
   }
+
   .nav-link {
     display: none;
   }
+
   .menu {
     float: right !important;
     display: block !important;
   }
+
   .nav-link.home-icon {
     position: absolute !important;
     left: 0 !important;
     top: 0 !important;
   }
+
   .nav-list.responsive {
     position: relative;
   }
+
   .nav-list.responsive .menu {
     position: absolute !important;
     right: 0 !important;
     top: 0 !important;
   }
+
   .nav-list.responsive li {
     float: none !important;
     display: block !important;
     text-align: left !important;
   }
+
   .circle {
     width: 50px !important;
     height: 50px !important;
   }
+
   .fa-brands,
   .fab,
   .fa-solid {
     font-size: 1.8em !important;
   }
+
   .left-landing ul {
     padding-inline-start: 20px !important;
   }
+
   .skills {
     margin: 0 !important;
   }
+
   #projects button {
     font-size: 1.1rem !important;
   }
+
   .button1 {
     left: 5px !important;
   }
+
   .button2 {
     right: 5px !important;
   }
+
   .pie {
     width: 350px !important;
     height: 350px !important;
   }
+
   .pie img {
     width: 350px !important;
     height: 350px !important;
   }
+
   .piedesc ul {
     padding-inline-start: 20px !important;
   }
+
   .pie {
     align-self: center !important;
   }
+
   .pie button {
     width: 50px !important;
     height: 50px !important;
@@ -254,9 +272,11 @@ table {
   .footer img {
     display: none;
   }
+
   .card {
     height: fit-content !important;
   }
+
   .piedesc {
     margin-left: 0 !important;
   }
@@ -358,7 +378,8 @@ table {
 
 .hollow-text {
   color: black;
-  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-fill-color: white;
+  /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
 }
@@ -442,13 +463,11 @@ table {
 }
 
 .animate-text {
-  background-image: linear-gradient(
-    -225deg,
-    #ff85b4 0%,
-    #ad83c3 29%,
-    #ff478b 67%,
-    #72bcfd 100%
-  );
+  background-image: linear-gradient(-225deg,
+      #ff85b4 0%,
+      #ad83c3 29%,
+      #ff478b 67%,
+      #72bcfd 100%);
   background-size: auto auto;
   background-clip: border-box;
   background-size: 200% auto;
@@ -580,13 +599,10 @@ table {
   margin: 0 15px 15px 0;
   transition: 0.5s ease-out;
 
-  background: linear-gradient(
-      to left,
+  background: linear-gradient(to left,
       transparent 50%,
       rgba(255, 221, 236, 1) 0%,
-      rgba(221, 236, 255, 1) 100%
-    )
-    right;
+      rgba(221, 236, 255, 1) 100%) right;
   background-size: 200%;
 
   -webkit-transition: all 0.4s ease-in-out;
@@ -720,21 +736,38 @@ table {
   position: relative;
 }
 
+.cards-container {
+  padding: 50px;
+}
+
 .card {
   display: inline-block;
-  vertical-align: middle;
+  /* vertical-align: middle; */
   height: 550px;
   width: 325px;
   max-width: 47%;
   border-radius: 15px;
+  border: 3px solid pink;
   -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
-  background-color: white;
+  background-color: lavenderblush;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   padding: 25px;
   margin: 30px 15px 15px 15px;
+}
+
+.bottom {
+  position: relative;
+  vertical-align: bottom;
+  bottom: 20px;
+}
+
+.top {
+  position: relative;
+  vertical-align: top;
+  top: 20px;
 }
 
 .card:hover {
@@ -744,13 +777,12 @@ table {
 }
 
 .card img {
+  background-color: white;
   border-radius: 10px;
-  border-style: solid;
-  border-color: gray;
-  border-width: 1.3px;
+  border: 3px solid pink;
   width: 100%;
   height: 270px;
-  filter: grayscale(0.2);
+  margin-bottom: 10px;
 }
 
 .card h3 {
@@ -760,7 +792,6 @@ table {
 #projects button {
   position: absolute;
   top: 50%;
-  /* background-color: inherit; */
   border: none;
   text-align: center;
   text-decoration: none;
@@ -1008,6 +1039,7 @@ table {
 .gallery {
   display: inline-block;
 }
+
 .gallery img {
   width: 320px;
   border-radius: 8px;
@@ -1027,9 +1059,11 @@ table {
 .compose {
   padding: 0 100px 0 100px;
 }
+
 .compose h1 {
   font-size: 2.5rem;
 }
+
 .blog h1 {
   font-size: 2.5rem;
 }

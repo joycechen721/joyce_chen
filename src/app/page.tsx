@@ -1,4 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
+'use client';
+
 import NavBar from "../components/NavBar";
 import MainContent from "../components/MainContent";
 import Footer from "../components/Footer";

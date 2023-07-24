@@ -1,7 +1,31 @@
 /* eslint-disable react/no-unescaped-entities */
+import React, { useState } from "react";
 import Image from "next/image";
+import CardCarousel from "./CardCarousel";
+import ProjectCards from "./ProjectCards";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Link from 'next/link'
 
-export default function MainContent() {
+const MainContent = () => {
+  const [isCollapse1Visible, setIsCollapse1Visible] = useState(false);
+  const [isCollapse2Visible, setIsCollapse2Visible] = useState(false);
+  const [isCollapse3Visible, setIsCollapse3Visible] = useState(false);
+
+  const handleCollapseToggle = (collapseId: number): void => {
+    switch (collapseId) {
+      case 1:
+        setIsCollapse1Visible((prev) => !prev);
+        break;
+      case 2:
+        setIsCollapse2Visible((prev) => !prev);
+        break;
+      case 3:
+        setIsCollapse3Visible((prev) => !prev);
+        break;
+      default:
+        break;
+    }
+  };
   return (
     <main>
       {/* <!-- LANDING PAGE ^_^--> */}
@@ -34,7 +58,7 @@ export default function MainContent() {
                 <div className="contact-info">
                   <p className="contact-title">Email</p>
                   <a
-                    href="mailto:joycechen721@ucla.g.edu"
+                    href="mailto:joycechen721@g.ucla.edu"
                     className="contact-link"
                   >
                     joycechen721@ucla.edu
@@ -59,7 +83,7 @@ export default function MainContent() {
               </li>
 
               <div className="my-links">
-                <a href="https://github.com/winterberry123" target="_blank">
+                <a href="https://github.com/joycechen721" target="_blank">
                   <span className="circle">
                     <i className="fa-brands fa-github"></i>
                   </span>
@@ -69,7 +93,7 @@ export default function MainContent() {
                   target="_blank"
                 >
                   <span className="circle">
-                    <i className="fa-brands fa-linkedin"></i>
+                  
                   </span>
                 </a>
                 {/* <!-- <a href = "https://bit.ly/joycechenresume" target="_blank"><span className="circle">
@@ -231,7 +255,7 @@ export default function MainContent() {
                       <a href="https://uberposition-1.devpost.com/">
                         Uber-sponsored business hackathon
                       </a>{" "}
-                      with 550+ attendees (41% beginners). 2 submission tracks –
+                      with 550+ attendees (41% beginners). 2 submission tracks -
                       technical and business. #DriveInnovation!
                     </p>
                   </li>
@@ -313,34 +337,34 @@ export default function MainContent() {
               <h3>coursework 📚</h3>
               <div className="flex-row courses">
                 <div className="">
-                  <a href="/cs31">CS 31</a>
+                <Link href="/courses/cs31">CS 31</Link>
                 </div>
                 <div className="">
-                  <a href="#">CS 32</a>
+                <Link href="/courses/cs32">CS 32</Link>
                 </div>
                 <div className="">
-                  <a href="#">CS 33</a>
+                <Link href="/courses/cs33">CS 33</Link>
                 </div>
                 <div className="">
-                  <a href="#">CS 35L</a>
+                <Link href="/courses/cs35l">CS 35L</Link>
                 </div>
                 <div className="">
-                  <a href="#">Math 32A</a>
+                <Link href="/courses/math32a">Math 32A</Link>
                 </div>
                 <div className="">
-                  <a href="#">Math 32B</a>
+                <Link href="/courses/math32b">Math 32B</Link>
                 </div>
                 <div className="">
-                  <a href="#">Math 33A</a>
+                <Link href="/courses/math33a">Math 33A</Link>
                 </div>
                 <div className="">
-                  <a href="#">Math 61</a>
+                <Link href="/courses/math61">Math 61</Link>
                 </div>
                 <div className="">
-                  <a href="#">Physics 1B</a>
+                <Link href="/courses/physics1b">Physics 1B</Link>
                 </div>
                 <div className="">
-                  <a href="#">Geog 5</a>
+                <Link href="/courses/geog5">Geog 5</Link>
                 </div>
               </div>
 
@@ -350,32 +374,44 @@ export default function MainContent() {
                 <h3>online courses 💻</h3>
                 <ul>
                   <li>
-                    <a id="algo1">Algorithms Part I - Princeton Coursera</a>
-                    <div className="collapse collapse1">
-                      rating: ⭐️⭐️⭐️⭐️⭐️ (5/5)
-                      <br />
-                      review:
-                      <br />
-                      <a href="https://www.coursera.org/learn/algorithms-part1/home/week/1">
-                        link to course
-                      </a>
-                    </div>
+                    <a onClick={() => handleCollapseToggle(1)}>
+                      Algorithms Part I - Princeton Coursera
+                    </a>
+                    {isCollapse1Visible && (
+                      <div className="collapse collapse1">
+                        rating: ⭐️⭐️⭐️⭐️⭐️ (5/5)
+                        <br />
+                        review:
+                        <br />
+                        <a href="https://www.coursera.org/learn/algorithms-part1/home/week/1">
+                          link to course
+                        </a>
+                      </div>
+                    )}
                   </li>
                   <li>
-                    <a id="duke">Duke Java Specialization</a>
-                    <div className="collapse collapse2">
-                      rating: ⭐️⭐️⭐️ (3/5)
-                      <br />
-                      review:
-                    </div>
+                    <a onClick={() => handleCollapseToggle(2)}>
+                      Duke Java Specialization
+                    </a>
+                    {isCollapse2Visible && (
+                      <div className="collapse collapse2">
+                        rating: ⭐️⭐️⭐️ (3/5)
+                        <br />
+                        review:
+                      </div>
+                    )}
                   </li>
                   <li>
-                    <a id="udemy">Udemy Web Development</a>
-                    <div className="collapse collapse3">
-                      rating: ⭐️⭐️⭐️⭐️ (4/5)
-                      <br />
-                      review:
-                    </div>
+                    <a onClick={() => handleCollapseToggle(3)}>
+                      Udemy Web Development
+                    </a>
+                    {isCollapse3Visible && (
+                      <div className="collapse collapse3">
+                        rating: ⭐️⭐️⭐️⭐️ (4/5)
+                        <br />
+                        review:
+                      </div>
+                    )}
                   </li>
                 </ul>
               </div>
@@ -392,68 +428,7 @@ export default function MainContent() {
           <div className="frame">
             <h2>projects.</h2>
             <div className="separator"></div>
-            <div className="project-cards">
-              <button type="button" className="button1">
-                {" "}
-                ⇦{" "}
-              </button>
-              <div className="card" id="0">
-                <img src="images/GUI.png" alt="" />
-                <h3>3D-SMT GUI</h3>
-                <p>
-                  A graphical user interface powered by MATLAB. Plots
-                  fluorescence intensity & lifetime data from 3D single-molecule
-                  tracking instruments. Uses the ebFRET library, which analyzes
-                  a molecule’s time traces using a hidden Markov model and
-                  derives its DNA transition state probabilities.
-                </p>
-              </div>
-              <div className="card" id="1">
-                <img src="images/universify.png" alt="" />
-                <h3>Universify</h3>
-                <p>
-                  A web-app that helps high schoolers organize college
-                  application materials, because essays & college spreadsheets &
-                  resume's get messy super quickly (from personal experience).
-                  Currently still work in progress, but here's the{" "}
-                  <a href="https://bit.ly/joycec_universifyprototype">
-                    prototype
-                  </a>
-                  .
-                </p>
-              </div>
-              <div className="card" id="2">
-                <img src="images/terris.png" alt="" />
-                <h3>Other Miscellaneous</h3>
-                <p>
-                  Developed websites for a couple different organizations and
-                  events over the past few years.
-                </p>
-                <br />
-                <p>
-                  🌐{" "}
-                  <a href="https://www.spfremont.org/">
-                    Superposition Fremont site
-                  </a>
-                </p>
-                <p>
-                  🌐{" "}
-                  <a href="https://demoterris.merylmathew.repl.co/index.html">
-                    Terris Challenge site
-                  </a>
-                </p>
-                <p>
-                  🌐{" "}
-                  <a href="https://ahscsfirst.github.io/csfirst/">
-                    CS First site
-                  </a>
-                </p>
-              </div>
-              <button type="button" className="button2">
-                {" "}
-                ⇨{" "}
-              </button>
-            </div>
+            <CardCarousel cards={ProjectCards} showNum={3} />
           </div>
         </div>
       </section>
@@ -647,4 +622,6 @@ export default function MainContent() {
       </section>
     </main>
   );
-}
+};
+
+export default MainContent;
