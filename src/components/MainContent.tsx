@@ -1,10 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import CardCarousel from "./CardCarousel";
 import ProjectCards from "./ProjectCards";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Link from 'next/link'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as api from "@/utils";
+import Link from "next/link";
 
 const MainContent = () => {
   const [isCollapse1Visible, setIsCollapse1Visible] = useState(false);
@@ -26,6 +27,11 @@ const MainContent = () => {
         break;
     }
   };
+
+  useEffect(() => {
+    api.listPagesFromNotion()
+  }, [])
+
   return (
     <main>
       {/* <!-- LANDING PAGE ^_^--> */}
@@ -36,7 +42,7 @@ const MainContent = () => {
               hi! I'm <span className="animate-text">Joyce Chen.</span>
             </h1>
             <Image
-              src="/images/pfp.jpg"
+              src="/images/placeholder.jpeg"
               className="crop"
               alt="joyce chen"
               width={230}
@@ -92,9 +98,7 @@ const MainContent = () => {
                   href="https://www.linkedin.com/in/joycechen12/"
                   target="_blank"
                 >
-                  <span className="circle">
-                  
-                  </span>
+                  <span className="circle"></span>
                 </a>
                 {/* <!-- <a href = "https://bit.ly/joycechenresume" target="_blank"><span className="circle">
             <i className="fa-solid fa-file-csv"></i>
@@ -118,20 +122,22 @@ const MainContent = () => {
                 Hello hello ~ I'm Joyce, your friendly neighborhood cat-lover
                 and a second-year UCLA undergrad majoring in{" "}
                 <b>computer science</b>! From building full-stack web apps to
-                tackling challenging class projects, I absolutely love coding up
-                products that let my creativity run wild and stimulate my
-                problem solving skills :{`)`} Transforming lines of code into
-                something tangible and impactful - yes, that is one big source
-                of serotonin.
+                tackling challenging class projects, I love coding up products
+                that let my creativity run wild and stimulate my problem solving
+                skills :{`)`} At the end of the day, I desire to build
+                technology that touches lives and sparks positive change in the
+                world - whether that be developing a simple app that simplifies
+                daily tasks, or building a revolutionary full-fledged project!
                 <br />
-                Beyond just coding, I hope to build technology that touches
-                lives and sparks positive change in the world~ Whether it's
-                developing a simple app that simplifies daily tasks, or building
-                a beautiful full-fledged project, I desire to leave a lasting
-                mark that matters. Now enough with this cheesy intro, let's keep
-                scrolling! 🌎 🫶
+                Beyond just coding, some of my hobbies include reading,
+                journaling, window shopping, and cafe hopping! Hit me up if you
+                need anime/kdrama reccs, because I've got my fair share of
+                experience dealing with enemies-to-lovers tropes :P Also, I'm
+                always looking for a gym buddy to get those gains with~ Now
+                enough with this cheesy intro, let's keep scrolling -{">"} 🌎❤️
               </p>
             </div>
+            {/*  */}
             <div className="frame">
               <h2>
                 <em>currently...</em>
@@ -337,34 +343,34 @@ const MainContent = () => {
               <h3>coursework 📚</h3>
               <div className="flex-row courses">
                 <div className="">
-                <Link href="/courses/cs31">CS 31</Link>
+                  <Link href="/courses/cs31">CS 31</Link>
                 </div>
                 <div className="">
-                <Link href="/courses/cs32">CS 32</Link>
+                  <Link href="/courses/cs32">CS 32</Link>
                 </div>
                 <div className="">
-                <Link href="/courses/cs33">CS 33</Link>
+                  <Link href="/courses/cs33">CS 33</Link>
                 </div>
                 <div className="">
-                <Link href="/courses/cs35l">CS 35L</Link>
+                  <Link href="/courses/cs35l">CS 35L</Link>
                 </div>
                 <div className="">
-                <Link href="/courses/math32a">Math 32A</Link>
+                  <Link href="/courses/math32a">Math 32A</Link>
                 </div>
                 <div className="">
-                <Link href="/courses/math32b">Math 32B</Link>
+                  <Link href="/courses/math32b">Math 32B</Link>
                 </div>
                 <div className="">
-                <Link href="/courses/math33a">Math 33A</Link>
+                  <Link href="/courses/math33a">Math 33A</Link>
                 </div>
                 <div className="">
-                <Link href="/courses/math61">Math 61</Link>
+                  <Link href="/courses/math61">Math 61</Link>
                 </div>
                 <div className="">
-                <Link href="/courses/physics1b">Physics 1B</Link>
+                  <Link href="/courses/physics1b">Physics 1B</Link>
                 </div>
                 <div className="">
-                <Link href="/courses/geog5">Geog 5</Link>
+                  <Link href="/courses/geog5">Geog 5</Link>
                 </div>
               </div>
 
@@ -532,14 +538,18 @@ const MainContent = () => {
                 <h3>media rec's ☔️</h3>
                 <ul>
                   <li>
-                    kdramas: 25 21, misaeng, itaewon className, my mister,
-                    yumi's cells, hello my 20's
+                    kdramas: 25 21, misaeng, itaewon class, my mister, yumi's
+                    cells, hello my 20's
                   </li>
                   <li>
-                    anime: your lie in april, great pretender, horimiya, attack
+                    anime: your lie in april, jujutsu kaisen, horimiya, attack
                     on titan, parasyte
                   </li>
-                  <li>manhwa: seasons of blossom, remarried empress</li>
+                  <li>
+                    books: les miserables, wuthering heights, jane eyre, pride
+                    & prejudice (the classics are truly classic)
+                  </li>
+                  <li>manhwa: tower of god, lookism, seasons of blossom, remarried empress</li>
                 </ul>
               </div>
               <div className="frame2">
@@ -594,9 +604,12 @@ const MainContent = () => {
                   <li>apps: notion, todoist, dream</li>
                   <li>kaomoji: Fooooood…ԅ(¯﹃¯ԅ)</li>
                   <li>
-                    kpop: enhypen (ddeonuu!), le sserafim, newjeans, gidle
+                    kpop: enhypen (ddeonuuwu), le sserafim, newjeans, gidle
                   </li>
-                  <li>youtubers: linh truong, dustin vuong, leahsfieldnotes</li>
+                  <li>
+                    role models: linh truong, IU, leahsfieldnotes, zhao lusi, my
+                    mom!
+                  </li>
                 </ul>
               </div>
             </div>
