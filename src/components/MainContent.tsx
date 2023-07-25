@@ -42,7 +42,7 @@ const MainContent = () => {
               hi! I'm <span className="animate-text">Joyce Chen.</span>
             </h1>
             <Image
-              src="/images/placeholder.jpeg"
+              src="/images/pfp.jpg"
               className="crop"
               alt="joyce chen"
               width={230}
@@ -121,19 +121,19 @@ const MainContent = () => {
               <p>
                 Hello hello~ it's Joyce, your friendly neighborhood cat-lover
                 and 2nd-year UCLA undergrad majoring in <b>computer science</b>!
-                From building full-stack apps to tackling challenging class
+                From developing full-stack apps to tackling challenging class
                 projects, I love the way coding enhances my problem-solving
-                skills and allows for limitless creativity :{`)`} A lifelong
-                goal of mine is to develop tech that sparks positive change in
-                the world - whether it be simple apps to streamline daily tasks,
-                or full-fledged projects to revolutionize industries!
+                skills and allows for limitless creativity :{`)`} My lifelong
+                goal is to create technology that sparks positive change in this
+                world, whether it be simple daily tools or apps that
+                revolutionize society! 🌎❤️
                 <br />
                 Beyond coding, some of my hobbies include reading, journaling,
                 window shopping, and cafe hopping. Hit me up if you need korean
-                drama reccomendations, or just a fellow hopeless romantic to
-                confide in :,{")"} Also, I'm always, always looking for gym
-                buddies to become muscle mommies with. Now enough with this
-                way-too-long intro, let's keep scrolling ~ 🌎❤️
+                drama reccomendations...or just a fellow hopeless romantic to
+                confide in :,{")"} Also, I'm always looking for gym buddies to
+                become strong muscle mommies with. Now enough with this
+                long-winded intro, let's keep scrolling ~
               </p>
             </div>
             {/*  */}
