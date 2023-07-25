@@ -119,22 +119,21 @@ const MainContent = () => {
             <div className="frame">
               <h2>intro 👋</h2>
               <p>
-                Hello hello ~ I'm Joyce, your friendly neighborhood cat-lover
-                and a second-year UCLA undergrad majoring in{" "}
-                <b>computer science</b>! From building full-stack web apps to
-                tackling challenging class projects, I love coding up products
-                that let my creativity run wild and stimulate my problem solving
-                skills :{`)`} At the end of the day, I desire to build
-                technology that touches lives and sparks positive change in the
-                world - whether that be developing a simple app that simplifies
-                daily tasks, or building a revolutionary full-fledged project!
+                Hello hello~ it's Joyce, your friendly neighborhood cat-lover
+                and 2nd-year UCLA undergrad majoring in <b>computer science</b>!
+                From building full-stack apps to tackling challenging class
+                projects, I love the way coding enhances my problem-solving
+                skills and allows for limitless creativity :{`)`} A lifelong
+                goal of mine is to develop tech that sparks positive change in
+                the world - whether it be simple apps to streamline daily tasks,
+                or full-fledged projects to revolutionize industries!
                 <br />
-                Beyond just coding, some of my hobbies include reading,
-                journaling, window shopping, and cafe hopping! Hit me up if you
-                need anime/kdrama reccs, because I've got my fair share of
-                experience dealing with enemies-to-lovers tropes :P Also, I'm
-                always looking for a gym buddy to get those gains with~ Now
-                enough with this cheesy intro, let's keep scrolling -{">"} 🌎❤️
+                Beyond coding, some of my hobbies include reading, journaling,
+                window shopping, and cafe hopping. Hit me up if you need korean
+                drama reccomendations, or just a fellow hopeless romantic to
+                confide in :,{")"} Also, I'm always, always looking for gym
+                buddies to become muscle mommies with. Now enough with this
+                way-too-long intro, let's keep scrolling ~ 🌎❤️
               </p>
             </div>
             {/*  */}
