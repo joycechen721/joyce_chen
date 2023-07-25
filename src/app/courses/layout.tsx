@@ -1,3 +1,5 @@
+import NavBar from "@/components/NavBar"
+
 export default function CourseLayout({
     children,
   }: {
@@ -5,9 +7,7 @@ export default function CourseLayout({
   }) {
     return (
       <section>
-        <h1>Hello</h1>
-        <nav></nav>
-   
+        <NavBar />
         {children}
       </section>
     )
