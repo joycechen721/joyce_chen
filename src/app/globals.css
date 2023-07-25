@@ -7,9 +7,11 @@
   --orange-highlight: #f4ae3e;
   --frame: #707989;
 
-  --pinkgradient: linear-gradient(to left,
-      rgba(255, 221, 236, 1),
-      rgba(221, 236, 255, 1));
+  --pinkgradient: linear-gradient(
+    to left,
+    rgba(255, 221, 236, 1),
+    rgba(221, 236, 255, 1)
+  );
 
   --ff-poppins: "Poppins", sans-serif;
 
@@ -26,7 +28,8 @@ body {
   background: #faf9f9;
   min-height: 100vh;
   /* cursor: url(https://cdn.custom-cursor.com/db/8215/32/neon-butterfly-pointer.png) , default !important; */
-  cursor: url(https://cdn.custom-cursor.com/db/9279/32/neon-hummingbird-and-feather-pointer.png), default !important;
+  cursor: url(https://cdn.custom-cursor.com/db/9279/32/neon-hummingbird-and-feather-pointer.png),
+    default !important;
   /* cursor: url(https://cdn.custom-cursor.com/db/10115/32/mochi-mochi-peach-cat-and-bubble-tea-pointer.png), default !important; */
 }
 
@@ -463,11 +466,13 @@ table {
 }
 
 .animate-text {
-  background-image: linear-gradient(-225deg,
-      #ff85b4 0%,
-      #ad83c3 29%,
-      #ff478b 67%,
-      #72bcfd 100%);
+  background-image: linear-gradient(
+    -225deg,
+    #ff85b4 0%,
+    #ad83c3 29%,
+    #ff478b 67%,
+    #72bcfd 100%
+  );
   background-size: auto auto;
   background-clip: border-box;
   background-size: 200% auto;
@@ -599,10 +604,13 @@ table {
   margin: 0 15px 15px 0;
   transition: 0.5s ease-out;
 
-  background: linear-gradient(to left,
+  background: linear-gradient(
+      to left,
       transparent 50%,
       rgba(255, 221, 236, 1) 0%,
-      rgba(221, 236, 255, 1) 100%) right;
+      rgba(221, 236, 255, 1) 100%
+    )
+    right;
   background-size: 200%;
 
   -webkit-transition: all 0.4s ease-in-out;
@@ -737,20 +745,20 @@ table {
 }
 
 .cards-container {
-  padding: 50px;
+  padding: 50px 0 50px 0;
 }
 
 .card {
   display: inline-block;
   /* vertical-align: middle; */
-  height: 550px;
+  min-height: 550px;
   width: 325px;
   max-width: 47%;
   border-radius: 15px;
-  border: 3px solid pink;
-  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
-  background-color: lavenderblush;
+  border: 1.5px solid rgb(251, 195, 204);
+  /* -webkit-box-shadow: 0 0 10px mistyrose;
+  box-shadow: 0 0 10px mistyrose; */
+  background-color: rgb(254, 247, 249);
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
@@ -771,15 +779,16 @@ table {
 }
 
 .card:hover {
-  -webkit-transform: scale(1.02);
-  -ms-transform: scale(1.02);
-  transform: scale(1.02);
+  -webkit-transform: scale(1.03);
+  -ms-transform: scale(1.03);
+  transform: scale(1.03);
+  background-color: white;
 }
 
 .card img {
   background-color: white;
   border-radius: 10px;
-  border: 3px solid pink;
+  border: 1.5px solid rgb(251, 195, 204);
   width: 100%;
   height: 270px;
   margin-bottom: 10px;
@@ -790,6 +799,8 @@ table {
 }
 
 #projects button {
+  opacity: 0.7;
+  background: none;
   position: absolute;
   top: 50%;
   border: none;
@@ -802,6 +813,8 @@ table {
 }
 
 #projects button:hover {
+  -webkit-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
   background-color: hotpink;
   color: white;
 }
@@ -1207,4 +1220,51 @@ table {
   margin: auto;
   margin-top: 15px;
   background: white;
+}
+
+/* Basic styles for the flip container */
+.flip-container {
+  perspective: 1000px;
+  margin: 20px;
+}
+
+/* Define the flipper element (the container for the front and back sides) */
+.flipper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+/* Define the front and back sides of the flipper */
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Style the front side of the flipper */
+.front {
+  z-index: 2;
+}
+
+/* Style the back side of the flipper (you can add styles to make it look blank) */
+.back {
+  background-color: white;
+  color: black;
+  z-index: 1;
+  transform: rotateY(180deg);
+}
+
+/* When the flip-container is flipped, hide the front side and display the back side */
+.flip-container.flipped .front {
+  transform: rotateY(180deg);
+}
+
+/* When the flip-container is flipped, hide the back side and display the front side */
+.flip-container.flipped .back {
+  transform: rotateY(0deg);
 }

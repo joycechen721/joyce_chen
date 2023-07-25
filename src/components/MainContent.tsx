@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import CardCarousel from "./CardCarousel";
 import ProjectCards from "./ProjectCards";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Link from 'next/link'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 
 const MainContent = () => {
   const [isCollapse1Visible, setIsCollapse1Visible] = useState(false);
@@ -92,9 +92,7 @@ const MainContent = () => {
                   href="https://www.linkedin.com/in/joycechen12/"
                   target="_blank"
                 >
-                  <span className="circle">
-                  
-                  </span>
+                  <span className="circle"></span>
                 </a>
                 {/* <!-- <a href = "https://bit.ly/joycechenresume" target="_blank"><span className="circle">
             <i className="fa-solid fa-file-csv"></i>
@@ -137,7 +135,6 @@ const MainContent = () => {
                 <em>currently...</em>
               </h2>
               <ul>
-                <li className="flower-item"></li>
                 <li className="flower-item">
                   interning as a swe at{" "}
                   <a
@@ -337,34 +334,34 @@ const MainContent = () => {
               <h3>coursework 📚</h3>
               <div className="flex-row courses">
                 <div className="">
-                <Link href="/courses/cs31">CS 31</Link>
+                  <Link href="/courses/cs31">CS 31</Link>
                 </div>
                 <div className="">
-                <Link href="/courses/cs32">CS 32</Link>
+                  <Link href="/courses/cs32">CS 32</Link>
                 </div>
                 <div className="">
-                <Link href="/courses/cs33">CS 33</Link>
+                  <Link href="/courses/cs33">CS 33</Link>
                 </div>
                 <div className="">
-                <Link href="/courses/cs35l">CS 35L</Link>
+                  <Link href="/courses/cs35l">CS 35L</Link>
                 </div>
                 <div className="">
-                <Link href="/courses/math32a">Math 32A</Link>
+                  <Link href="/courses/math32a">Math 32A</Link>
                 </div>
                 <div className="">
-                <Link href="/courses/math32b">Math 32B</Link>
+                  <Link href="/courses/math32b">Math 32B</Link>
                 </div>
                 <div className="">
-                <Link href="/courses/math33a">Math 33A</Link>
+                  <Link href="/courses/math33a">Math 33A</Link>
                 </div>
                 <div className="">
-                <Link href="/courses/math61">Math 61</Link>
+                  <Link href="/courses/math61">Math 61</Link>
                 </div>
                 <div className="">
-                <Link href="/courses/physics1b">Physics 1B</Link>
+                  <Link href="/courses/physics1b">Physics 1B</Link>
                 </div>
                 <div className="">
-                <Link href="/courses/geog5">Geog 5</Link>
+                  <Link href="/courses/geog5">Geog 5</Link>
                 </div>
               </div>
 
@@ -428,7 +425,7 @@ const MainContent = () => {
           <div className="frame">
             <h2>projects.</h2>
             <div className="separator"></div>
-            <CardCarousel cards={ProjectCards} showNum={3} />
+            <CardCarousel cards={ProjectCards()} showNum={3} />
           </div>
         </div>
       </section>
