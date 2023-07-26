@@ -13,11 +13,7 @@ const CardCarousel: React.FC<CarouselProps> = ({ cards, showNum }) => {
   const [endIndex, setEndIndex] = useState(numToShow);
   // make the cards go up/down for ~texture~
   const initialCards = useRef<any[]>(
-    cards.map((card, index) => (
-      <div key={index} className={` ${index % 2 === 0 ? "bottom" : "top"}`}>
-        {card}
-      </div>
-    ))
+    cards.map((card, index) => <div key={index}>{card}</div>)
   );
   // initial group of cards shown
   const [shownCards, setShownCards] = useState<any[]>(
@@ -63,17 +59,17 @@ const CardCarousel: React.FC<CarouselProps> = ({ cards, showNum }) => {
 
   return (
     <div className="project-cards">
-      <button type="button" className="button1" onClick={() => goPrev()}>
+      {/* <button type="button" className="button1" onClick={() => goPrev()}>
         {" "}
         ⇦{" "}
-      </button>
+      </button> */}
 
       <div className="cards-container">{shownCards}</div>
 
-      <button type="button" className="button2" onClick={() => goNext()}>
+      {/* <button type="button" className="button2" onClick={() => goNext()}>
         {" "}
         ⇨{" "}
-      </button>
+      </button> */}
     </div>
   );
 };

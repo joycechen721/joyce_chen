@@ -16,7 +16,8 @@ const ProjectCards = () => {
               target="_blank"
             >
               GitHub
-            </a>{" "}
+            </a>
+            {" | "}
             <a href="https://bit.ly/joycechen3DSMT-GUI" target="_blank">
               Research
             </a>
@@ -70,15 +71,16 @@ const ProjectCards = () => {
       frontDiv={
         <div className="" id="3">
           <img src="images/terris.png" alt="" />
-          <h3>Club Websites</h3>
-          <p>
-            Developed websites for a couple different organizations and events
-            across the years.
-          </p>
+          <h3>Misc. Websites ⚙️</h3>
         </div>
       }
       backDiv={
         <div>
+          <p>
+            Developed multiple websites for a different organizations and events
+            across the years.
+          </p>
+          <br />
           <p>
             🌐{" "}
             <a href="https://github.com/dailybruin/flamingo" target="_blank">
@@ -127,12 +129,17 @@ const ProjectCards = () => {
             target="_blank"
           >
             GitHub
-          </a>{" "}
+          </a>
+          {" | "}
           <a
             href="https://www.figma.com/file/LOaE5OE8xoEOhHYaHS1dJx/FOTC-Design?type=design&node-id=2306%3A4761&mode=design&t=GJ4QMbRZFwuwA3PD-1"
             target="_blank"
           >
             Figma
+          </a>
+          {" | "}
+          <a href="https://lablueprint.org/projects" target="_blank">
+            LA Blueprint
           </a>
         </div>
       }
@@ -156,7 +163,16 @@ const ProjectCards = () => {
         <div>
           <img src="images/mapify.png" alt="" />
           <h3>Mapify 🌍 🎧</h3>
-          <a href="https://bit.ly/joycec_universifyprototype">GitHub</a>
+          <a href="https://github.com/kalcow/mapify" target="_blank">
+            GitHub
+          </a>
+          {" | "}
+          <a
+            href="https://drive.google.com/file/d/1gyrHQvDk0izxN1q71M-cK3tDu-7sS9oz/view?usp=sharing"
+            target="_blank"
+          >
+            Presentation
+          </a>
         </div>
       }
       backDiv={
@@ -181,12 +197,15 @@ const ProjectCards = () => {
         <div>
           <img src="images/bruinshare.png" alt="" />
           <h3>BruinShare 🚌</h3>
-          <a href="https://bit.ly/joycec_universifyprototype">GitHub</a>
+          <a href="https://github.com/rolandyangg/BruinShare" target="_blank">
+            GitHub
+          </a>
+          {" | "}
           <a
             href="https://docs.google.com/presentation/d/1fMz-C_A9c9Lis-F9RDV-bSLyxL38-4UVSQzA2nmzmV8/edit#slide=id.g24eac0b5bce_0_56"
             target="_blank"
           >
-            Product Design
+            Presentation
           </a>
         </div>
       }
@@ -211,7 +230,13 @@ const ProjectCards = () => {
         <div>
           <img src="images/peachparty.png" alt="" />
           <h3>Peach Party 🍑</h3>
-          <a href="https://bit.ly/joycec_universifyprototype">GitHub</a>
+          <a href="https://github.com/joycechen721/PeachParty" target="_blank">
+            GitHub
+          </a>
+        </div>
+      }
+      backDiv={
+        <div>
           <p>
             A web app that serves as a resource bank for Friends of the Children
             (Los Angeles).
@@ -219,7 +244,6 @@ const ProjectCards = () => {
           <p>Built with: C++</p>
         </div>
       }
-      backDiv={<div></div>}
     />
   );
 
@@ -230,7 +254,9 @@ const ProjectCards = () => {
         <div>
           <img src="images/pnetphlix.png" alt="" />
           <h3>PnetPhlix 🎬 🍿</h3>
-          <a href="https://bit.ly/joycec_universifyprototype">GitHub</a>
+          <a href="https://github.com/joycechen721/PnetPhlix" target="_blank">
+            GitHub
+          </a>
         </div>
       }
       backDiv={

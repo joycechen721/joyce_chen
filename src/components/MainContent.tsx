@@ -4,7 +4,7 @@ import Image from "next/image";
 import CardCarousel from "./CardCarousel";
 import ProjectCards from "./ProjectCards";
 import Postings from "./Postings";
-import FlipCard from "./FlipCard";
+import PieWheel from "./PieWheel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as api from "@/utils";
 import Link from "next/link";
@@ -98,9 +98,11 @@ const MainContent = () => {
                 >
                   <span className="circle"></span>
                 </a>
-                {/* <!-- <a href = "https://bit.ly/joycechenresume" target="_blank"><span className="circle">
-            <i className="fa-solid fa-file-csv"></i>
-          </span></a> --> */}
+                <a href="https://bit.ly/joycechenresume" target="_blank">
+                  <span className="circle">
+                    <i className="fa-solid fa-file-csv"></i>
+                  </span>
+                </a>
                 <a
                   href="https://open.spotify.com/user/aa5970or7sdjkclmzp1wwnj1b"
                   target="_blank"
@@ -202,7 +204,32 @@ const MainContent = () => {
                 <ul>
                   <li className="flower-item">
                     <mark>Software Engineer Intern, June '23 - Present</mark>
-                    <p>Description.</p>
+                    <p></p>
+                  </li>
+                </ul>
+              </div>
+              <div className="skill-row">
+                <h3>
+                  <a href="https://codingtomorrow.org/" target="_blank">
+                    LA Blueprint
+                  </a>
+                </h3>
+                <ul>
+                  <li className="flower-item">
+                    <mark>Software Developer, Present</mark>
+                    <p>
+                      Continuing the Blueprint mission of creating tech for good
+                      in our upcoming projects!
+                    </p>
+                  </li>
+                  <li className="flower-item">
+                    <mark>FOTC Developer, Sept. '22 - July '23</mark>
+                    <p>
+                      Built a React app to serve as a centralized resource bank
+                      for the "Friends of the Children" nonprofit. Worked with 6
+                      developers in weekly 6-hour sprints, creating software
+                      deliverables across a 7-month period.
+                    </p>
                   </li>
                 </ul>
               </div>
@@ -215,20 +242,12 @@ const MainContent = () => {
                 <ul>
                   <li className="flower-item">
                     <mark>Software Engineer Intern, Sept. '22 - Present</mark>
-                    <p>Description.</p>
-                  </li>
-                </ul>
-              </div>
-              <div className="skill-row">
-                <h3>
-                  <a href="https://codingtomorrow.org/" target="_blank">
-                    LA Blueprint
-                  </a>
-                </h3>
-                <ul>
-                  <li className="flower-item">
-                    <mark>Software Developer, Sept. '22 - Present</mark>
-                    <p>Description.</p>
+                    <p>
+                      Develops and maintains official website for UCLA’s
+                      100-years-and-running newspaper, The Daily Bruin. Uses
+                      React and other web application frameworks to build
+                      interactive tag pages for 30K monthly viewers.
+                    </p>
                   </li>
                 </ul>
               </div>
@@ -246,14 +265,14 @@ const MainContent = () => {
                       <a href="https://superposition-vi.devpost.com/">
                         Bay Area's largest gender-focused hackathon
                       </a>{" "}
-                      for high school and college students. Organized guest
+                      for high school and college students. Contacted workshop
                       speakers and judged all 20+ project submissions.
                     </p>
                   </li>
                   <li className="flower-item">
                     <mark>Uberposition HackerX, Oct. '21</mark>
                     <p>
-                      A one-week, entirely{" "}
+                      Organized a one-week, entirely{" "}
                       <a href="https://uberposition-1.devpost.com/">
                         Uber-sponsored business hackathon
                       </a>{" "}
@@ -325,13 +344,13 @@ const MainContent = () => {
             <div className="frame2">
               <h3>relevant skills </h3>
               <ul>
-                <li>languages: java, javascript, c++, python</li>
-                <li>frontend: html/css, jquery, react</li>
+                <li>languages: c++, java, javascript, python, typescript</li>
+                <li>frontend: html/css, jquery, nextjs, reactjs</li>
                 <li>
-                  backend: nodejs, express, mysql, nextjs, hibernate, stripe,
-                  spring
+                  backend: express, firebase, hibernate, mysql, nodejs, spring,
+                  stripe
                 </li>
-                <li>other technologies: rest api's, firebase, git/github</li>
+                <li>other technologies: rest api's, git/github</li>
               </ul>
             </div>
 
@@ -430,7 +449,7 @@ const MainContent = () => {
           <div className="frame">
             <h2>projects.</h2>
             <div className="separator"></div>
-            <CardCarousel cards={ProjectCards()} showNum={3} />
+            <CardCarousel cards={ProjectCards()} showNum={8} />
           </div>
         </div>
       </section>
@@ -442,112 +461,66 @@ const MainContent = () => {
         <div className="container">
           <div className="frame">
             <h2>more about me.</h2>
-            <p>
-              an unasked-for detour into my life and whatnot. tea {">"} coffee.{" "}
-            </p>
+            <p>an unasked-for detour into my life and whatnot. sowwie.</p>
             <br />
             <div id="pie">
               <div className="flex-container">
-                <div className="pie">
-                  <img className="box" src="images/pie.png" alt="" />
-                  <button type="button" name="button" className="spin">
-                    ⇨
-                  </button>
-                </div>
-                <div id="achievements" className="frame piedesc">
-                  <h2>achievements</h2>
-                  <p>
-                    awards minus scholarships from other colleges b/c ucla
-                    didn't give me any ;-;
-                  </p>
-                  <ul>
-                    <li>
-                      1st Place Instrumental Solo - US Open Music Competition
-                    </li>
-                    <li>
-                      State Solo Festival Superior Rating - California Music
-                      Educators Association
-                    </li>
-                    <li>
-                      ABRSM Grade 8 Flute with Distinction (awarded 32 credits
-                      @Level 3)
-                    </li>
-                    <li>President's Volunteer Gold Service Award</li>
-                    <li>
-                      American High School Academic Block Award, Academic Honor
-                      Pin
-                    </li>
-                    <li>2x AP Scholar with Distinction</li>
-                  </ul>
-                  <p>and manifesting for future achievements...</p>
-                  <p>
-                    let's get scholarships, an internship, and good grades
-                    please 🥹
-                  </p>
-                </div>
-                {/* <div id="workshops" className="frame piedesc">
-                  <h2>workshops</h2>
-                  <ul>
-                    <li>
-                      none yet, work in progress! here's some placeholder text
-                      that i will get back to.
-                    </li>
-                  </ul>
-                </div>
-                <div id="teaching" className="frame piedesc">
-                  <h2>teaching</h2>
-                  <ul>
-                    <li>
-                      none yet, work in progress! here's some placeholder text
-                      that i will get back to.
-                    </li>
-                  </ul>
-                </div>
-                <div id="music" className="frame piedesc">
-                  <h2>music</h2>
-                  <p>
-                    for half of my life, I lived and breathed in concerts and
-                    performances 🥳{" "}
-                  </p>
-                  <p>
-                    the best thing about music is the community of people you
-                    find, who you can rant about practicing 40 hours with or
-                    relate to from getting roasted by your music teacher :D oh!
-                    and also make cool music together!
-                  </p>
-                  <ul>
-                    <li>
-                      2.2.2017 - Taipei National Concert Hall, TMJH Wind
-                      Ensemble
-                    </li>
-                    <li>
-                      i seriously can't remember...there are too many. will
-                      update sometime.
-                    </li>
-                  </ul>
-                </div> */}
+                <PieWheel />
               </div>
             </div>
             <br />
             <div className="flex-container" id="media-reccs">
               <div className="frame2">
+                <h3>album rec's 🎶</h3>
+                <ul>
+                  <li>
+                    <a
+                      href="https://open.spotify.com/album/5NVdE7fnUNSfJ7Taka31IF?si=OIWqIKaYTbm0ia2l0Q33JQ"
+                      target="_blank"
+                    >
+                      still blue
+                    </a>{" "}
+                    by gemini
+                  </li>
+                  <li>
+                    moodswings in{" "}
+                    <a
+                      href="https://open.spotify.com/album/2hPHncbZRuWiCBauEUJxyA?si=CyK70U5ARd-YKjkpeye_vw"
+                      target="_blank"
+                    >
+                      this
+                    </a>{" "}
+                    (
+                    <a
+                      href="https://open.spotify.com/album/7vp2iMEQzhNX4sEIUbHpiJ?si=NsaCBMNSQ3OrFAzEeBM_mA"
+                      target="_blank"
+                    >
+                      to
+                    </a>
+                    ) order by dpr ian
+                  </li>
+                  <li>~how i'm feeling~ by lauv</li>
+                  <li>planet her by doja cat</li>
+                  <li>palette & love poem by iu</li>
+                  <li>border: carnival by enhypen</li>
+                </ul>
+              </div>
+              <div className="frame2">
                 <h3>media rec's ☔️</h3>
                 <ul>
                   <li>
-                    kdramas: 25 21, misaeng, itaewon class, my mister, yumi's
-                    cells, hello my 20's
+                    🇰🇷: 25 21, misaeng, itaewon class, my mister, hello my 20's
                   </li>
                   <li>
-                    anime: your lie in april, jujutsu kaisen, horimiya, attack
-                    on titan, parasyte
+                    🇨🇳: the untamed, love like the galaxy, reset, snow sword
+                    stride
                   </li>
                   <li>
-                    books: les miserables, wuthering heights, jane eyre, pride &
-                    prejudice (the classics are truly classic)
+                    🇯🇵: your lie in april, jujutsu kaisen, horimiya, attack on
+                    titan, parasyte
                   </li>
                   <li>
-                    manhwa: tower of god, lookism, seasons of blossom, remarried
-                    empress
+                    📖: les miserables, wuthering heights, jane eyre, beloved
                   </li>
                 </ul>
               </div>
@@ -574,6 +547,16 @@ const MainContent = () => {
                     podcast
                   </li>
                   <li>
+                    <em>
+                      <a
+                        target="_blank"
+                        href="https://open.spotify.com/show/70tDlUjoCZAFqO7cnuspJW?si=e5dc91fa270b43f8"
+                      >
+                        the expectation effect
+                      </a>
+                    </em>
+                  </li>
+                  <li>
                     <a target="_blank" href="https://youtu.be/vO1bpod0vKM">
                       7 daily habits (projectElon)
                     </a>
@@ -584,30 +567,30 @@ const MainContent = () => {
                     </a>{" "}
                     advocacy group
                   </li>
+                  <li>
+                    <em>
+                      <a
+                        target="_blank"
+                        href="https://open.spotify.com/show/70tDlUjoCZAFqO7cnuspJW?si=e5dc91fa270b43f8"
+                      >
+                        how to win friends and influence people
+                      </a>
+                    </em>
+                  </li>
                 </ul>
               </div>
               <div className="frame2">
-                <h3>album rec's 🎶</h3>
+                <h3>favorite... 🐈</h3>
                 <ul>
-                  <li>moodswings in this (to) order by dpr ian</li>
-                  <li>~how i'm feeling~ by lauv</li>
-                  <li>planet her by doja cat</li>
-                  <li>palette & love poem by iu</li>
-                  <li>border: carnival by enhypen</li>
-                </ul>
-              </div>
-              <div className="frame2">
-                <h3>fav's ☕️</h3>
-                <ul>
-                  <li>cats & corgis. samoyeds too.</li>
+                  <li>pets: CATS, CORGIS, SAMOYEDS.</li>
                   <li>apps: notion, todoist, dream</li>
                   <li>kaomoji: Fooooood…ԅ(¯﹃¯ԅ)</li>
                   <li>
                     kpop: enhypen (ddeonuuwu), le sserafim, newjeans, gidle
                   </li>
                   <li>
-                    role models: linh truong, IU, leahsfieldnotes, zhao lusi, my
-                    mom!
+                    people: linh truong, IU, zhao lusi, zhou shen, my mom, and
+                    YOU!
                   </li>
                 </ul>
               </div>
