@@ -14,7 +14,7 @@ const CardCarousel: React.FC<CarouselProps> = ({ cards, showNum }) => {
   // make the cards go up/down for ~texture~
   const initialCards = useRef<any[]>(
     cards.map((card, index) => (
-      <div key={index} className={`card ${index % 2 === 0 ? "bottom" : "top"}`}>
+      <div key={index} className={` ${index % 2 === 0 ? "bottom" : "top"}`}>
         {card}
       </div>
     ))

@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import CardCarousel from "./CardCarousel";
 import ProjectCards from "./ProjectCards";
+import Postings from "./Postings";
+import FlipCard from "./FlipCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as api from "@/utils";
 import Link from "next/link";
@@ -27,10 +29,6 @@ const MainContent = () => {
         break;
     }
   };
-
-  useEffect(() => {
-    api.listPagesFromNotion();
-  }, []);
 
   return (
     <main>
@@ -125,7 +123,7 @@ const MainContent = () => {
                 projects, I love the way coding enhances my problem-solving
                 skills and allows for limitless creativity :{`)`} My lifelong
                 goal is to create technology that sparks positive change in this
-                world, whether it be simple daily tools or apps that
+                world, whether they be simple daily tools or apps that
                 revolutionize society! 🌎❤️
                 <br />
                 Beyond coding, some of my hobbies include reading, journaling,
@@ -626,6 +624,7 @@ const MainContent = () => {
             <h2>blog & rants.</h2>
             <div className="separator"></div>
             <div id="blog">
+              <Postings />
               {/* <table>
           <tr>
           </tr>

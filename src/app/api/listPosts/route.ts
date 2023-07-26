@@ -5,35 +5,10 @@ import { Client } from '@notionhq/client';
 const notion = new Client({ auth: process.env.NOTION_KEY });
 const databaseId : string | undefined = process.env.NOTION_DATABASE_ID;
 
-interface AddItemRequestBody {
-  text: string;
-}
-// type Employee = {
-//     id: number;
-//     name: string;
-//   };
 type PropertyFilter = {
     property: string,
     contains: string,
 }
-
-// const { Client } = require('@notionhq/client');
-
-// const notion = new Client({ auth: process.env.NOTION_API_KEY });
-
-// (async () => {
-//   const databaseId = '2f26ee68df304251aad48ddc420cba3d';
-//   const response = await notion.databases.query({
-//     database_id: databaseId,
-//     filter: {
-//       property: 'Last ordered',
-//       date: {
-//         past_week: {},
-//       },
-//     }
-//   });
-//   console.log(response);
-// })();
 
 const filter : PropertyFilter = {
     "property": "Tags",
@@ -42,19 +17,23 @@ const filter : PropertyFilter = {
 
 export async function GET(req: NextRequest, res: NextResponse) {
   try {
-    const response = await notion.databases.query({
+    const pageResponse = await notion.databases.query({
       database_id: String(databaseId),
-      filter: filter,
-    //   filter: {
-    //     tags: 'Last ordered',
-    //     date: {
-    //         past_week: {},
-    //     }
-    //   }
     });
+    const pages = pageResponse.results;
+    const pageIds : any []= []
+    const children : any []= []
+    
+    for (const page of pages) {
+      pageIds.push(page.id);
+      const pageChildren = await notion.blocks.children.list({
+          block_id: page.id,
+          page_size: 50,
+      });
+      children.push(pageChildren.results);
+  }
 
-    console.log(response);
-    return NextResponse.json({ success: true }, { status: 201 });
+    return NextResponse.json({ success: true, pageResponse}, { status: 201 });
   } catch (error: any) {
     console.error(error.body);
     return NextResponse.json({ error }, { status: error.statusCode || 500 });
