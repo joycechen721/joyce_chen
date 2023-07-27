@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React, { useState, useEffect, Fragment } from "react";
 import {
   createColumnHelper,
@@ -33,7 +34,7 @@ const defaultData: Post[] = [
   {
     title: "on escapism and books.",
     content:
-      "wow, i haven’t written down my thoughts in a while. this is gonna feel extremely awkward. bear with me, as my words will probably not make much sense and my sentences choppy; but hopefully i’ll be able to iterate my thoughts in a semi-understandable manner today.",
+      "wow, i haven't written down my thoughts in a while. this is gonna feel extremely awkward. bear with me, as my words will probably not make much sense and my sentences choppy; but hopefully i'll be able to iterate my thoughts in a semi-understandable manner today.",
     date: dateObj.toLocaleString("en-US", options),
     image:
       "https://img.freepik.com/free-photo/red-white-cat-i-white-studio_155003-13189.jpg?w=2000",
@@ -45,7 +46,7 @@ const defaultData: Post[] = [
   {
     title: "on escapism and books.",
     content:
-      "wow, i haven’t written down my thoughts in a while. this is gonna feel extremely awkward. bear with me, as my words will probably not make much sense and my sentences choppy; but hopefully i’ll be able to iterate my thoughts in a semi-understandable manner today.",
+      "wow, i haven't written down my thoughts in a while. this is gonna feel extremely awkward. bear with me, as my words will probably not make much sense and my sentences choppy; but hopefully i'll be able to iterate my thoughts in a semi-understandable manner today.",
     date: dateObj.toLocaleString("en-US", options),
     image:
       "https://cdn.britannica.com/39/7139-050-A88818BB/Himalayan-chocolate-point.jpg",
@@ -92,6 +93,7 @@ const columns = [
         <div className="topics-container">
           {topics.map((topic) => (
             <div
+              key={topic.name}
               className="post-topic"
               style={{ backgroundColor: topic.color }}
             >
