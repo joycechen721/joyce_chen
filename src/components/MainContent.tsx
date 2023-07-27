@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import CardCarousel from "./CardCarousel";
 import ProjectCards from "./ProjectCards";
-import Postings from "./Postings";
+import Postings from "./PostTable";
 import PieWheel from "./PieWheel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as api from "@/utils";
