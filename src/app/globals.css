@@ -106,6 +106,30 @@ li a {
   color: inherit;
 }
 
+table {
+  margin-top: 20px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px gray solid;
+}
+
+td {
+  padding: 10px;
+  min-width: 150px;
+}
+
+th {
+  padding: 10px;
+  background-color: lavenderblush;
+}
+
+table tbody tr:hover {
+  background-color: lavenderblush;
+}
+
 form label,
 button {
   font-size: 1rem;

@@ -9,63 +9,55 @@ import * as api from "@/utils";
 
 type Post = {
   title: string;
-  age: number;
-  visits: number;
-  status: string;
-  progress: number;
+  date: string;
+  image: string;
+  topics: string;
   content: string;
+};
+
+const dateObj: Date = new Date();
+const options: Intl.DateTimeFormatOptions = {
+  year: 'numeric',
+  month: 'numeric',
+  day: 'numeric',
 };
 
 const defaultData: Post[] = [
   {
-    title: "tanner",
-    content: "linsley",
-    age: 24,
-    visits: 100,
-    status: "In Relationship",
-    progress: 50,
+    title: "on escapism and books.",
+    content: "wow, i haven’t written down my thoughts in a while. this is gonna feel extremely awkward. bear with me, as my words will probably not make much sense and my sentences choppy; but hopefully i’ll be able to iterate my thoughts in a semi-understandable manner today.",
+    date: dateObj.toLocaleString('en-US', options),
+    image: "https://img.freepik.com/free-photo/red-white-cat-i-white-studio_155003-13189.jpg?w=2000",
+    topics: "life thoughts, coding",
   },
   {
-    title: "tandy",
-    content: "miller",
-    age: 40,
-    visits: 40,
-    status: "Single",
-    progress: 80,
-  },
-  {
-    title: "joe",
-    content: "dirte",
-    age: 45,
-    visits: 20,
-    status: "Complicated",
-    progress: 10,
+    title: "on escapism and books.",
+    content: "wow, i haven’t written down my thoughts in a while. this is gonna feel extremely awkward. bear with me, as my words will probably not make much sense and my sentences choppy; but hopefully i’ll be able to iterate my thoughts in a semi-understandable manner today.",
+    date: dateObj.toLocaleString('en-US', options),
+    image: "https://cdn.britannica.com/39/7139-050-A88818BB/Himalayan-chocolate-point.jpg",
+    topics: "life thoughts",
   },
 ];
 
 const columnHelper = createColumnHelper<Post>();
 
 const columns = [
+  columnHelper.accessor("image", {
+    header: () => "",
+    cell: (info) => <img src={info.getValue()} style={{height: '120px'}} />
+  }),
   columnHelper.accessor("title", {
+    header: () => "title 📝",
     cell: (info) => info.getValue(),
   }),
-  columnHelper.accessor("age", {
-    header: () => "Age",
-    cell: (info) => info.renderValue(),
+  columnHelper.accessor("date", {
+    header: () => "date 📅",
   }),
-  columnHelper.accessor("visits", {
-    header: () => <span>Visits</span>,
+  columnHelper.accessor("topics", {
+    header: "topics 💭",
   }),
-  columnHelper.accessor("status", {
-    header: "Status",
-  }),
-  columnHelper.accessor("progress", {
-    header: "Profile Progress",
-  }),
-  columnHelper.accessor((row) => row.content, {
-    id: "content",
-    cell: (info) => <i>{info.getValue()}</i>,
-    header: () => <p>content</p>,
+  columnHelper.accessor("content", {
+    header: "blah.blah.. 🖋️",
   }),
 ];
 
