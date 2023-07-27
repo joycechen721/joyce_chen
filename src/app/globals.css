@@ -107,27 +107,30 @@ li a {
 }
 
 table {
-  margin-top: 20px;
+  margin-top: 30px;
+  margin-bottom: 10px;
   border-collapse: collapse;
-  width: 100%;
+  width: 50%;
+  border: 1px gray solid;
 }
 
-th, td {
-  border: 1px gray solid;
+tr {
+  border-bottom: 1px gray solid;
 }
 
 td {
   padding: 10px;
-  min-width: 150px;
+  /* min-width: 150px; */
 }
 
 th {
-  padding: 10px;
+  padding: 15px;
   background-color: lavenderblush;
 }
 
 table tbody tr:hover {
   background-color: lavenderblush;
+  cursor: pointer;
 }
 
 form label,
@@ -1283,3 +1286,30 @@ table {
   margin: 5px 5px 10px 5px;
 }
 /* rgb(251, 195, 204) */
+
+.topics-container {
+  /* text-align: right; */
+}
+
+.post-topic {
+  display: inline-block;
+  margin: 3px;
+  padding: 5px 10px 5px 10px;
+  border-radius: 10px;
+}
+
+.post-row{
+  background-color: lavenderblush;
+}
+
+.post-row:hover{
+  background-color: lavenderblush !important;
+}
+
+.post-content {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  width: 50%;
+  margin: auto;
+}
