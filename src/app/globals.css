@@ -6,6 +6,7 @@
   --purple: #8383c3;
   --orange-highlight: #f4ae3e;
   --frame: #707989;
+  --cutepink: rgb(253, 175, 209);
 
   --pinkgradient: linear-gradient(
     to left,
@@ -110,8 +111,9 @@ table {
   margin-top: 30px;
   margin-bottom: 10px;
   border-collapse: collapse;
-  width: 50%;
+  width: 100%;
   border: 1px gray solid;
+  border-spacing: 0 5px;
 }
 
 tr {
@@ -151,10 +153,6 @@ form input,
 textarea {
   margin-bottom: 10px;
   width: 100%;
-}
-
-table {
-  border-spacing: 0 5px;
 }
 
 .container {
@@ -439,8 +437,12 @@ table {
   margin: 20px;
   border: 1px solid;
   border-color: #8d99ae;
-  -webkit-box-shadow: -20px 12px pink;
-  box-shadow: -20px 12px pink;
+  -webkit-box-shadow: -20px 12px var(--cutepink);
+  box-shadow: -20px 12px var(--cutepink);
+}
+
+.hide {
+  display: none;
 }
 
 .crop2 {
@@ -448,6 +450,7 @@ table {
 }
 
 .my-links {
+  margin-top: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -460,29 +463,26 @@ table {
 
 .circle {
   float: left;
-  height: 75px;
-  width: 75px;
-  background-color: hotpink;
+  height: 70px;
+  width: 70px;
+  font-size: 2em;
+  background-color: var(--cutepink);
   border-radius: 30%;
-  margin: 0 12px 0 12px;
+  margin: 0 20px 0 12px;
+  align-content: center;
+  color: white;
+  margin-left: 0 !important;
 }
 
 .circle:hover {
   background: var(--pinkgradient);
-}
-
-.circle:hover .fa-brands {
-  color: hotpink;
-}
-
-.circle:hover .fa-solid {
-  color: hotpink;
+  color: var(--cutepink);
+  cursor: pointer;
 }
 
 .fa-brands,
 .fab,
 .fa-solid {
-  color: white;
   font-size: 2.3em;
   position: relative;
   top: 25%;
@@ -509,6 +509,7 @@ table {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textclip 1.5s linear infinite;
+  text-decoration: none;
 }
 
 @keyframes textclip {
@@ -557,6 +558,11 @@ table {
   font-size: 16px;
   z-index: 1;
   margin-right: 40px;
+}
+
+.contacts-icon {
+  font-size: 30px;
+  color: #474646;
 }
 
 /* COOL LIST */
@@ -1298,18 +1304,18 @@ table {
   border-radius: 10px;
 }
 
-.post-row{
+.post-row {
   background-color: lavenderblush;
 }
 
-.post-row:hover{
+.post-row:hover {
   background-color: lavenderblush !important;
 }
 
 .post-content {
-  background: white;
+  /* background: white; */
   border-radius: 20px;
   padding: 20px;
-  width: 50%;
+  width: 80%;
   margin: auto;
 }

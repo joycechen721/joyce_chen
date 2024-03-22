@@ -5,14 +5,26 @@ import CardCarousel from "./CardCarousel";
 import ProjectCards from "./ProjectCards";
 import Postings from "./PostTable";
 import PieWheel from "./PieWheel";
+import { faSchool, faEnvelope, faFileCsv } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as api from "@/utils";
 import Link from "next/link";
+import {
+  faGithub,
+  faLinkedin,
+  faSpotify,
+} from "@fortawesome/free-brands-svg-icons";
 
 const MainContent = () => {
   const [isCollapse1Visible, setIsCollapse1Visible] = useState(false);
   const [isCollapse2Visible, setIsCollapse2Visible] = useState(false);
   const [isCollapse3Visible, setIsCollapse3Visible] = useState(false);
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleList = () => {
+    setIsOpen(!isOpen);
+  };
 
   const handleCollapseToggle = (collapseId: number): void => {
     switch (collapseId) {
@@ -51,13 +63,9 @@ const MainContent = () => {
             <ul className="contacts-list">
               <li className="contact-item">
                 <div className="icon-box">
-                  <Image
-                    src="/images/mail.png"
-                    className="crop2"
-                    alt="email-icon"
-                    width={30}
-                    height={30}
-                  />
+                  <span className="contacts-icon">
+                    <FontAwesomeIcon icon={faEnvelope} />
+                  </span>
                 </div>
                 <div className="contact-info">
                   <p className="contact-title">Email</p>
@@ -72,13 +80,9 @@ const MainContent = () => {
 
               <li className="contact-item">
                 <div className="icon-box">
-                  <Image
-                    src="/images/laptop.png"
-                    className="crop2"
-                    alt="email-icon"
-                    width={30}
-                    height={30}
-                  />
+                  <span className="contacts-icon">
+                    <FontAwesomeIcon icon={faSchool} />
+                  </span>
                 </div>
                 <div className="contact-info">
                   <p className="contact-title">Education</p>
@@ -89,18 +93,20 @@ const MainContent = () => {
               <div className="my-links">
                 <a href="https://github.com/joycechen721" target="_blank">
                   <span className="circle">
-                    <i className="fa-brands fa-github"></i>
+                    <FontAwesomeIcon icon={faGithub} />
                   </span>
                 </a>
                 <a
                   href="https://www.linkedin.com/in/joycechen12/"
                   target="_blank"
                 >
-                  <span className="circle"></span>
+                  <span className="circle">
+                    <FontAwesomeIcon icon={faLinkedin} />
+                  </span>
                 </a>
                 <a href="https://bit.ly/joycechenresume" target="_blank">
                   <span className="circle">
-                    <i className="fa-solid fa-file-csv"></i>
+                    <FontAwesomeIcon icon={faFileCsv} />
                   </span>
                 </a>
                 <a
@@ -108,7 +114,7 @@ const MainContent = () => {
                   target="_blank"
                 >
                   <span className="circle">
-                    <i className="fa-brands fa-spotify"></i>
+                    <FontAwesomeIcon icon={faSpotify} />
                   </span>
                 </a>
               </div>
@@ -120,20 +126,19 @@ const MainContent = () => {
               <h2>intro 👋</h2>
               <p>
                 Hello hello~ it's Joyce, your friendly neighborhood cat-lover
-                and 2nd-year UCLA undergrad majoring in <b>computer science</b>!
-                From developing full-stack apps to tackling challenging class
-                projects, I love the way coding enhances my problem-solving
-                skills and allows for limitless creativity :{`)`} My lifelong
-                goal is to create technology that sparks positive change in this
-                world, whether they be simple daily tools or apps that
-                revolutionize society! 🌎❤️
+                and 2nd-year majoring in <b>computer science</b>!
+                From developing full-stack apps to tackling class projects, I
+                love the way coding enhances my problem-solving skills and
+                allows for limitless creativity :{`)`} My lifelong goal is to
+                create tech that sparks positive change in this world, whether
+                they be simple tools or apps that revolutionize society! 🌎 ❤️
                 <br />
                 Beyond coding, some of my hobbies include reading, journaling,
                 window shopping, and cafe hopping. Hit me up if you need korean
                 drama reccomendations...or just a fellow hopeless romantic to
                 confide in :,{")"} Also, I'm always looking for gym buddies to
-                become strong muscle mommies with. Now enough with this
-                long-winded intro, let's keep scrolling ~
+                become strong muscle mommies with. Enough with this long-winded
+                intro, let's keep scrolling ~
               </p>
             </div>
             {/*  */}
@@ -203,7 +208,7 @@ const MainContent = () => {
                 </h3>
                 <ul>
                   <li className="flower-item">
-                    <mark>Software Engineer Intern, June '23 - Present</mark>
+                    <mark>Software Engineer Intern, June '23 - Sept '23</mark>
                     <p></p>
                   </li>
                 </ul>
@@ -234,12 +239,13 @@ const MainContent = () => {
                 </ul>
               </div>
               <div className="skill-row">
-                <h3>
-                  <a href="https://codingtomorrow.org/" target="_blank">
+                <h3 onClick={toggleList}>
+                  {'> '}
+                  {/* <a href="https://codingtomorrow.org/" target="_blank"> */}
                     Daily Bruin
-                  </a>
+                  {/* </a> */}
                 </h3>
-                <ul>
+                <ul className={`list-items ${isOpen ? 'hide' : ''}`}>
                   <li className="flower-item">
                     <mark>Software Engineer Intern, Sept. '22 - Present</mark>
                     <p>
@@ -475,12 +481,39 @@ const MainContent = () => {
                 <ul>
                   <li>
                     <a
+                      href="https://open.spotify.com/album/3ivhPVStd9RrtczBFwjkMQ?si=-Yzuatf-SuCjwqLtkqtHpA"
+                      target="_blank"
+                    >
+                      pieces
+                    </a>{" "}
+                    by IU 🧩
+                  </li>
+                  <li>
+                    <a
+                      href="https://open.spotify.com/album/38VzP4yWfHdHafITKKRHEB?si=w243fT0DRQKCrLXwPhemKA"
+                      target="_blank"
+                    >
+                      i've ive
+                    </a>{" "}
+                    by IVE 💄
+                  </li>
+                  <li>
+                    <a
                       href="https://open.spotify.com/album/5NVdE7fnUNSfJ7Taka31IF?si=OIWqIKaYTbm0ia2l0Q33JQ"
                       target="_blank"
                     >
                       still blue
                     </a>{" "}
-                    by gemini
+                    by gemini 🎧
+                  </li>
+                  <li>
+                    <a
+                      href="https://open.spotify.com/album/3ZuE680xhR1A4bCFGvL8mi?si=3cyXm8iZTRKQBpP0Kzx9wA"
+                      target="_blank"
+                    >
+                      ~how i'm feeling~
+                    </a>{" "}
+                    by lauv 🎨
                   </li>
                   <li>
                     moodswings in{" "}
@@ -497,12 +530,17 @@ const MainContent = () => {
                     >
                       to
                     </a>
-                    ) order by dpr ian
+                    ) order by dpr ian 🫐
                   </li>
-                  <li>~how i'm feeling~ by lauv</li>
-                  <li>planet her by doja cat</li>
-                  <li>palette & love poem by iu</li>
-                  <li>border: carnival by enhypen</li>
+                  <li>
+                    <a
+                      href="https://open.spotify.com/album/18pzJc8GyrVQmunRXrY3ch?si=chcIgB6rQpigMLwftfi9-A"
+                      target="_blank"
+                    >
+                      to love in the 21st century
+                    </a>{" "}
+                    by lyn lapid 💐
+                  </li>
                 </ul>
               </div>
               <div className="frame2">
@@ -543,22 +581,11 @@ const MainContent = () => {
                       href="https://open.spotify.com/show/70tDlUjoCZAFqO7cnuspJW?si=e5dc91fa270b43f8"
                     >
                       stoic coffee break
-                    </a>{" "}
-                    podcast
-                  </li>
-                  <li>
-                    <em>
-                      <a
-                        target="_blank"
-                        href="https://open.spotify.com/show/70tDlUjoCZAFqO7cnuspJW?si=e5dc91fa270b43f8"
-                      >
-                        the expectation effect
-                      </a>
-                    </em>
+                    </a>
                   </li>
                   <li>
                     <a target="_blank" href="https://youtu.be/vO1bpod0vKM">
-                      7 daily habits (projectElon)
+                      7 daily habits
                     </a>
                   </li>
                   <li>
@@ -566,6 +593,16 @@ const MainContent = () => {
                       good for youth
                     </a>{" "}
                     advocacy group
+                  </li>
+                  <li>
+                    <em>
+                      <a
+                        target="_blank"
+                        href="https://www.goodreads.com/book/show/25899336-when-breath-becomes-air"
+                      >
+                        when breath becomes air
+                      </a>
+                    </em>
                   </li>
                   <li>
                     <em>
@@ -584,14 +621,11 @@ const MainContent = () => {
                 <ul>
                   <li>pets: CATS, CORGIS, SAMOYEDS.</li>
                   <li>apps: notion, todoist, dream</li>
-                  <li>kaomoji: Fooooood…ԅ(¯﹃¯ԅ)</li>
+                  <li>kaomoji: …ԅ(¯﹃¯ԅ)</li>
                   <li>
                     kpop: enhypen (ddeonuuwu), le sserafim, newjeans, gidle
                   </li>
-                  <li>
-                    people: linh truong, IU, zhao lusi, zhou shen, my mom, and
-                    YOU!
-                  </li>
+                  <li>people: linh truong, IU, zhao lusi, my mum, + YOU! 🫶</li>
                 </ul>
               </div>
             </div>
@@ -604,7 +638,7 @@ const MainContent = () => {
       <section>
         <div className="container blog">
           <div className="frame">
-            <h2>blog & rants.</h2>
+            <h2>thoughts.</h2>
             <div className="separator"></div>
             <div id="blog">
               <Postings />

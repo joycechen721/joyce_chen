@@ -111,11 +111,7 @@ const columns = [
 
 const postContent = ({ row }: { row: Row<Post> }) => {
   const content = JSON.stringify(row.original.content, null, 2);
-  return (
-    <div className="frame post-content">
-      {content}
-    </div>
-  );
+  return <div className="post-content">{content}</div>;
 };
 
 const PostTable = () => {

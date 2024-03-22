@@ -146,11 +146,18 @@ const ProjectCards = () => {
       backDiv={
         <div>
           <p>
-            A web app that serves as a resource bank for Friends of the
-            Children, Los Angeles chapter. Developed in a team of 6 other
-            developers and 4 designers at UCLA's LA Blueprint.
+            <b>about</b>: a web app i built with 10 other lovely, talented
+            student developers/designers in LA Blueprint ('22-23)! done in
+            partnership with the national nonprofit "Friends of the Children,"
+            which pairs underserved youth with professional mentors. our app now
+            serves as a centralized resource bank for the organization's
+            administrators, mentors, and caregivers :{")"} GO FOTC!! <br />
+            <b>features</b>: global announcement wall, login/user profile
+            system, nested folders page, mentees modules page, and more!
           </p>
-          <p>Built with: React.js, Node, Express, Firebase, Google API's</p>
+          <p>
+            <b>built with</b>: react, node, firebase, google api's
+          </p>
         </div>
       }
     />
@@ -212,12 +219,20 @@ const ProjectCards = () => {
       backDiv={
         <div>
           <p>
-            A web app designed to streamline the process of ridesharing,
-            specifically for UCLA students. Serves as a centralized platform
-            where people can create and join ridesharing groups, lowering the
-            cost of Ubering to your favorite destinations~
+            <b>about</b>: web app that streamlines the process of ridesharing,
+            specifically for (broke) UCLA students. users are able to create and
+            join ridesharing groups that can lower the cost of Ubering to their
+            favorite destinations! built in a team of 5 for the course cs35l
+            (software construction lab).
           </p>
-          <p>Built with: Next.js, React.js, Express, Firebase, MUI</p>
+          <p>
+            <b>features</b>: bulletin board for active rideshare groups, ability
+            to create/edit/delete rideshare postings, user-specific join/leave
+            groups page, login/user profile system
+          </p>
+          <p>
+            <b>built with</b>: nextjs, react, node, express, firebase, mui
+          </p>
         </div>
       }
     />
