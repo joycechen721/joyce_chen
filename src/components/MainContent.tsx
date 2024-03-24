@@ -3,9 +3,13 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import CardCarousel from "./CardCarousel";
 import ProjectCards from "./ProjectCards";
-import Postings from "./PostTable";
+import CloudsLanding from "./CloudsLanding";
 import PieWheel from "./PieWheel";
-import { faSchool, faEnvelope, faFileCsv } from "@fortawesome/free-solid-svg-icons";
+import {
+  faSchool,
+  faEnvelope,
+  faFileCsv,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as api from "@/utils";
 import Link from "next/link";
@@ -97,7 +101,7 @@ const MainContent = () => {
                   </span>
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/joycechen12/"
+                  href="https://www.linkedin.com/in/joycechen721/"
                   target="_blank"
                 >
                   <span className="circle">
@@ -126,12 +130,12 @@ const MainContent = () => {
               <h2>intro 👋</h2>
               <p>
                 Hello hello~ it's Joyce, your friendly neighborhood cat-lover
-                and 2nd-year majoring in <b>computer science</b>!
-                From developing full-stack apps to tackling class projects, I
-                love the way coding enhances my problem-solving skills and
-                allows for limitless creativity :{`)`} My lifelong goal is to
-                create tech that sparks positive change in this world, whether
-                they be simple tools or apps that revolutionize society! 🌎 ❤️
+                and 2nd-year majoring in <b>computer science</b>! From
+                developing full-stack apps to tackling class projects, I love
+                the way coding enhances my problem-solving skills and allows for
+                limitless creativity :{`)`} My lifelong goal is to create tech
+                that sparks positive change in this world, whether they be
+                simple tools or apps that revolutionize society! 🌎 ❤️
                 <br />
                 Beyond coding, some of my hobbies include reading, journaling,
                 window shopping, and cafe hopping. Hit me up if you need korean
@@ -240,12 +244,12 @@ const MainContent = () => {
               </div>
               <div className="skill-row">
                 <h3 onClick={toggleList}>
-                  {'> '}
+                  {"> "}
                   {/* <a href="https://codingtomorrow.org/" target="_blank"> */}
-                    Daily Bruin
+                  Daily Bruin
                   {/* </a> */}
                 </h3>
-                <ul className={`list-items ${isOpen ? 'hide' : ''}`}>
+                <ul className={`list-items ${isOpen ? "hide" : ""}`}>
                   <li className="flower-item">
                     <mark>Software Engineer Intern, Sept. '22 - Present</mark>
                     <p>
@@ -637,17 +641,7 @@ const MainContent = () => {
 
       <section>
         <div className="container blog">
-          <div className="frame">
-            <h2>thoughts.</h2>
-            <div className="separator"></div>
-            <div id="blog">
-              <Postings />
-              {/* <table>
-          <tr>
-          </tr>
-        </table> */}
-            </div>
-          </div>
+          <CloudsLanding />
         </div>
       </section>
     </main>

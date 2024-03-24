@@ -14,8 +14,10 @@ const Footer = () => {
             <a className="footer-link" href="mailto:joycechen721@ucla.g.edu">
               email
             </a>
-            <a className="footer-link" href="https://www.linkedin.com/">
-              linkedIn
+            <a className="footer-link"
+                href="https://www.linkedin.com/in/joycechen721/"
+                target="_blank"> 
+              linkedin   
             </a>
             {/* <!-- <a className="footer-link" href="https://bit.ly/joycechenresume">resume</a> --> */}
             <a
