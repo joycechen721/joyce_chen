@@ -6,29 +6,36 @@ import { useRouter } from "next/navigation";
 const CloudsLanding: React.FC = () => {
   const router = useRouter();
   const [category, setCategory] = useState("red");
-  let itemsList: Array<string> = [
-    "school",
+  const happy: Array<string> = [
+    "clubs",
     "cats",
-    "music",
-    "shower thoughts",
+    "travel",
+    "gym",
     "food",
     "life",
     "random",
   ];
+  const sad: Array<string> = [
+    "school",
+    "insecurities",
+    "2am thoughts",
+    "cs",
+    "eggert",
+    "leetcode",
+  ];
 
+  const [itemsList, setItemsList] = useState(happy);
   const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   const handleThemeToggle = () => {
-    setIsDarkTheme((prevTheme) => !prevTheme);
-    itemsList = [
-      "meow",
-      "meow",
-      "music",
-      "shower thoughts",
-      "food",
-      "life",
-      "random",
-    ];
+    setIsDarkTheme((prevTheme) => {
+      if (prevTheme == true) {
+        setItemsList(happy);
+      } else {
+        setItemsList(sad);
+      }
+      return !prevTheme;
+    });
   };
 
   return (

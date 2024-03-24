@@ -19,7 +19,7 @@ const ProjectCards = () => {
             </a>
             {" | "}
             <a href="https://bit.ly/joycechen3DSMT-GUI" target="_blank">
-              Research
+              Presentation
             </a>
           </div>
         </div>
@@ -27,39 +27,50 @@ const ProjectCards = () => {
       backDiv={
         <div>
           <p>
-            A graphical user interface that plots intensity/lifetime data
-            obtained from 3D single-molecule tracking instruments to determine
-            DNA transition state probabilities (the rate at which DNA
-            hybridizes). Analyzes a molecule's fluorescence time traces through
-            a hidden Markov model, using the ebFRET library.
+            <b>about</b>: a graphical user interface that plots
+            intensity/lifetime data obtained from 3D single-molecule tracking
+            instruments. determines DNA transition state probabilities (the rate
+            at which DNA hybridizes) & analyzes a molecule's fluorescence time
+            traces using a hidden Markov model.
           </p>
-          <p>Built with: MATLAB, Python</p>
+          <p>
+            <b>features</b>: check the presentation!
+          </p>
+          <p>
+            <b>built with</b>: matlab, python
+          </p>
         </div>
       }
     />
   );
 
-  const universify = (
+  const idontmind = (
     <FlipCard
       id="2"
       frontDiv={
         <div>
-          <img src="images/universify.png" alt="" />
-          <h3>Universify 🏫</h3>
-          <a href="https://bit.ly/joycec_universifyprototype" target="_blank">
-            Prototype
+          <img src="images/idontmind.png" alt="" />
+          <h3>IDONTMIND 💭</h3>
+          <a href="https://github.com/lablueprint/idontmind" target="_blank">
+            GitHub
+          </a>{" "}
+          |{" "}
+          <a href="https://idontmind.com/" target="_blank">
+            IDONTMIND
           </a>
         </div>
       }
       backDiv={
         <div>
           <p>
-            A web-app that helps high schoolers organize college application
-            materials, because essays & college spreadsheets & resume's get
-            messy super quickly (from personal experience). Currently still work
-            in progress, but here's the{" "}
+            <b>about</b>: in progress
           </p>
-          <p>Built with: React.js, Figma</p>
+          <p>
+            <b>features</b>: in progress
+          </p>
+          <p>
+            <b>built with</b>: react native, mongodb, express
+          </p>
         </div>
       }
     />
@@ -138,25 +149,25 @@ const ProjectCards = () => {
             Figma
           </a>
           {" | "}
-          <a href="https://lablueprint.org/projects" target="_blank">
-            LA Blueprint
+          <a href="https://lablueprint.org/projects/fotc" target="_blank">
+            Outline
           </a>
         </div>
       }
       backDiv={
         <div>
           <p>
-            <b>about</b>: a web app i built with 10 other lovely, talented
-            student developers/designers in LA Blueprint ('22-23)! done in
-            partnership with the national nonprofit "Friends of the Children,"
-            which pairs underserved youth with professional mentors. our app now
-            serves as a centralized resource bank for the organization's
-            administrators, mentors, and caregivers :{")"} GO FOTC!! <br />
+            <b>about</b>: a web app i built with 10 other student
+            developers/designers in Blueprint ('22-23)! done in partnership with
+            the nonprofit "Friends of the Children," which pairs underserved
+            youth with professional mentors. our app serves as a centralized
+            resource bank for the organization's administrators, mentors, and
+            caregivers :{")"} <br />
             <b>features</b>: global announcement wall, login/user profile
             system, nested folders page, mentees modules page, and more!
           </p>
           <p>
-            <b>built with</b>: react, node, firebase, google api's
+            <b>built with</b>: react, nodejs, express, firebase, google api's
           </p>
         </div>
       }
@@ -185,13 +196,17 @@ const ProjectCards = () => {
       backDiv={
         <div>
           <p>
-            A mobile app that blends your location and music taste, bringing
-            geographic control of your music to your fingertips! Features
-            include: generating location-based song reccs, viewing friends'
-            locations and current song, and creating custom playlist rooms with
-            your music buddies :{")"}
+            <b>about</b>: a mobile app that blends your location and music
+            taste, bringing geographic control of your music to your fingertips!
           </p>
-          <p>Built with: React Native, Node, PostgreSQL</p>
+          <p>
+            <b>features</b>: generating location-based song reccs, viewing
+            friends' locations and current song, and creating custom playlist
+            rooms with your music buddies :{")"}
+          </p>
+          <p>
+            <b>built with</b>: react native, nodejs, postgresql
+          </p>
         </div>
       }
     />
@@ -231,7 +246,7 @@ const ProjectCards = () => {
             groups page, login/user profile system
           </p>
           <p>
-            <b>built with</b>: nextjs, react, node, express, firebase, mui
+            <b>built with</b>: nextjs, react, nodejs, express, firebase, mui
           </p>
         </div>
       }
@@ -253,10 +268,18 @@ const ProjectCards = () => {
       backDiv={
         <div>
           <p>
-            A web app that serves as a resource bank for Friends of the Children
-            (Los Angeles).
+            <b>about</b>: 2-player video game parody of “Mario Party” in C++.
+            characters Peach/Yoshi navigate a Monopoly-like board to collect
+            coins whilst dodging random projectiles and avoiding monsters
+            Boo/Bowser.
           </p>
-          <p>Built with: C++</p>
+          <p>
+            <b>features</b>: designed using C++ inheritance concepts such as
+            abstract base classes & pure virtual functions.
+          </p>
+          <p>
+            <b>built with</b>: c++
+          </p>
         </div>
       }
     />
@@ -277,25 +300,30 @@ const ProjectCards = () => {
       backDiv={
         <div>
           <p>
-            A web-app that helps high schoolers organize college application
-            materials, because essays & college spreadsheets & resume's get
-            messy super quickly (from personal experience). Currently still work
-            in progress, but here's the{" "}
+            <b>about</b>: movie recommendation app that assesses real-world
+            films based on genre, director, and actors from the user's
+            previously watched movies.
           </p>
-          <p>Built with: React.js, Figma</p>
+          <p>
+            <b>features</b>: a binary-tree-multimap data structure to load and
+            filter through 20K+ movies and 100K+ users in less than 1 second.
+          </p>
+          <p>
+            <b>built with</b>: c++
+          </p>
         </div>
       }
     />
   );
 
   return [
+    idontmind,
     fotc,
     bruinshare,
     mapify,
     gui,
     peachparty,
     misc,
-    universify,
     pnetphlix,
   ];
 };

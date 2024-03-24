@@ -755,6 +755,30 @@ textarea {
   list-style: "🍙  ";
 }
 
+.course-body {
+  margin: auto;
+  text-align: center;
+  width: 50%;
+}
+
+.course-heading {
+  font-size: 2em;
+}
+
+.course-desc {
+  font-size: 15px;
+}
+
+.course-listitem {
+  text-decoration: none;
+  display: list-item;
+  margin-left: 20px;
+}
+
+.course-navitem {
+  cursor: pointer;
+}
+
 /* PROJECTS SECTION */
 #projects .flex-container {
   -webkit-box-orient: horizontal;
@@ -1509,4 +1533,42 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+/* BLOG NAVBAR */
+.blognav-container {
+  background: skyblue;
+  position: sticky;
+  top: 20px;
+  left: 0px;
+}
+
+/* ACTUAL BLOG PAGE */
+.blog-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.blog-main {
+  width: 50%;
+  height: 150vh;
+  margin: auto;
+}
+
+.blog-main p{
+  font-size: 15px;
+}
+
+.blog-main h1 {
+  font-size: 35px;
+}
+
+.blog-sidebar {
+  display: block;
+  overflow-y: auto;
+  position: fixed;
+  left: 5vw;
+  top: 20vh;
+  height: 80vh;
+  max-width: 20vw;
 }

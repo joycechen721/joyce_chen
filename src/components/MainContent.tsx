@@ -26,10 +26,6 @@ const MainContent = () => {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleList = () => {
-    setIsOpen(!isOpen);
-  };
-
   const handleCollapseToggle = (collapseId: number): void => {
     switch (collapseId) {
       case 1:
@@ -108,7 +104,7 @@ const MainContent = () => {
                     <FontAwesomeIcon icon={faLinkedin} />
                   </span>
                 </a>
-                <a href="https://bit.ly/joycechenresume" target="_blank">
+                <a href="">
                   <span className="circle">
                     <FontAwesomeIcon icon={faFileCsv} />
                   </span>
@@ -129,20 +125,20 @@ const MainContent = () => {
             <div className="frame">
               <h2>intro 👋</h2>
               <p>
-                Hello hello~ it's Joyce, your friendly neighborhood cat-lover
-                and 2nd-year majoring in <b>computer science</b>! From
-                developing full-stack apps to tackling class projects, I love
-                the way coding enhances my problem-solving skills and allows for
-                limitless creativity :{`)`} My lifelong goal is to create tech
-                that sparks positive change in this world, whether they be
-                simple tools or apps that revolutionize society! 🌎 ❤️
+                Hey~ it's Joyce, your friendly neighborhood cat-lover and
+                2nd-year computer science student! From developing full-stack
+                apps to tackling class projects, I love the way coding enhances
+                my problem-solving skills and allows for limitless creativity :
+                {`)`} My goal is to create tech that sparks positive change,
+                whether they be simple tools or apps that revolutionize the
+                world. 🌎 ❤️
                 <br />
-                Beyond coding, some of my hobbies include reading, journaling,
-                window shopping, and cafe hopping. Hit me up if you need korean
-                drama reccomendations...or just a fellow hopeless romantic to
-                confide in :,{")"} Also, I'm always looking for gym buddies to
-                become strong muscle mommies with. Enough with this long-winded
-                intro, let's keep scrolling ~
+                Some of my other hobbies include reading, journaling, window
+                shopping, and cafe hopping! Hit me up if you need korean drama
+                reccomendations...or just a fellow hopeless romantic to confide
+                in :,{")"} Also, I'm always looking for gym buddies to become
+                strong muscle mommies with. Enough with this long-winded intro,
+                let's keep scrolling ~
               </p>
             </div>
             {/*  */}
@@ -152,14 +148,8 @@ const MainContent = () => {
               </h2>
               <ul>
                 <li className="flower-item">
-                  interning as a swe at{" "}
-                  <a
-                    href="https://www.perfectcorp.com/business"
-                    target="_blank"
-                  >
-                    Perfect Corp
-                  </a>
-                  , an AR beauty tech company based in taipei!
+                  trying to academic weapon spring quarter like a delulu (4 cs
+                  hah..)
                 </li>
                 <li className="flower-item">
                   listening to these dope artists - zeph, lyn lapid, le
@@ -187,7 +177,7 @@ const MainContent = () => {
                   . curious much? yes, GO CLICK. you won't regret.
                 </li>
                 <li className="flower-item">
-                  working on this website 💖 also open to any fun opportunities!
+                  working on this website 💖 and having fun!
                 </li>
               </ul>
             </div>
@@ -206,26 +196,29 @@ const MainContent = () => {
             <div className="skills">
               <div className="skill-row">
                 <h3>
-                  <a href="https://codingtomorrow.org/" target="_blank">
-                    Perfect Corp.
+                  <a href="https://elfin.igpp.ucla.edu/" target="_blank">
+                    ELFIN
                   </a>
                 </h3>
                 <ul>
                   <li className="flower-item">
-                    <mark>Software Engineer Intern, June '23 - Sept '23</mark>
-                    <p></p>
+                    <mark>Flight Software Engineer, Oct '23 - Present</mark>
+                    <p>
+                      Writing the flight sofware for a satellite mission at
+                      UCLA.
+                    </p>
                   </li>
                 </ul>
               </div>
               <div className="skill-row">
                 <h3>
-                  <a href="https://codingtomorrow.org/" target="_blank">
+                  <a href="https://lablueprint.org/" target="_blank">
                     LA Blueprint
                   </a>
                 </h3>
                 <ul>
                   <li className="flower-item">
-                    <mark>Software Developer, Present</mark>
+                    <mark>IDONTMIND Developer, Sept '23 - Present</mark>
                     <p>
                       Continuing the Blueprint mission of creating tech for good
                       in our upcoming projects!
@@ -243,13 +236,16 @@ const MainContent = () => {
                 </ul>
               </div>
               <div className="skill-row">
-                <h3 onClick={toggleList}>
-                  {"> "}
-                  {/* <a href="https://codingtomorrow.org/" target="_blank"> */}
-                  Daily Bruin
-                  {/* </a> */}
+                <h3>
+                  <a href="https://new.dailybruin.com/" target="_blank">
+                    Daily Bruin
+                  </a>
                 </h3>
                 <ul className={`list-items ${isOpen ? "hide" : ""}`}>
+                  <li className="flower-item">
+                    <mark>Bruinwalk Developer, Sept. '23 - Present</mark>
+                    <p>Dev-ops for the bruinwalk.com site.</p>
+                  </li>
                   <li className="flower-item">
                     <mark>Software Engineer Intern, Sept. '22 - Present</mark>
                     <p>
@@ -263,86 +259,22 @@ const MainContent = () => {
               </div>
               <div className="skill-row">
                 <h3>
-                  <a href="https://superposition.tech/" target="_blank">
-                    Superposition
-                  </a>
-                </h3>
-                <ul>
-                  <li className="flower-item">
-                    <mark>Superposition VI Operations, June '22</mark>
-                    <p>
-                      The 6th iteration of{" "}
-                      <a href="https://superposition-vi.devpost.com/">
-                        Bay Area's largest gender-focused hackathon
-                      </a>{" "}
-                      for high school and college students. Contacted workshop
-                      speakers and judged all 20+ project submissions.
-                    </p>
-                  </li>
-                  <li className="flower-item">
-                    <mark>Uberposition HackerX, Oct. '21</mark>
-                    <p>
-                      Organized a one-week, entirely{" "}
-                      <a href="https://uberposition-1.devpost.com/">
-                        Uber-sponsored business hackathon
-                      </a>{" "}
-                      with 550+ attendees (41% beginners). 2 submission tracks -
-                      technical and business. #DriveInnovation!
-                    </p>
-                  </li>
-                  <li className="flower-item">
-                    <mark>Chapter Manager, '21-22</mark>
-                    <p>
-                      Facilitates 125 chapters across 19 countries & 18 US
-                      states; Executes ideas for chapter bonding, integration,
-                      and inclusion like monthly "chapter conferences."
-                    </p>
-                  </li>
-                  <li className="flower-item">
-                    <mark>Fremont Chapter Tech Team, '20-22</mark>
-                    <p>
-                      Empowers girls in STEM in FUSD; Taught HTML/CSS to 25+
-                      5th-8th graders; Coordinated "STEAM Week" speaker panel &
-                      the “Terris Challenge,” a 2-week STEMathon.
-                    </p>
-                  </li>
-                </ul>
-              </div>
-              <div className="skill-row">
-                <h3>
                   <a
-                    href="https://ahscsfirst.github.io/csfirst/"
+                    href="https://www.perfectcorp.com/business"
                     target="_blank"
                   >
-                    Google CS First Club
+                    Perfect Corp.
                   </a>
                 </h3>
                 <ul>
                   <li className="flower-item">
-                    <mark>President, '21-22</mark>
+                    <mark>Software Engineer Intern, June '23 - Sept '23</mark>
                     <p>
-                      Hosted weekly coding practice sessions and
-                      career-exploration events (speaker panels, workshops) for
-                      students at American High School interested in computer
-                      science.
-                    </p>
-                  </li>
-                </ul>
-              </div>
-              <div className="skill-row">
-                <h3>
-                  <a href="https://codingtomorrow.org/" target="_blank">
-                    Coding Tomorrow Initiative
-                  </a>
-                </h3>
-                <ul>
-                  <li className="flower-item">
-                    <mark>AHS Chapter President, '21-22</mark>
-                    <p>
-                      Directed multiple free virtual classes on web design,
-                      Python, and Java programming. Recruited 15+ high school
-                      volunteers & taught 150+ students across the Fremont
-                      school district.
+                      Engineered CRUD API’s using Hibernate ORM and Spring to
+                      track client product statuses. Developed Node.js scripts
+                      to automate Strapi endpoint testing. Constructed paginated
+                      React.js tables to sort, filter, export makeup SKU data on
+                      the B2B service console page.
                     </p>
                   </li>
                 </ul>
