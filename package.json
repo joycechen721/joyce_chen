@@ -25,9 +25,11 @@
     "next": "^13.4.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "showdown": "^2.1.0",
     "typescript": "5.1.6"
   },
   "devDependencies": {
+    "@types/showdown": "^2.0.6",
     "@vercel/node": "^2.15.6"
   }
 }
