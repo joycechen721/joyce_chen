@@ -1,10 +1,13 @@
-const cats = () => {
-  return (
-    <>
-      <div className="blog-main">
-        <h1>cats</h1>
-        <div className="blog-body">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+const spring24 = () => {
+    return (
+      <>
+        <div className="blog-main">
+          <h1>spring &apos;24</h1>
+          <div className="blog-body">
+            <h3 id="3/25/2024">la hacks</h3>
+            <h3 id="3/25/2024">spring retreat</h3>
+            <h3 id="3/25/2024">03/25/2024</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
           ultricies, velit quis vestibulum accumsan, enim leo placerat dolor, a
           convallis ipsum purus vitae mi. Mauris sit amet commodo felis. Nulla
           facilisi. Suspendisse potenti. Nam fermentum est in dolor mollis, sit
@@ -61,7 +64,6 @@ const cats = () => {
           sed. Phasellus efficitur nisl vel turpis volutpat, nec ultricies dui
           tempus. Maecenas vitae dapibus arcu, eu malesuada elit. Aenean lacinia
           odio et magna commodo, ut lacinia metus vehicula. Sed ac turpis augue.
-          <h5 id="siamese">siamese</h5>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
           ultricies, velit quis vestibulum accumsan, enim leo placerat dolor, a
           convallis ipsum purus vitae mi. Mauris sit amet commodo felis. Nulla
@@ -85,30 +87,26 @@ const cats = () => {
           posuere. Sed vel justo ultricies, gravida metus id, luctus ligula.
           Nulla facilisi. Nunc dignissim, mauris sit amet vehicula interdum,
           metus dolor gravida lectus, eget vestibulum urna justo nec lorem.
-          Integer rhoncus, lorem non consectetur commodo, justo tortor efficitur
-          nisi, eget rutrum purus velit vel arcu. Sed tincidunt suscipit nisi, a
-          euismod lorem aliquet sed. Phasellus efficitur nisl vel turpis
-          volutpat, nec ultricies dui tempus. Maecenas vitae dapibus arcu, eu
-          malesuada elit. Aenean lacinia odio et magna commodo, ut lacinia metus
-          vehicula. Sed ac turpis augue.
+          Integer rhoncus, lorem non consectetur commodo, justo tortor efficitur</p>
+          </div>
         </div>
-      </div>
-      <div className="blog-sidebar">
-        <h3>contents</h3>
-        <ul>
-        {["siamese", "ragdoll", "bengal","tabby", "scottish fold", "russian blue", "ragdoll", "bengal","tabby", "scottish fold", "russian blue"].map((item) => (
-          <>
-            <li className="flower-item">
-              <a href={`/thoughts/cats/#${item}`}>
-              {item}
-              </a>
-              </li>
-          </>
-        ))}
-        </ul>
-      </div>
-    </>
-  );
-};
-
-export default cats;
+        <div className="blog-sidebar">
+          <h3>contents</h3>
+          <ul>
+          {["la hacks", "spring retreat", "3/25/2024"].map((item) => (
+            <>
+              <li className="flower-item">
+                <a href={`/thoughts/spring24/#${item}`}>
+                {item}
+                </a>
+                </li>
+            </>
+          ))}
+          </ul>
+        </div>
+      </>
+    );
+  };
+  
+  export default spring24;
+  

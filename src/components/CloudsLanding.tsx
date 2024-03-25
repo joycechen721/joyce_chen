@@ -9,10 +9,10 @@ const CloudsLanding: React.FC = () => {
   const happy: Array<string> = [
     "clubs",
     "cats",
-    "travel",
+    "spring24",
     "gym",
     "food",
-    "life",
+    "books",
     "random",
   ];
   const sad: Array<string> = [

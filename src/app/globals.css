@@ -8,11 +8,9 @@
   --frame: #707989;
   --cutepink: rgb(253, 175, 209);
 
-  --pinkgradient: linear-gradient(
-    to left,
-    rgba(255, 221, 236, 1),
-    rgba(221, 236, 255, 1)
-  );
+  --pinkgradient: linear-gradient(to left,
+      rgba(255, 221, 236, 1),
+      rgba(221, 236, 255, 1));
 
   --ff-poppins: "Poppins", sans-serif;
 
@@ -494,13 +492,11 @@ textarea {
 }
 
 .animate-text {
-  background-image: linear-gradient(
-    -225deg,
-    #ff85b4 0%,
-    #ad83c3 29%,
-    #ff478b 67%,
-    #72bcfd 100%
-  );
+  background-image: linear-gradient(-225deg,
+      #ff85b4 0%,
+      #ad83c3 29%,
+      #ff478b 67%,
+      #72bcfd 100%);
   background-size: auto auto;
   background-clip: border-box;
   background-size: 200% auto;
@@ -638,13 +634,10 @@ textarea {
   margin: 0 15px 15px 0;
   transition: 0.5s ease-out;
 
-  background: linear-gradient(
-      to left,
+  background: linear-gradient(to left,
       transparent 50%,
       rgba(255, 221, 236, 1) 0%,
-      rgba(221, 236, 255, 1) 100%
-    )
-    right;
+      rgba(221, 236, 255, 1) 100%) right;
   background-size: 200%;
 
   -webkit-transition: all 0.4s ease-in-out;
@@ -1310,6 +1303,7 @@ textarea {
 .card h3 {
   margin: 5px 5px 10px 5px;
 }
+
 /* rgb(251, 195, 204) */
 
 .topics-container {
@@ -1342,10 +1336,11 @@ textarea {
 /* CLOUDS POSTS */
 @keyframes moveClouds {
   0% {
-      transform: translateX(0);
+    transform: translateX(0);
   }
+
   100% {
-      transform: translateY(25px);
+    transform: translateY(25px);
   }
 }
 
@@ -1382,44 +1377,45 @@ textarea {
   height: 400px;
 }
 
-.cloud{
+.cloud {
   cursor: pointer;
-  margin-top:30px;
-  width:140px;
-  height:60px;
+  margin-top: 30px;
+  width: 140px;
+  height: 60px;
   background: rgb(205, 178, 222);
   background: white;
   box-shadow: 5px 7px rgba(136, 135, 135, 0.2);
-  border-radius:100px;
+  border-radius: 100px;
 }
 
-.cloud::after, .cloud::before{
-   content:"";
-   position:relative;
-   display:inline-block;
-   background:inherit;
-   border-radius:inherit;
+.cloud::after,
+.cloud::before {
+  content: "";
+  position: relative;
+  display: inline-block;
+  background: inherit;
+  border-radius: inherit;
 }
 
 /* smaller hump */
-.cloud::after{
-   width:45px;
-   height:45px;
-   top:-40px;
-   left:-62px;
+.cloud::after {
+  width: 45px;
+  height: 45px;
+  top: -40px;
+  left: -62px;
 }
 
 /* bigger hump */
-.cloud::before{
-   width:70px;
-   height:70px;
-   top: -25px;
-   left: 40px;
+.cloud::before {
+  width: 70px;
+  height: 70px;
+  top: -25px;
+  left: 40px;
 }
 
 .cloud span {
   z-index: 1;
-  position:absolute;
+  position: absolute;
   top: 20%;
   left: 30%;
   text-decoration: none;
@@ -1435,37 +1431,37 @@ textarea {
 
 .cloud:nth-child(2) {
   animation: moveClouds 2.5s infinite alternate-reverse;
-  grid-column: 2 / span 1; 
+  grid-column: 2 / span 1;
   grid-row: 2 / span 1;
 }
 
 .cloud:nth-child(3) {
   animation: moveClouds 2s infinite alternate;
-  grid-column: 3 / span 1; 
+  grid-column: 3 / span 1;
   grid-row: 1 / span 1;
 }
 
 .cloud:nth-child(4) {
   animation: moveClouds 2.5s infinite alternate-reverse;
-  grid-column: 4 / span 1; 
+  grid-column: 4 / span 1;
   grid-row: 2 / span 1;
 }
 
 .cloud:nth-child(5) {
   animation: moveClouds 2.5s infinite alternate;
-  grid-column: 1 / span 1; 
+  grid-column: 1 / span 1;
   grid-row: 3 / span 1;
 }
 
 .cloud:nth-child(6) {
   animation: moveClouds 2.5s infinite alternate;
-  grid-column: 3 / span 1; 
+  grid-column: 3 / span 1;
   grid-row: 3 / span 1;
 }
 
 .cloud:nth-child(7) {
   animation: moveClouds 2s infinite alternate;
-  grid-column: 5 / span 1; 
+  grid-column: 5 / span 1;
   grid-row: 1 / span 1;
 }
 
@@ -1513,15 +1509,15 @@ textarea {
   transition: .4s;
 }
 
-input:checked + .slider {
+input:checked+.slider {
   background-color: rgb(153, 153, 153);
 }
 
-input:focus + .slider {
+input:focus+.slider {
   box-shadow: 0 0 1px rgb(153, 153, 153);
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
@@ -1550,12 +1546,13 @@ input:checked + .slider:before {
 }
 
 .blog-main {
-  width: 50%;
+  width: 45%;
   height: 150vh;
   margin: auto;
 }
 
-.blog-main p{
+.blog-body {
+  text-align: left;
   font-size: 15px;
 }
 
@@ -1568,7 +1565,20 @@ input:checked + .slider:before {
   overflow-y: auto;
   position: fixed;
   left: 5vw;
-  top: 20vh;
+  top: 17vh;
   height: 80vh;
   max-width: 20vw;
+}
+
+.blog-sidebar h3 {
+  font-weight: 500;
+  text-decoration: underline 5px purple;
+}
+
+.blog-sidebar li {
+  cursor: pointer;
+}
+
+.blog-sidebar a {
+  text-decoration: none;
 }
