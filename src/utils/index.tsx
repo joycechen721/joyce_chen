@@ -1,3 +1,23 @@
+// markdown to html
+async function renderMd(slug: string) {
+  try {
+    const response = await fetch(`/api/renderMd`, {
+      method: "POST", headers: {
+        'Content-Type': 'application/json',
+      }, body: JSON.stringify(slug)
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to convert markdown.');
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error converting markdown:', error);
+  }
+}
+
 // adds a new page to the blog database on my Notion
 async function addPostToNotion(text: string) {
   try {
@@ -22,17 +42,17 @@ async function addPostToNotion(text: string) {
 }
 
 // lists all the children of a block
-async function listBlockChildren(block_id : string) {
+async function listBlockChildren(block_id: string) {
   try {
     const response = await fetch('/api/listBlockChildren', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({block_id})
+      body: JSON.stringify({ block_id })
     })
 
-    if(!response.ok) {
+    if (!response.ok) {
       throw new Error(`Failed to load children of block ${block_id}`)
     }
 
@@ -68,4 +88,4 @@ async function listPagesFromNotion() {
   }
 }
 
-export {addPostToNotion, listPagesFromNotion}
+export { renderMd, addPostToNotion, listPagesFromNotion }

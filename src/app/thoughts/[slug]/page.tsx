@@ -1,42 +1,39 @@
-import React from "react";
-import MarkdownRenderer from "./md-renderer";
-import fs from 'fs';
-import path from 'path';
+"use client"
+import React, { useState, useEffect } from "react";
+import { renderMd } from "@/utils";
 
 export default function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;
-  const postMD = `${slug}.md`
-  let markdownContent = '';
+  const [htmlContent, setHtmlContent] = useState('');
 
-  const markdownPath = path.join(process.cwd(), 'src', 'posts/', postMD);
-  const defaultMarkdownPath = path.join(process.cwd(), 'src', 'posts/default.md');
-
-  try {
-    markdownContent = fs.readFileSync(markdownPath, 'utf-8');
-  } catch (error) {
-    markdownContent = fs.readFileSync(defaultMarkdownPath, 'utf-8');
-  }
+  useEffect(() => {
+    const fetchMarkdownContent = async () => {
+      const data = await renderMd(slug);
+      setHtmlContent(data.htmlContent)
+    };
+    if (slug) {
+      fetchMarkdownContent();
+    }
+  }, [slug]);
 
   return <>
     <div className="blog-main">
       <h1>{slug}</h1>
       <div className="blog-body">
-        <MarkdownRenderer markdownContent={markdownContent} />
+        <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
       </div>
     </div>
     <div className="blog-sidebar">
       <h3>contents</h3>
       <ul>
-        {["siamese", "ragdoll", "bengal", "tabby", "scottish fold", "russian blue", "ragdoll", "bengal", "tabby", "scottish fold", "russian blue"].map((item) => (
-          <>
-            <li className="flower-item">
-              <a href={`/thoughts/cats/#${item}`}>
-                {item}
-              </a>
-            </li>
-          </>
+        {["siamese", "ragdoll", "bengal", "tabby", "scottish fold", "russian blue",].map((item) => (
+          <li key={item} className="flower-item" >
+            <a href={`/thoughts/cats/#${item}`}>
+              {item}
+            </a>
+          </li>
         ))}
-      </ul>
-    </div>
+      </ul >
+    </div >
   </>
 }
