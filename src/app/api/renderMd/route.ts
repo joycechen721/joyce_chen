@@ -14,7 +14,7 @@ type Node = {
   value: string,
 }
 
-const converter = new showdown.Converter({ tables: true, rawHeaderId: true });
+const converter = new showdown.Converter({ tables: true, rawHeaderId: true, emoji: true });
 
 // takes slug (category) and converts its corresponding md to html
 export async function POST(req: NextRequest, res: NextResponse) {
@@ -35,19 +35,13 @@ export async function POST(req: NextRequest, res: NextResponse) {
     }
 
     // convert to html
-    const content = converter.makeHtml(markdownContent);
-
-    //  add styling
-    const markdownStylePath = path.join(process.cwd(), 'src', 'posts/style.md');
-    const styleContent = fs.readFileSync(markdownStylePath, 'utf-8');
-    const htmlContent = content + '\n' + styleContent;
+    const htmlContent = converter.makeHtml(markdownContent);
 
     // extract all headings
     const headings: any[] = [];
     const ast = remark.parse(markdownContent);
     ast.children.forEach((node) => {
       if (node.type === "heading" && node.depth === 3) {
-        console.log(node)
         const headingObject: Node = node.children[0] as Node;
         headings.push(headingObject.value)
       }

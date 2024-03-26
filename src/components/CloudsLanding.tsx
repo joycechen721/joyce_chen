@@ -7,10 +7,10 @@ const CloudsLanding: React.FC = () => {
   const router = useRouter();
   const happy: Array<string> = [
     "clubs",
-    "rants",
+    "food",
     "spring 24",
     "gym",
-    "food",
+    "rants",
     "books",
     "random",
   ];

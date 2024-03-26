@@ -1,31 +1,13 @@
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis velit vel tortor pulvinar pharetra. Fusce lobortis hendrerit est, eu rhoncus libero condimentum ut. Nullam eget vestibulum nisi, nec interdum risus. Duis nec dolor vel elit gravida tempus. Sed consequat consequat tortor, eu viverra odio sagittis eu. Ut posuere lacinia eros ac faucibus.
+*this is an attempt to log my food journey as well as be more health conscious. yes, we are aging, and yes, we are what we eat!*
 
-### Section 1
+## :fork_and_knife: :apple: :ramen: :rice_ball: :grapes: :fried_shrimp: :shaved_ice: :tropical_drink: :corn: :hamburger: :bento: :cake: :tangerine: :oden:
+<style> h2 {text-align: center} </style>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis velit vel tortor pulvinar pharetra. Fusce lobortis hendrerit est, eu rhoncus libero condimentum ut. Nullam eget vestibulum nisi, nec interdum risus. Duis nec dolor vel elit gravida tempus. Sed consequat consequat tortor, eu viverra odio sagittis eu. Ut posuere lacinia eros ac faucibus.
+### dongting noodle
+now, this has gotta be one of my favorite noodle places in sawtelle. they say third time's the charm, but man, that original beef noodle soup hit straight home from the very first slurp i took. it was unforgettable.
 
-<!-- [![](/images/kittypeep.png)](/images/kittypeep.png) -->
-<img src="/images/kittypeep.png" alt=""/>
+<img src="/images/food/braised_beef_noodles.webp" alt="noods 1" style="width: 200px; height: 250px"/>
 
-| Item              | In Stock | Price |
-| :---------------- | :------: | ----: |
-| Python Hat        |   True   | 23.99 |
-| SQL Hat           |   True   | 23.99 |
-| Codecademy Tee    |  False   | 19.99 |
-| Codecademy Hoodie |  False   | 42.99 |
+### about time cafe
 
-### meow
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis velit vel tortor pulvinar pharetra. Fusce lobortis hendrerit est, eu rhoncus libero condimentum ut. Nullam eget vestibulum nisi, nec interdum risus. Duis nec dolor vel elit gravida tempus. Sed consequat consequat tortor, eu viverra odio sagittis eu. Ut posuere lacinia eros ac faucibus.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis velit vel tortor pulvinar pharetra. Fusce lobortis hendrerit est, eu rhoncus libero condimentum ut. Nullam eget vestibulum nisi, nec interdum risus. Duis nec dolor vel elit gravida tempus. Sed consequat consequat tortor, eu viverra odio sagittis eu. Ut posuere lacinia eros ac faucibus.
-
-### Section 3
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis velit vel tortor pulvinar pharetra. Fusce lobortis hendrerit est, eu rhoncus libero condimentum ut. Nullam eget vestibulum nisi, nec interdum risus. Duis nec dolor vel elit gravida tempus. Sed consequat consequat tortor, eu viverra odio sagittis eu. Ut posuere lacinia eros ac faucibus.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis velit vel tortor pulvinar pharetra. Fusce lobortis hendrerit est, eu rhoncus libero condimentum ut. Nullam eget vestibulum nisi, nec interdum risus. Duis nec dolor vel elit gravida tempus. Sed consequat consequat tortor, eu viverra odio sagittis eu. Ut posuere lacinia eros ac faucibus.
-
-### Section 4
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis velit vel tortor pulvinar pharetra. Fusce lobortis hendrerit est, eu rhoncus libero condimentum ut. Nullam eget vestibulum nisi, nec interdum risus. Duis nec dolor vel elit gravida tempus. Sed consequat consequat tortor, eu viverra odio sagittis eu. Ut posuere lacinia eros ac faucibus.
+### ucla hill food

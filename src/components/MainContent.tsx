@@ -141,14 +141,14 @@ const MainContent = () => {
                 let's keep scrolling ~
               </p>
             </div>
-            {/*  */}
+
             <div className="frame">
               <h2>
                 <em>currently...</em>
               </h2>
               <ul>
                 <li className="flower-item">
-                  trying to academic weapon spring quarter like a delulu (4 cs
+                  trying to academic weapon spring quarter like a delulu (4 cs classes
                   hah..)
                 </li>
                 <li className="flower-item">

@@ -1,5 +1,5 @@
 ### on escapism and books
-#### 07/24/2023
+#### 07/24/2023 :sparkles:
 wow, i haven’t written down my thoughts in a while. this is gonna feel extremely awkward. bear with me, as my words will probably not make much sense and my sentences choppy; but hopefully i’ll be able to iterate my thoughts in a semi-understandable manner today. 
 
 the main reason i haven’t been journaling lately is my gradual submersion into superficial society. everything i do now is to blend into society, to appear a normal and likeable person, and this is the tragic downfall of my unique consciousness. my identity as a unique being has been drastically muted (perhaps ever since i started university), and it constantly feels like i’m operating on a surface level. *am i becoming one of those zepeto sim creatures?* like, every action i take is not intentionally thought through but rather a reflection of what is considered “normal” or “trendy” in today’s world, and every thought i have is geared towards — “how can i make myself a cooler person? how can i make other people like me?” 
@@ -11,7 +11,7 @@ so, i’m slowly losing myself, slipping away from what makes me *me*, finding m
 anyways, recently i’ve also been reading some books in an attempt to save myself from plummeting into the void of stupidity, which i definitely would if i keep watching hours of cdramas/anime everyday after work like i’ve been doing for the past month. obtained some books from 誠品 like “a man’s search for meaning,” “how to make friends and influence people,” and a compilation of george orwell’s essays. “how to …” (too long, don’t wanna type it) is an amazing, amazing book...
 
 ### confusion, or more specifically, loss of direction
-#### 2023
+#### 2023 :sheep:
 
 cringe alert! young joyce had big dreams. inexperienced with what the word “fleeting” entailed, life seemed incredibly long. long enough to be able to dip my toes into every single hobby out there in existence, to accomplish personal goals while making big money, and to be charitable and kind to other people. “17 years old is old,” my younger self would have said. any age past 10 seemed like an eternity away, and i even doubted whether i’d reach 11 years of age without dying beforehand. 
 

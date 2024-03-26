@@ -28,7 +28,7 @@ export default function Page({ params }: { params: { slug: string } }) {
       </div>
     </div>
     <div className="blog-sidebar">
-      <h3>contents</h3>
+      <h3>table of contents</h3>
       <ul>
         {headings.map((item) => {
           const strippedItem = item.replace(/[ '"-]/g, '-').toLowerCase();

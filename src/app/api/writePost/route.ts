@@ -3,7 +3,7 @@ import { NextRequest } from 'next/server';
 import { Client } from '@notionhq/client';
 
 const notion = new Client({ auth: process.env.NOTION_KEY });
-const databaseId : string | undefined = process.env.NOTION_DATABASE_ID;
+const databaseId: string | undefined = process.env.NOTION_DATABASE_ID;
 
 interface AddPostReqBody {
   text: string;
@@ -31,7 +31,6 @@ export async function POST(req: NextRequest, res: NextResponse) {
       },
     });
 
-    console.log(response);
     return NextResponse.json({ success: true }, { status: 201 });
   } catch (error: any) {
     console.error(error.body);
