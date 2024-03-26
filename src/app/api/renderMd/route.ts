@@ -1,43 +1,59 @@
 import { NextResponse } from 'next/server';
 import { NextRequest } from 'next/server';
-import { unified } from 'unified'
-import remarkHtml from 'remark-html'
-import remarkParse from 'remark-parse'
 import path from 'path';
 import fs from 'fs';
+import { remark } from "remark";
+import showdown from 'showdown';
 
 interface AddPostReqBody {
   slug: string;
 }
 
-const convertMarkdownToHtml = async (markdownContent: string): Promise<String> => {
-  const file = await unified()
-    .use(remarkParse)
-    .use(remarkHtml)
-    .process(markdownContent);
-  return String(file);
+type Node = {
+  type: string,
+  value: string,
 }
+
+const converter = new showdown.Converter({ tables: true, rawHeaderId: true });
 
 // takes slug (category) and converts its corresponding md to html
 export async function POST(req: NextRequest, res: NextResponse) {
   try {
     const body: AddPostReqBody = await req.json();
-    const slug = body;
+    const { slug } = body;
     const postMD = `${slug}.md`
     let markdownContent = '';
 
     const markdownPath = path.join(process.cwd(), 'src', 'posts/', postMD);
     const defaultMarkdownPath = path.join(process.cwd(), 'src', 'posts/default.md');
 
+    // read in markdown file
     try {
       markdownContent = fs.readFileSync(markdownPath, 'utf-8');
     } catch (error) {
       markdownContent = fs.readFileSync(defaultMarkdownPath, 'utf-8');
     }
 
-    const htmlContent = await convertMarkdownToHtml(markdownContent);
+    // convert to html
+    const content = converter.makeHtml(markdownContent);
 
-    return NextResponse.json({ success: true, htmlContent }, { status: 201 });
+    //  add styling
+    const markdownStylePath = path.join(process.cwd(), 'src', 'posts/style.md');
+    const styleContent = fs.readFileSync(markdownStylePath, 'utf-8');
+    const htmlContent = content + '\n' + styleContent;
+
+    // extract all headings
+    const headings: any[] = [];
+    const ast = remark.parse(markdownContent);
+    ast.children.forEach((node) => {
+      if (node.type === "heading" && node.depth === 3) {
+        console.log(node)
+        const headingObject: Node = node.children[0] as Node;
+        headings.push(headingObject.value)
+      }
+    })
+
+    return NextResponse.json({ success: true, htmlContent, headings }, { status: 201 });
   } catch (error: any) {
     console.error("error: ", error);
     return NextResponse.json({ error }, { status: error.statusCode || 500 });

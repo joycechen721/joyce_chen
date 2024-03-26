@@ -1,15 +1,14 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 
 const CloudsLanding: React.FC = () => {
   const router = useRouter();
-  const [category, setCategory] = useState("red");
   const happy: Array<string> = [
     "clubs",
-    "cats",
-    "spring24",
+    "rants",
+    "spring 24",
     "gym",
     "food",
     "books",

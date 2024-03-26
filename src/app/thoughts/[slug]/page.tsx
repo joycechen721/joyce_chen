@@ -4,13 +4,17 @@ import { renderMd } from "@/utils";
 
 export default function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;
+  const decodedSlug = decodeURIComponent(slug);
+
   const [htmlContent, setHtmlContent] = useState('');
+  const [headings, setHeadings] = useState<string[]>([]);
 
   useEffect(() => {
     const fetchMarkdownContent = async () => {
-      const data = await renderMd(slug);
-      setHtmlContent(data.htmlContent)
-    };
+      const data = await renderMd(decodedSlug);
+      setHtmlContent(data.htmlContent);
+      setHeadings(data.headings);
+    }
     if (slug) {
       fetchMarkdownContent();
     }
@@ -18,7 +22,7 @@ export default function Page({ params }: { params: { slug: string } }) {
 
   return <>
     <div className="blog-main">
-      <h1>{slug}</h1>
+      <h1>{decodedSlug}</h1>
       <div className="blog-body">
         <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
       </div>
@@ -26,13 +30,16 @@ export default function Page({ params }: { params: { slug: string } }) {
     <div className="blog-sidebar">
       <h3>contents</h3>
       <ul>
-        {["siamese", "ragdoll", "bengal", "tabby", "scottish fold", "russian blue",].map((item) => (
-          <li key={item} className="flower-item" >
-            <a href={`/thoughts/cats/#${item}`}>
-              {item}
-            </a>
-          </li>
-        ))}
+        {headings.map((item) => {
+          const strippedItem = item.replace(/[ '"-]/g, '-').toLowerCase();
+          return (
+            <li key={item} className="flower-item" >
+              <a href={`#${strippedItem}`}>
+                {item}
+              </a>
+            </li>
+          )
+        })}
       </ul >
     </div >
   </>

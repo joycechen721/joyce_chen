@@ -4,7 +4,7 @@ async function renderMd(slug: string) {
     const response = await fetch(`/api/renderMd`, {
       method: "POST", headers: {
         'Content-Type': 'application/json',
-      }, body: JSON.stringify(slug)
+      }, body: JSON.stringify({ slug })
     });
 
     if (!response.ok) {
