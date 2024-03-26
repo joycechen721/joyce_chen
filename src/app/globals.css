@@ -403,14 +403,6 @@ textarea {
   /* gap: 15px; */
 }
 
-.hollow-text {
-  color: black;
-  -webkit-text-fill-color: white;
-  /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
-}
-
 .right-landing span {
   text-decoration: none;
   font-size: 1.5rem;
@@ -834,51 +826,6 @@ textarea {
   border-radius: 15px;
 }
 
-.life-img {
-  position: relative;
-  max-width: 80%;
-}
-
-.life-img img {
-  width: 100%;
-  height: 320px;
-  border-radius: 7%;
-  -webkit-filter: drop-shadow(3px 3px 5px gray) grayscale(50%);
-  filter: drop-shadow(3px 3px 5px gray) grayscale(50%);
-}
-
-.life-img .overlay {
-  position: absolute;
-  border-radius: 7%;
-  padding: 17px;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 98%;
-  display: none;
-}
-
-.life-img .overlay p {
-  color: var(--rice);
-  text-align: justify;
-  line-height: 1.3;
-  vertical-align: middle;
-  font-family: "Edu SA Beginner", cursive;
-  font-size: 1.27rem;
-}
-
-.life-heading {
-  color: white;
-  font-weight: 500;
-  font-size: 2rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
 .overlay-show {
   display: block !important;
   background: rgba(0, 0, 0, 0.6);
@@ -1041,176 +988,11 @@ textarea {
   border: solid 1px;
 }
 
-/* GALLERY */
-.gallery {
-  display: inline-block;
-}
-
-.gallery img {
-  width: 320px;
-  border-radius: 8px;
-  margin: 5px;
-  -webkit-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-
-.gallery img:hover {
-  -webkit-transform: scale(1.05);
-  -ms-transform: scale(1.05);
-  transform: scale(1.05);
-}
-
-/* COMPOSE BLOG*/
-.compose {
-  padding: 0 100px 0 100px;
-}
-
-.compose h1 {
-  font-size: 2.5rem;
-}
-
-.blog h1 {
-  font-size: 2.5rem;
-}
-
-/* BLOG PREVIEW */
-/* ::-webkit-scrollbar-thumb:horizontal {
-  background-color: rgb(188, 186, 186);
-  height: auto;
-}
-
-::-webkit-scrollbar {
-  height: 5px;
-  width: 5px;
-  background-color: rgb(230, 229, 229);
-} */
-
-#blogtitle {
-  text-shadow: 0px 1px 0px aliceblue;
-  padding: 10px 10px 15px 10px;
-  margin: 0px 0 5px 0;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 400;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  letter-spacing: 6px;
-  background-image: url("/images/banner.png");
-}
-
-#compose {
-  font-size: 0.5rem;
-  text-decoration: none;
-}
-
-#blog {
-  padding: 10px 10px 5px 10px;
-  /* overflow: auto; */
-  border-radius: var(--rounded);
-  /* background-image: url('https://i.pinimg.com/564x/3a/cb/97/3acb972188c9da7bdc0eb7e9f073316e.jpg'); */
-  /* border: 10px solid #fff; */
-}
-
-#network {
-  width: 350px;
-  height: 353px;
-  padding: 10px;
-  border-radius: 15px;
-  margin: 30px 10px 15px 0;
-  background-color: #fff;
-  border: 1px solid gray;
-}
-
-#portrait img {
-  width: 100px;
-  height: 100px;
-  border-radius: 80px;
-  border: 10px solid #fff;
-  margin-top: -50px;
-  box-shadow: 0px 0px 0px 1px #fbd5d5;
-}
-
-#networktitle {
-  height: 110px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom: 2px dashed #d2c6a6;
-  background-color: #fde9e9;
-  text-transform: lowercase;
-  letter-spacing: 3px;
-  color: #f38a8a;
-  text-align: center;
-  background-image: url("https://i.pinimg.com/564x/73/9b/7f/739b7fe03d670a59dc5fa5f1a8226a13.jpg");
-}
-
-#networktitle a {
-  text-decoration: none;
-  font-size: 20px;
-  text-transform: lowercase;
-  letter-spacing: 1px;
-  color: white;
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
-  -ms-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-}
-
-#networktitle a:hover {
-  color: #eeb169;
-}
-
-#description {
-  overflow: auto;
-  font-family: "Open Sans", sans-serif;
-  line-height: 20px;
-  text-align: left;
-  color: #9b938a;
-  font-weight: 400;
-}
-
-#description img {
-  display: block;
-  width: 130px;
-  height: 235px;
-  border-bottom-left-radius: 10px;
-}
-
-#description td {
-  padding: 0;
-}
-
-#description a {
-  text-decoration: none;
-  color: #ee6982;
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
-  -ms-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-}
-
-#description a:hover {
-  color: #eeb169;
-}
-
 #course h1 {
   font-size: 2.5rem;
 }
 
-.courseframe {
-  width: 550px;
-  height: 600px;
-  border: 1px solid var(--frame);
-  border-radius: var(--rounded);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
-  padding: 20px;
-  margin: auto;
-  margin-top: 15px;
-  background: white;
-}
-
+/* PROJECTS CARD FLIP STUFF */
 .flip-container {
   width: 380px;
   perspective: 1000px;
@@ -1304,12 +1086,7 @@ textarea {
   margin: 5px 5px 10px 5px;
 }
 
-/* rgb(251, 195, 204) */
-
-.topics-container {
-  /* text-align: right; */
-}
-
+/* OLD POSTS TABLE */
 .post-topic {
   display: inline-block;
   margin: 3px;
