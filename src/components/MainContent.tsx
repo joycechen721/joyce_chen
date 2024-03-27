@@ -52,7 +52,7 @@ const MainContent = () => {
               hi! I'm <span className="animate-text">Joyce Chen.</span>
             </h1>
             <Image
-              src="/images/pfp.jpg"
+              src="/images/main/pfp.jpg"
               className="crop"
               alt="joyce chen"
               width={230}
@@ -125,12 +125,12 @@ const MainContent = () => {
             <div className="frame">
               <h2>intro 👋</h2>
               <p>
-                Hey~ it's Joyce, your friendly neighborhood cat-lover and
-                2nd-year computer science student! From developing full-stack
-                apps to tackling class projects, I love the way coding enhances
-                my problem-solving skills and allows for limitless creativity :
-                {`)`} My goal is to create tech that sparks positive change,
-                whether they be simple tools or apps that revolutionize the
+                Hey there~ it's Joyce, your friendly neighborhood cat-lover and
+                struggling computer science student! From developing full-stack
+                apps to class projects, I love the way coding enhances
+                my problem-solving skills and breathes life into my ideas :
+                {`)`} My goal is to create technology that sparks positive change,
+                whether that be simple apps or tools that revolutionize the
                 world. 🌎 ❤️
                 <br />
                 Some of my other hobbies include reading, journaling, window
@@ -312,22 +312,22 @@ const MainContent = () => {
                   <Link href="/courses/cs35l">CS 35L</Link>
                 </div>
                 <div className="">
-                  <Link href="/courses/math32a">Math 32A</Link>
+                  <Link href="/courses/cs180">CS 180</Link>
                 </div>
                 <div className="">
-                  <Link href="/courses/math32b">Math 32B</Link>
+                  <Link href="/courses/cs111">CS 111</Link>
                 </div>
                 <div className="">
-                  <Link href="/courses/math33a">Math 33A</Link>
+                  <Link href="/courses/cs181">CS 181</Link>
                 </div>
                 <div className="">
-                  <Link href="/courses/math61">Math 61</Link>
+                  <Link href="/courses/csm146">CS M146</Link>
                 </div>
                 <div className="">
-                  <Link href="/courses/physics1b">Physics 1B</Link>
+                  <Link href="/courses/cs174a">CS 174A</Link>
                 </div>
                 <div className="">
-                  <Link href="/courses/geog5">Geog 5</Link>
+                  <Link href="/courses/cs118">CS 118</Link>
                 </div>
               </div>
 

@@ -11,13 +11,13 @@ const Custom404: NextPage = () => {
       <h1>~ 404 ~</h1>
       <p style={{ textAlign: 'center', marginTop: '30px' }}>this page is either in the workings or simply does not exist :/</p>
       <div>
-      <Image
-        src="/images/hi.gif"
-        alt="Hello GIF"
-        width={300} // Adjust width as needed
-        height={200} // Adjust height as needed
-      />
-    </div>
+        <Image
+          src="/images/main/hi.gif"
+          alt="Hello GIF"
+          width={300} // Adjust width as needed
+          height={200} // Adjust height as needed
+        />
+      </div>
     </div>
   );
 };

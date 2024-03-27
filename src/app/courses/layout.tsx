@@ -9,10 +9,7 @@ export default function CourseLayout({
   return (
     <section>
       <NavBar />
-      <div className="blog-wrapper">
-        <CourseNav />
-        <div className="blog-main">{children}</div>
-      </div>
+      <div className="blog-wrapper">{children}</div>
     </section>
   );
 }

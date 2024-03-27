@@ -8,7 +8,7 @@ const ProjectCards = () => {
       id="1"
       frontDiv={
         <div>
-          <img src="images/GUI.png" alt="" />
+          <img src="images/main/GUI.png" alt="" />
           <h3>3D-SMT GUI 🧬</h3>
           <div>
             <a
@@ -49,7 +49,7 @@ const ProjectCards = () => {
       id="2"
       frontDiv={
         <div>
-          <img src="images/idontmind.png" alt="" />
+          <img src="images/main/idontmind.png" alt="" />
           <h3>IDONTMIND 💭</h3>
           <a href="https://github.com/lablueprint/idontmind" target="_blank">
             GitHub
@@ -81,7 +81,7 @@ const ProjectCards = () => {
       id="3"
       frontDiv={
         <div className="" id="3">
-          <img src="images/terris.png" alt="" />
+          <img src="images/main/terris.png" alt="" />
           <h3>Misc. Websites ⚙️</h3>
         </div>
       }
@@ -133,7 +133,7 @@ const ProjectCards = () => {
       id="4"
       frontDiv={
         <div>
-          <img src="images/fotc.png" alt="" />
+          <img src="images/main/fotc.png" alt="" />
           <h3>Friends of the Children 👭</h3>
           <a
             href="https://github.com/lablueprint/friends-of-the-children"
@@ -179,7 +179,7 @@ const ProjectCards = () => {
       id="5"
       frontDiv={
         <div>
-          <img src="images/mapify.png" alt="" />
+          <img src="images/main/mapify.png" alt="" />
           <h3>Mapify 🌍 🎧</h3>
           <a href="https://github.com/kalcow/mapify" target="_blank">
             GitHub
@@ -217,7 +217,7 @@ const ProjectCards = () => {
       id="6"
       frontDiv={
         <div>
-          <img src="images/bruinshare.png" alt="" />
+          <img src="images/main/bruinshare.png" alt="" />
           <h3>BruinShare 🚌</h3>
           <a href="https://github.com/rolandyangg/BruinShare" target="_blank">
             GitHub
@@ -258,7 +258,7 @@ const ProjectCards = () => {
       id="7"
       frontDiv={
         <div>
-          <img src="images/peachparty.png" alt="" />
+          <img src="images/main/peachparty.png" alt="" />
           <h3>Peach Party 🍑</h3>
           <a href="https://github.com/joycechen721/PeachParty" target="_blank">
             GitHub
@@ -290,7 +290,7 @@ const ProjectCards = () => {
       id="8"
       frontDiv={
         <div>
-          <img src="images/pnetphlix.png" alt="" />
+          <img src="images/main/pnetphlix.png" alt="" />
           <h3>PnetPhlix 🎬 🍿</h3>
           <a href="https://github.com/joycechen721/PnetPhlix" target="_blank">
             GitHub

@@ -35,6 +35,7 @@ body {
 
 html,
 body {
+  scroll-behavior: smooth;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -1010,7 +1011,7 @@ textarea {
   transform: rotateY(0deg);
   /* -webkit-box-shadow: 0px 0px 5px 5px mistyrose; */
   /* box-shadow: 0px 0px 6px 6px lavender; */
-  background-image: url("../../public/images/sakura.gif");
+  background-image: url("../../public/images/main/sakura.gif");
   background-color: white !important;
 }
 
@@ -1194,10 +1195,12 @@ textarea {
   z-index: 1;
   position: absolute;
   top: 20%;
-  left: 20%;
   text-decoration: none;
   color: black;
   font-weight: 400;
+  left: 50%;
+  transform: translateX(-50%);
+  letter-spacing: 1px;
 }
 
 .cloud:nth-child(1) {
@@ -1216,6 +1219,8 @@ textarea {
   animation: moveClouds 2s infinite alternate;
   grid-column: 3 / span 1;
   grid-row: 1 / span 1;
+  width: 155px;
+  font-size: 15px;
 }
 
 .cloud:nth-child(4) {
@@ -1315,7 +1320,7 @@ input:checked+.slider:before {
 }
 
 .blog-main {
-  width: 45%;
+  width: 50%;
   height: 150vh;
   margin: auto;
 }
@@ -1328,8 +1333,10 @@ input:checked+.slider:before {
 }
 
 .blog-main img {
-  border: solid 2px;
+  border: solid 3px #99e3e3;
+  border-radius: 10px;
   height: 150px;
+  margin-right: 10px;
 }
 
 .blog-main h3 {
@@ -1339,6 +1346,13 @@ input:checked+.slider:before {
 }
 
 .blog-main h4 {
+  font-size: 15px;
+  text-decoration: underline;
+  margin: 0;
+  margin-top: 25px;
+}
+
+.blog-main h5 {
   margin: 5px 0 10px 0;
   color: gray;
   font-style: italic;
@@ -1350,8 +1364,31 @@ input:checked+.slider:before {
   font-weight: 400;
 }
 
+.blog-main li {
+  font-size: 15px;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
 .blog-main table {
   margin: 30px 0 30px 0;
+  border-collapse: collapse !important;
+}
+
+.blog-main table th,
+td {
+  border-left: 1px solid !important;
+  border-right: 1px solid #000 !important;
+}
+
+.blog-main table td {
+  width: 0px;
+}
+
+.blog-main table img {
+  border: none;
+  width: 80px;
+  height: 90px;
 }
 
 .blog-body {
@@ -1382,4 +1419,65 @@ input:checked+.slider:before {
 
 .blog-sidebar a {
   text-decoration: none;
+}
+
+.blog-rightbar {
+  display: block;
+  overflow-y: auto;
+  position: fixed;
+  right: 5vw;
+  top: 12vh;
+  height: 88vh;
+  max-width: 20vw;
+}
+
+.blog-rightbar .cloud {
+  position: relative;
+  animation: none;
+  margin-top: 50px;
+  margin-right: 5px;
+  background: #e8f1f1;
+  width: 140px;
+}
+
+.blog-rightbar .cloud span {
+  top: auto;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 300;
+  color: #000;
+}
+
+.highlightCategory {
+  background: #99e3e3 !important;
+}
+
+.no-border-table {
+  border-collapse: collapse;
+}
+
+.no-border-table td img {
+  border: solid 3px #99e3e3;
+}
+
+.no-border-table td {
+  border-right: none !important;
+  vertical-align: baseline !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.no-border-table td h4 {
+  margin-top: 10px;
+}
+
+.no-border-table tr {
+  border-left: none !important;
+  border-bottom: none !important;
+  padding: 0 !important;
+}
+
+.no-border-table tr:hover {
+  background: none !important;
+  cursor: auto !important;
 }

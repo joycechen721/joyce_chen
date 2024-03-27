@@ -23,7 +23,7 @@ const PieWheel = () => {
       <div className="pie">
         <img
           className="box"
-          src="images/pie.png"
+          src="images/main/pie.png"
           alt=""
           style={{ transform: `rotate(${rotationAngle}deg)` }}
         />

@@ -28,7 +28,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <img src="/images/kittypeep.png" alt="" />
+        <img src="/images/main/kittypeep.png" alt="" />
       </div>
     </>
   );
