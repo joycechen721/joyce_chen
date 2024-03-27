@@ -1,4 +1,4 @@
-import NavBar from "@/components/NavBar";
+import NavBar2 from "@/components/NavBar2";
 
 export default function CourseLayout({
   children,
@@ -7,7 +7,7 @@ export default function CourseLayout({
 }) {
   return (
     <section>
-      <NavBar />
+      <NavBar2 />
       <div className="blog-wrapper">{children}</div>
     </section>
   );

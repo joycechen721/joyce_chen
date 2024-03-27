@@ -6,21 +6,16 @@ import { useRouter } from "next/navigation";
 const CloudsLanding: React.FC = () => {
   const router = useRouter();
   const happy: Array<string> = [
-    "clubs",
+    "places",
     "food",
     "spring 24",
-    "gym",
-    "rants",
-    "books",
+    "fitness",
+    "vents",
     "random",
+    "music",
   ];
   const sad: Array<string> = [
-    "school",
-    "insecurities",
-    "2am thoughts",
-    "cs",
-    "eggert",
-    "leetcode",
+    "archives",
   ];
 
   const [itemsList, setItemsList] = useState(happy);

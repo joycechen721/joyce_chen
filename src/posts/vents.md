@@ -1,3 +1,5 @@
+## 🌌⛅🪐💭🌦️🌄☀️🌊🌻🌱🌘
+
 ### on escapism and books
 ##### 07/24/2023 :sparkles:
 wow, i haven’t written down my thoughts in a while. this is gonna feel extremely awkward. bear with me, as my words will probably not make much sense and my sentences choppy; but hopefully i’ll be able to iterate my thoughts in a semi-understandable manner today. 

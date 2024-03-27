@@ -21,7 +21,6 @@ const Footer = () => {
             >
               linkedin
             </a>
-            {/* <!-- <a className="footer-link" href="https://bit.ly/joycechenresume">resume</a> --> */}
             <a className="footer-link" href="https://github.com/joycechen721">
               github
             </a>

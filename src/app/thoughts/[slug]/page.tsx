@@ -23,19 +23,13 @@ export default function Page({ params }: { params: { slug: string } }) {
   }, [slug, decodedSlug]);
 
   const itemsList: Array<string> = [
-    "books",
-    "cs",
-    "clubs",
-    "eggert",
-    "food",
-    "gym",
-    "insecurities",
-    "leetcode",
-    "random",
-    "rants",
-    "school",
     "spring 24",
-    "2am thoughts",
+    "fitness",
+    "food",
+    "music",
+    "places",
+    "random",
+    "vents",
   ];
 
   return <>

@@ -1,7 +1,6 @@
-*this is an attempt to log my food journey as well as be more health conscious. yes, we are aging, and yes, we are what we eat!*
+## 🍽️🍜🍇🍤🍧🍹🌽🍔🍱🍊🍢
 
-## :fork_and_knife: :apple: :ramen: :rice_ball: :grapes: :fried_shrimp: :shaved_ice: :tropical_drink: :corn: :hamburger: :bento: :cake: :tangerine: :oden:
-<style> h2 {text-align: center} </style>
+*this is an attempt to log my food journey as well as be more health conscious. yes, we are aging, and yes, we are what we eat!*
 
 ### cafes (cute bevs)
 |                  cafe                  |                   order                   |                                   rating                                    |                                                               cam                                                                |
@@ -27,7 +26,7 @@ got the GOAM, tan tan men, and chinchikurinyaki (i think)! didn't taste as delic
  
 <img src="/images/food/cc1.JPG" alt="cc 1" style="width: 150px; height: 200px"/>
 <img src="/images/food/cc2.JPG" alt="cc 2" style="width: 200px; height: 130px"/>
-<img src="/images/food/cc3.JPG" alt="cc 3" style="width: 140px; height: 150px"/>
+<img src="/images/food/cc3.JPG" alt="cc 3" style="width: 120px; height: 140px"/>
 
 #### dongting noodle
 now, this has gotta be one of my favorite noodle places in sawtelle. they say third time's the charm, but man, that original beef noodle soup hit straight home from the very first slurp i took. it was unforgettable. everything from the noods, to the juicy cuts of beef, to the hot savory soup base was perfect. that is to say, don't order the braised red beef noodles because they aren't as good.
@@ -47,6 +46,7 @@ literally SO good. like SO good. came for the first time w my roomies and we ord
 
 <img src="/images/food/tsujita1.png" alt="tsujita 1" style="width: 200px; height: 150px"/>
 <img src="/images/food/tsujita2.JPG" alt="tsujita 2" style="width: 200px; height: 150px"/>
+<img src="/images/food/tsujita3.jpg" alt="tsujita 2" style="width: 120px; height: 150px"/>
 
 <div style="two-column">
 <table class="no-border-table">
