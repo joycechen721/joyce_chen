@@ -11,7 +11,7 @@ interface AlbumCover {
 }
 
 // get current state, parse json to get track
-export async function getCurrentTrack(): Promise<Track | null> {
+export async function getCurrentTrack(): Promise<Track | undefined> {
     try {
         const response = await fetch('/api/spotify/getCurrentState', { cache: 'no-store' });
         if (!response.ok) {
@@ -20,7 +20,7 @@ export async function getCurrentTrack(): Promise<Track | null> {
         const data = await response.json();
 
         if (data.is_playing === false) {
-            return null;
+            return undefined;
         }
 
         const { item } = data;
