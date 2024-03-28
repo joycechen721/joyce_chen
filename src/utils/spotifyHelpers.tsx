@@ -31,7 +31,7 @@ export const getCurrentState = async () => {
     const { access_token } = tokenRes;
 
     // return promise
-    const data = fetch(`${apiEndpoint}/me/player`, {
+    const data = await fetch(`${apiEndpoint}/me/player`, {
         headers: {
             Authorization: `Bearer ${access_token}`,
         },
