@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import CardCarousel from "./CardCarousel";
@@ -11,20 +10,21 @@ import {
   faFileCsv,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import * as api from "@/utils";
+import { getCurrentTrack } from "@/utils/spotifyParse";
 import Link from "next/link";
 import {
   faGithub,
   faLinkedin,
   faSpotify,
 } from "@fortawesome/free-brands-svg-icons";
+import SpotifyTrack from "./SpotifyTrack";
+import Track from "@/utils/types";
 
 const MainContent = () => {
   const [isCollapse1Visible, setIsCollapse1Visible] = useState(false);
   const [isCollapse2Visible, setIsCollapse2Visible] = useState(false);
   const [isCollapse3Visible, setIsCollapse3Visible] = useState(false);
-
-  const [isOpen, setIsOpen] = useState(false);
+  const [track, setTrack] = useState<Track | null>(null);
 
   const handleCollapseToggle = (collapseId: number): void => {
     switch (collapseId) {
@@ -42,6 +42,19 @@ const MainContent = () => {
     }
   };
 
+  const getTrack = async () => {
+    const data: Track | undefined = await getCurrentTrack();
+    setTrack(data);
+  }
+
+  useEffect(() => {
+    const intervalID = setInterval(() => {
+      getTrack();
+    }, 1000);
+
+    return () => clearInterval(intervalID);
+  }, []);
+
   return (
     <main>
       {/* <!-- LANDING PAGE ^_^--> */}
@@ -49,7 +62,7 @@ const MainContent = () => {
         <div className="landing-container flex-container">
           <div className="left-landing frame">
             <h1>
-              hi! I'm <span className="animate-text">Joyce Chen.</span>
+              hi! I&apos;m <span className="animate-text">Joyce Chen.</span>
             </h1>
             <Image
               src="/images/main/pfp.jpg"
@@ -86,7 +99,7 @@ const MainContent = () => {
                 </div>
                 <div className="contact-info">
                   <p className="contact-title">Education</p>
-                  <p className="contact-link">UCLA Computer Science '26</p>
+                  <p className="contact-link">UCLA Computer Science &apos;26</p>
                 </div>
               </li>
 
@@ -125,24 +138,24 @@ const MainContent = () => {
             <div className="frame">
               <h2>intro 👋</h2>
               <p>
-                Hey there~ it's Joyce, your friendly neighborhood cat-lover and
+                Hey there~ it&apos;s Joyce, your friendly neighborhood cat-lover and
                 struggling computer science student! From developing full-stack
                 apps to class projects, I love the way coding enhances
-                my problem-solving skills and breathes life into my ideas :
-                {`)`} My goal is to create technology that sparks positive change,
+                my problem-solving skills and breathes life into all my ideas. My goal is to create technology that sparks positive change,
                 whether that be simple apps or tools that revolutionize the
                 world. 🌎 ❤️
                 <br />
                 Some of my other hobbies include reading, journaling, window
                 shopping, and cafe hopping! Hit me up if you need korean drama
                 reccomendations...or just a fellow hopeless romantic to confide
-                in :,{")"} Also, I'm always looking for gym buddies to become
+                in :,{")"} Also, I&apos;m always looking for gym buddies to become
                 strong muscle mommies with. Enough with this long-winded intro,
-                let's keep scrolling ~
+                let&apos;s keep scrolling ~
               </p>
             </div>
 
             <div className="frame">
+              {track && <SpotifyTrack track={track} />}
               <h2>
                 <em>currently...</em>
               </h2>
@@ -152,12 +165,11 @@ const MainContent = () => {
                   hah..)
                 </li>
                 <li className="flower-item">
-                  listening to these dope artists - zeph, lyn lapid, le
-                  sserafim, oneheart 🎵
+                  watching the three body problem and 這就是街舞 S4
                 </li>
                 <li className="flower-item">
-                  studying operating systems and leetcoding :pp the grind is
-                  real.
+                  listening to these dope artists - zeph, lyn lapid, le
+                  sserafim, oneheart 🎵
                 </li>
                 <li className="flower-item">
                   reading books:{" "}
@@ -174,7 +186,7 @@ const MainContent = () => {
                   <a href="https://www.goodreads.com/book/show/56238083-george-orwell-essays?from_search=true&from_srp=true&qid=67uueHGhvH&rank=1">
                     this
                   </a>
-                  . curious much? yes, GO CLICK. you won't regret.
+                  . curious much? yes, GO CLICK. you won&apos;t regret.
                 </li>
                 <li className="flower-item">
                   working on this website 💖 and having fun!
@@ -202,7 +214,7 @@ const MainContent = () => {
                 </h3>
                 <ul>
                   <li className="flower-item">
-                    <mark>Flight Software Engineer, Oct '23 - Present</mark>
+                    <mark>Flight Software Engineer, Oct &apos;23 - Present</mark>
                     <p>
                       Writing the flight sofware for a satellite mission at
                       UCLA.
@@ -218,17 +230,17 @@ const MainContent = () => {
                 </h3>
                 <ul>
                   <li className="flower-item">
-                    <mark>IDONTMIND Developer, Sept '23 - Present</mark>
+                    <mark>IDONTMIND Developer, Sept &apos;23 - Present</mark>
                     <p>
                       Continuing the Blueprint mission of creating tech for good
                       in our upcoming projects!
                     </p>
                   </li>
                   <li className="flower-item">
-                    <mark>FOTC Developer, Sept. '22 - July '23</mark>
+                    <mark>FOTC Developer, Sept. &apos;22 - July &apos;23</mark>
                     <p>
                       Built a React app to serve as a centralized resource bank
-                      for the "Friends of the Children" nonprofit. Worked with 6
+                      for the &quot;Friends of the Children&quot; nonprofit. Worked with 6
                       developers in weekly 6-hour sprints, creating software
                       deliverables across a 7-month period.
                     </p>
@@ -241,13 +253,13 @@ const MainContent = () => {
                     Daily Bruin
                   </a>
                 </h3>
-                <ul className={`list-items ${isOpen ? "hide" : ""}`}>
+                <ul className="list-items">
                   <li className="flower-item">
-                    <mark>Bruinwalk Developer, Sept. '23 - Present</mark>
+                    <mark>Bruinwalk Developer, Sept. &apos;23 - Present</mark>
                     <p>Dev-ops for the bruinwalk.com site.</p>
                   </li>
                   <li className="flower-item">
-                    <mark>Software Engineer Intern, Sept. '22 - Present</mark>
+                    <mark>Software Engineer Intern, Sept. &apos;22 - Present</mark>
                     <p>
                       Develops and maintains official website for UCLA’s
                       100-years-and-running newspaper, The Daily Bruin. Uses
@@ -268,7 +280,7 @@ const MainContent = () => {
                 </h3>
                 <ul>
                   <li className="flower-item">
-                    <mark>Software Engineer Intern, June '23 - Sept '23</mark>
+                    <mark>Software Engineer Intern, June &apos;23 - Sept &apos;23</mark>
                     <p>
                       Engineered CRUD API’s using Hibernate ORM and Spring to
                       track client product statuses. Developed Node.js scripts
@@ -286,13 +298,9 @@ const MainContent = () => {
             <div className="frame2">
               <h3>relevant skills </h3>
               <ul>
-                <li>languages: c++, java, javascript, python, typescript</li>
-                <li>frontend: html/css, jquery, nextjs, reactjs</li>
-                <li>
-                  backend: express, firebase, hibernate, mysql, nodejs, spring,
-                  stripe
-                </li>
-                <li>other technologies: rest api's, git/github</li>
+                <li><b>languages</b>: c/c++, java, javascript, python, typescript, ocaml, html/css</li>
+                <li><b>frameworks</b>: node.js, next.js, react.js, react native, express, spring</li>
+                <li><b>other technologies</b>: mysql, mongodb, firebase, hibernate, rest api&apos;s, git/github</li>
               </ul>
             </div>
 
@@ -413,7 +421,7 @@ const MainContent = () => {
             <br />
             <div className="flex-container" id="media-reccs">
               <div className="frame2">
-                <h3>album rec's 🎶</h3>
+                <h3>album rec&apos;s 🎶</h3>
                 <ul>
                   <li>
                     <a
@@ -429,7 +437,7 @@ const MainContent = () => {
                       href="https://open.spotify.com/album/38VzP4yWfHdHafITKKRHEB?si=w243fT0DRQKCrLXwPhemKA"
                       target="_blank"
                     >
-                      i've ive
+                      i&apos;ve ive
                     </a>{" "}
                     by IVE 💄
                   </li>
@@ -447,7 +455,7 @@ const MainContent = () => {
                       href="https://open.spotify.com/album/3ZuE680xhR1A4bCFGvL8mi?si=3cyXm8iZTRKQBpP0Kzx9wA"
                       target="_blank"
                     >
-                      ~how i'm feeling~
+                      ~how i&apos;m feeling~
                     </a>{" "}
                     by lauv 🎨
                   </li>
@@ -480,10 +488,10 @@ const MainContent = () => {
                 </ul>
               </div>
               <div className="frame2">
-                <h3>media rec's ☔️</h3>
+                <h3>media rec&apos;s ☔️</h3>
                 <ul>
                   <li>
-                    🇰🇷: 25 21, misaeng, itaewon class, my mister, hello my 20's
+                    🇰🇷: 25 21, misaeng, itaewon class, my mister, hello my 20&apos;s
                   </li>
                   <li>
                     🇨🇳: the untamed, love like the galaxy, reset, snow sword
@@ -502,14 +510,14 @@ const MainContent = () => {
                 <h3>inspiring stuff ✨</h3>
                 <ul>
                   <li>
-                    "
+                    &quot;
                     <a
                       target="_blank"
                       href="https://forge.medium.com/youre-not-lazy-bored-or-unmotivated-35891b1f3376"
                     >
-                      you're not lazy, bored, or unmotivated
+                      you&apos;re not lazy, bored, or unmotivated
                     </a>
-                    "
+                    &quot;
                   </li>
                   <li>
                     <a

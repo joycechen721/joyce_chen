@@ -69,7 +69,7 @@ literally SO good. like SO good. came for the first time w my roomies and we ord
         <img src="/images/food/mm1.JPG" alt="cc 1" style="width: 150px; height: 180px"/>
     </td>
     <td>
-        <img src="/images/food/marugame1.jpg" alt="marugame 1" style="width: 150px; height: 180px"/>
+        <img src="/images/food/marugame1.JPG" alt="marugame 1" style="width: 150px; height: 180px"/>
     </td>
     <td>
         <img src="/images/food/seoultofu.png" alt="seoul tofu 1" style="width: 180px; height: 180px"/>

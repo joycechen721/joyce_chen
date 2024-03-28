@@ -1499,3 +1499,26 @@ td {
   background: none !important;
   cursor: auto !important;
 }
+
+.track {
+  float: right;
+  padding: 10px;
+  max-width: 180px;
+  margin-right: 15px;
+}
+
+.track a {
+  text-decoration: none;
+}
+
+.track-content p {
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: underline !important;
+}
+
+.track img {
+  width: 90px;
+  border-radius: 5px;
+}
