@@ -7,10 +7,6 @@ interface Props {
 }
 
 const SpotifyTrack: React.FC<Props> = ({ track }) => {
-    useEffect(() => {
-        console.log(track.name);
-    }, [track]);
-
     return (
         <div className="track">
             <Link href={track.url}>
