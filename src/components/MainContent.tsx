@@ -10,7 +10,6 @@ import {
   faFileCsv,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { getCurrentTrack } from "@/utils/spotifyParse";
 import Link from "next/link";
 import {
   faGithub,
@@ -18,13 +17,11 @@ import {
   faSpotify,
 } from "@fortawesome/free-brands-svg-icons";
 import SpotifyTrack from "./SpotifyTrack";
-import Track from "@/utils/types";
 
 const MainContent = () => {
   const [isCollapse1Visible, setIsCollapse1Visible] = useState(false);
   const [isCollapse2Visible, setIsCollapse2Visible] = useState(false);
   const [isCollapse3Visible, setIsCollapse3Visible] = useState(false);
-  const [track, setTrack] = useState<Track | null>(null);
 
   const handleCollapseToggle = (collapseId: number): void => {
     switch (collapseId) {
@@ -41,19 +38,6 @@ const MainContent = () => {
         break;
     }
   };
-
-  const getTrack = async () => {
-    const data: Track | undefined = await getCurrentTrack();
-    setTrack(data);
-  }
-
-  useEffect(() => {
-    const intervalID = setInterval(() => {
-      getTrack();
-    }, 1000);
-
-    return () => clearInterval(intervalID);
-  }, []);
 
   return (
     <main>
@@ -155,7 +139,7 @@ const MainContent = () => {
             </div>
 
             <div className="frame">
-              {track && <SpotifyTrack track={track} />}
+              <SpotifyTrack />
               <h2>
                 <em>currently...</em>
               </h2>

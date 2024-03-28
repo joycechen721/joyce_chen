@@ -4,7 +4,7 @@ const NavBar2 = () => {
       <ul className="nav-list" id="topNav">
         <li className="home-icon">
 
-          <a href="/#blog">
+          <a href="/">
             <img src="/images/main/logo.png" className="icon" />
           </a>
         </li>

@@ -1,7 +1,4 @@
-// pages/404.tsx
-
 import React from 'react';
-import Link from 'next/link';
 import { NextPage } from 'next';
 import Image from 'next/image';
 
@@ -13,9 +10,9 @@ const Custom404: NextPage = () => {
       <div>
         <Image
           src="/images/main/hi.gif"
-          alt="Hello GIF"
-          width={300} // Adjust width as needed
-          height={200} // Adjust height as needed
+          alt="hi gif"
+          width={300}
+          height={200}
         />
       </div>
     </div>

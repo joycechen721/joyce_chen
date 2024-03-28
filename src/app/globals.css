@@ -1522,3 +1522,15 @@ td {
   width: 90px;
   border-radius: 5px;
 }
+
+.playlist-container {
+  margin: 20px;
+}
+
+.playlist-gallery {
+  display: flex;
+  flex-wrap: wrap;
+
+  overflow-y: auto;
+  height: 70vh;
+}

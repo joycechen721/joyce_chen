@@ -30,12 +30,38 @@ export const getCurrentState = async () => {
     const tokenRes = await getAccessToken();
     const { access_token } = tokenRes;
 
-    // return promise
     const data = await fetch(`${apiEndpoint}/me/player`, {
         headers: {
             Authorization: `Bearer ${access_token}`,
         },
         cache: 'no-store',
+    });
+    return data;
+};
+
+// get recently played tracks
+export const getRecentTracks = async () => {
+    const tokenRes = await getAccessToken();
+    const { access_token } = tokenRes;
+
+    const data = await fetch(`${apiEndpoint}/me/player/recently-played?limit=15`, {
+        headers: {
+            Authorization: `Bearer ${access_token}`,
+        },
+        cache: 'no-store',
+    });
+    return data;
+};
+
+// get playlists
+export const getPlaylists = async () => {
+    const tokenRes = await getAccessToken();
+    const { access_token } = tokenRes;
+
+    const data = await fetch(`${apiEndpoint}/me/playlists`, {
+        headers: {
+            Authorization: `Bearer ${access_token}`,
+        },
     });
     return data;
 };

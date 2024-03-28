@@ -59,17 +59,7 @@ const CardCarousel: React.FC<CarouselProps> = ({ cards, showNum }) => {
 
   return (
     <div className="project-cards">
-      {/* <button type="button" className="button1" onClick={() => goPrev()}>
-        {" "}
-        ⇦{" "}
-      </button> */}
-
       <div className="cards-container">{shownCards}</div>
-
-      {/* <button type="button" className="button2" onClick={() => goNext()}>
-        {" "}
-        ⇨{" "}
-      </button> */}
     </div>
   );
 };
