@@ -286,7 +286,10 @@ textarea {
   }
   .clouds {
     height: auto !important;
-    /* padding-bottom: 30px !important; */
+    column-gap: 50px !important;
+  }
+  .piedesc {
+    background: none !important;
   }
 }
 
@@ -316,7 +319,7 @@ textarea {
 
 @media screen and (max-width: 1200px) {
   .clouds {
-    grid-template-columns: repeat(auto-fill, 120px) !important;
+    grid-template-columns: repeat(auto-fill, 130px) !important;
     grid-template-rows: repeat(auto-fill, 120px) !important;
     padding-bottom: 30px !important;
     height: auto !important;
@@ -1195,6 +1198,7 @@ textarea {
 
 .clouds {
   display: grid;
+  justify-content: center;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(3, 100px);
   row-gap: 20px;
@@ -1550,7 +1554,7 @@ td {
 .track {
   float: right;
   padding: 10px;
-  max-width: 180px;
+  max-width: 140px;
   margin-right: 15px;
 }
 
