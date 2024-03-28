@@ -1552,10 +1552,11 @@ td {
 }
 
 .track {
+  text-align: center;
   float: right;
   padding: 10px;
-  max-width: 140px;
-  margin-right: 15px;
+  max-width: 120px;
+  margin-left: 8px;
 }
 
 .track a {
@@ -1580,8 +1581,12 @@ td {
 
 .playlist-gallery {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-
+  border-radius: 20px;
+  background: black;
+  color: white;
   overflow-y: auto;
   height: 70vh;
+  margin-top: 20px;
 }

@@ -47,7 +47,7 @@ const PieWheel = () => {
               association
             </li>
             <li>
-              accepted into san francisco conservatory of music... but didn't go rip.
+              got into san francisco conservatory of music... but didn't go rip.
             </li>
           </ul>
           <p>

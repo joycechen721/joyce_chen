@@ -139,21 +139,20 @@ const MainContent = () => {
             </div>
 
             <div className="frame">
-              <SpotifyTrack />
               <h2>
                 <em>currently...</em>
               </h2>
               <ul>
                 <li className="flower-item">
-                  trying to academic weapon spring quarter like a delulu (4 cs classes
-                  hah..)
+                <SpotifyTrack />
+                  trying to academic weapon spring quarter like a delulu (4 cs classes hah... meow)
                 </li>
                 <li className="flower-item">
                   watching the three body problem and 這就是街舞 S4
                 </li>
                 <li className="flower-item">
-                  listening to these dope artists - zeph, lyn lapid, le
-                  sserafim, oneheart 🎵
+                  listening to these dope artists - gemini, lyn lapid, le
+                  sserafim 🎵
                 </li>
                 <li className="flower-item">
                   reading books:{" "}
