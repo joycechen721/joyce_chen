@@ -6,7 +6,7 @@ export const SpotifyTrack = () => {
     const [track, setTrack] = useState<Track | null>(null);
 
     const getTrack = async () => {
-        const data: Track | undefined = await getCurrentTrack();
+        const data: Track | null = await getCurrentTrack();
         setTrack(data);
     }
 
