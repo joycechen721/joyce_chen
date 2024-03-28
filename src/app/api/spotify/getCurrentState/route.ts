@@ -9,9 +9,9 @@ export async function GET(req: NextRequest, res: NextResponse) {
     if (!response) {
         return NextResponse.json({ error: 'Unable to connect to Spotify.' }, { status: 500 });
     }
-    // if (response.status === 204 || response.status > 400) {
-    //     return NextResponse.json({ is_playing: false }, { status: 200 });
-    // }
+    if (response.status === 204 || response.status > 400) {
+        return NextResponse.json({ is_playing: false }, { status: 200 });
+    }
     const data = await response.json();
 
     return NextResponse.json(data, { status: 200 });
