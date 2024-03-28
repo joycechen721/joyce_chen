@@ -13,7 +13,7 @@ interface AlbumCover {
 // get current state, parse json to get track
 export async function getCurrentTrack(): Promise<Track> {
     try {
-        const response = await fetch('/api/spotify/getCurrentState');
+        const response = await fetch('/api/spotify/getCurrentState', { cache: 'no-store' });
         if (!response.ok) {
             throw new Error('Failed to get current Spotify state.');
         }

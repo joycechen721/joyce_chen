@@ -35,6 +35,7 @@ export const getCurrentState = async () => {
         headers: {
             Authorization: `Bearer ${access_token}`,
         },
+        cache: 'no-store',
     });
     return data;
 };
