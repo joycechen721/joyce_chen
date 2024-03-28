@@ -301,6 +301,15 @@ textarea {
     flex-direction: column;
     gap: 15px;
   }
+  .blog-rightbar {
+    display: none !important;
+  }
+  .blog-sidebar {
+    display: none !important;
+  }
+  .blog-main {
+    width: 90% !important;
+  }
 }
 
 @media screen and (max-width: 1000px) {
