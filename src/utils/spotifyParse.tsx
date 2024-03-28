@@ -11,13 +11,17 @@ interface AlbumCover {
 }
 
 // get current state, parse json to get track
-export async function getCurrentTrack(): Promise<Track> {
+export async function getCurrentTrack(): Promise<Track | null> {
     try {
         const response = await fetch('/api/spotify/getCurrentState', { cache: 'no-store' });
         if (!response.ok) {
             throw new Error('Failed to get current Spotify state.');
         }
         const data = await response.json();
+
+        if (data.is_playing === false) {
+            return null;
+        }
 
         const { item } = data;
         const { name, artists, album, external_urls } = item;

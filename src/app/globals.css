@@ -284,6 +284,10 @@ textarea {
     width: auto !important;
     max-width: 100% !important;
   }
+  .clouds {
+    height: auto !important;
+    /* padding-bottom: 30px !important; */
+  }
 }
 
 @media (max-width: 900px) {
@@ -307,6 +311,49 @@ textarea {
 
   .piedesc {
     margin-left: 0 !important;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .clouds {
+    grid-template-columns: repeat(auto-fill, 120px) !important;
+    grid-template-rows: repeat(auto-fill, 120px) !important;
+    padding-bottom: 30px !important;
+    height: auto !important;
+  }
+  .cloud:nth-child(1) {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+  
+  .cloud:nth-child(2) {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+  
+  .cloud:nth-child(3) {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+  
+  .cloud:nth-child(4) {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+  
+  .cloud:nth-child(5) {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+  
+  .cloud:nth-child(6) {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+  
+  .cloud:nth-child(7) {
+    grid-column: auto !important;
+    grid-row: auto !important;
   }
 }
 
