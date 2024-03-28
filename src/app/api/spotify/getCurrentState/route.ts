@@ -16,3 +16,5 @@ export async function GET(req: NextRequest, res: NextResponse) {
 
     return NextResponse.json(data, { status: 200 });
 }
+
+export const revalidate = 0;
