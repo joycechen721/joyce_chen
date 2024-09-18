@@ -316,7 +316,40 @@ const ProjectCards = () => {
     />
   );
 
+  const plantingo = (
+    <FlipCard
+      id="9"
+      frontDiv={
+        <div>
+          <img src="images/main/idontmind.png" alt="" />
+          <h3>Plantingo 💭</h3>
+          <a href="https://github.com/lablueprint/idontmind" target="_blank">
+            GitHub
+          </a>{" "}
+          |{" "}
+          <a href="https://idontmind.com/" target="_blank">
+            Devpost
+          </a>
+        </div>
+      }
+      backDiv={
+        <div>
+          <p>
+            <b>about</b>: in progress
+          </p>
+          <p>
+            <b>features</b>: in progress
+          </p>
+          <p>
+            <b>built with</b>: react native, mongodb, express
+          </p>
+        </div>
+      }
+    />
+  );
+
   return [
+    plantingo,
     idontmind,
     fotc,
     bruinshare,

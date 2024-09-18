@@ -187,10 +187,6 @@ textarea {
     margin-right: 20px !important;
   }
 
-  .crop {
-    width: 70% !important;
-  }
-
   .nav-link {
     display: none;
   }
@@ -482,7 +478,7 @@ textarea {
 }
 
 .crop {
-  width: 33%;
+  width: 200px;
   border-radius: 10%;
   margin: 20px;
   border: 1px solid;
