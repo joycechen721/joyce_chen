@@ -49,14 +49,18 @@ const ProjectCards = () => {
       id="2"
       frontDiv={
         <div>
-          <img src="images/main/idontmind.png" alt="" />
+          <img src="images/main/idm.webp" alt="" />
           <h3>IDONTMIND 💭</h3>
           <a href="https://github.com/lablueprint/idontmind" target="_blank">
             GitHub
           </a>{" "}
           |{" "}
-          <a href="https://idontmind.com/" target="_blank">
-            IDONTMIND
+          <a href="https://www.figma.com/design/Goc2z8Dh48YCUURW6mFG5q/Designs?node-id=3982-4643&node-type=canvas" target="_blank">
+            Figma
+          </a>
+          {" | "}
+          <a href="https://lablueprint.org/projects/idontmind" target="_blank">
+            Ideation
           </a>
         </div>
       }
@@ -150,7 +154,7 @@ const ProjectCards = () => {
           </a>
           {" | "}
           <a href="https://lablueprint.org/projects/fotc" target="_blank">
-            Outline
+            Ideation
           </a>
         </div>
       }
@@ -321,13 +325,13 @@ const ProjectCards = () => {
       id="9"
       frontDiv={
         <div>
-          <img src="images/main/idontmind.png" alt="" />
+          <img src="images/main/plantingo.png" alt="" />
           <h3>Plantingo 💭</h3>
-          <a href="https://github.com/lablueprint/idontmind" target="_blank">
+          <a href="https://github.com/angelahao6/Plantingo" target="_blank">
             GitHub
           </a>{" "}
           |{" "}
-          <a href="https://idontmind.com/" target="_blank">
+          <a href="https://devpost.com/software/plantingo" target="_blank">
             Devpost
           </a>
         </div>
@@ -341,7 +345,7 @@ const ProjectCards = () => {
             <b>features</b>: in progress
           </p>
           <p>
-            <b>built with</b>: react native, mongodb, express
+            <b>built with</b>: reactjs, flask, gemini api, mongodb
           </p>
         </div>
       }
@@ -354,8 +358,8 @@ const ProjectCards = () => {
     fotc,
     bruinshare,
     mapify,
-    gui,
     peachparty,
+    gui,
     misc,
     pnetphlix,
   ];

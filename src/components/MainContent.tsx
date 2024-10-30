@@ -145,14 +145,13 @@ const MainContent = () => {
               <ul>
                 <li className="flower-item">
                 <SpotifyTrack />
-                  trying to academic weapon spring quarter like a delulu (4 cs classes hah... meow)
+                  taking distributed systems, computer security, and logic design :D
                 </li>
                 <li className="flower-item">
-                  watching the three body problem and 這就是街舞 S4
+                  watching the great british baking show and 這就是街舞 S4
                 </li>
                 <li className="flower-item">
-                  listening to these dope artists - gemini, lyn lapid, le
-                  sserafim 🎵
+                  listening to these dope artists - kuiper, laufey, enhypen 🎵
                 </li>
                 <li className="flower-item">
                   reading books:{" "}
@@ -189,6 +188,21 @@ const MainContent = () => {
             <h2>experience.</h2>
             <div className="separator"></div>
             <div className="skills">
+            <div className="skill-row">
+                <h3>
+                  <a href="https://elfin.igpp.ucla.edu/" target="_blank">
+                    Google
+                  </a>
+                </h3>
+                <ul>
+                  <li className="flower-item">
+                    <mark>ProfileService STEP Intern,</mark> June &apos;24 - Sept &apos;24
+                    <p>
+                      Hi.
+                    </p>
+                  </li>
+                </ul>
+              </div>
               <div className="skill-row">
                 <h3>
                   <a href="https://elfin.igpp.ucla.edu/" target="_blank">
@@ -197,7 +211,7 @@ const MainContent = () => {
                 </h3>
                 <ul>
                   <li className="flower-item">
-                    <mark>Flight Software Engineer, Oct &apos;23 - Present</mark>
+                    <mark>Flight Software Engineer,</mark> Oct &apos;23 - Present
                     <p>
                       Writing the flight sofware for a satellite mission at
                       UCLA.
@@ -212,15 +226,22 @@ const MainContent = () => {
                   </a>
                 </h3>
                 <ul>
-                  <li className="flower-item">
-                    <mark>IDONTMIND Developer, Sept &apos;23 - Present</mark>
+                <li className="flower-item">
+                    <mark>End Overdose Project Lead,</mark> Sept &apos;24 - Present
                     <p>
                       Continuing the Blueprint mission of creating tech for good
                       in our upcoming projects!
                     </p>
                   </li>
                   <li className="flower-item">
-                    <mark>FOTC Developer, Sept. &apos;22 - July &apos;23</mark>
+                    <mark>IDONTMIND Developer,</mark> Sept &apos;23 - July &apos;24
+                    <p>
+                      Continuing the Blueprint mission of creating tech for good
+                      in our upcoming projects!
+                    </p>
+                  </li>
+                  <li className="flower-item">
+                    <mark>FOTC Developer,</mark> Sept. &apos;22 - July &apos;23
                     <p>
                       Built a React app to serve as a centralized resource bank
                       for the &quot;Friends of the Children&quot; nonprofit. Worked with 6
@@ -238,11 +259,11 @@ const MainContent = () => {
                 </h3>
                 <ul className="list-items">
                   <li className="flower-item">
-                    <mark>Bruinwalk Developer, Sept. &apos;23 - Present</mark>
+                    <mark>Bruinwalk Developer,</mark> Sept. &apos;23 - Present
                     <p>Dev-ops for the bruinwalk.com site.</p>
                   </li>
                   <li className="flower-item">
-                    <mark>Software Engineer Intern, Sept. &apos;22 - Present</mark>
+                    <mark>Software Engineer Intern,</mark> Sept. &apos;22 - June. &apos;23
                     <p>
                       Develops and maintains official website for UCLA’s
                       100-years-and-running newspaper, The Daily Bruin. Uses
@@ -263,7 +284,7 @@ const MainContent = () => {
                 </h3>
                 <ul>
                   <li className="flower-item">
-                    <mark>Software Engineer Intern, June &apos;23 - Sept &apos;23</mark>
+                    <mark>Software Engineer Intern,</mark> June &apos;23 - Sept &apos;23
                     <p>
                       Engineered CRUD API’s using Hibernate ORM and Spring to
                       track client product statuses. Developed Node.js scripts
@@ -281,7 +302,7 @@ const MainContent = () => {
             <div className="frame2">
               <h3>relevant skills </h3>
               <ul>
-                <li><b>languages</b>: c/c++, java, javascript, python, typescript, ocaml, html/css</li>
+                <li><b>languages</b>: c/c++, java, javascript, python, typescript, golang, ocaml, html/css</li>
                 <li><b>frameworks</b>: node.js, next.js, react.js, react native, express, spring</li>
                 <li><b>other technologies</b>: mysql, mongodb, firebase, hibernate, rest api&apos;s, git/github</li>
               </ul>

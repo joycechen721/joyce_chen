@@ -21,7 +21,7 @@ const Footer = () => {
             >
               linkedin
             </a>
-            <a className="footer-link" href="https://github.com/joycechen721">
+            <a className="footer-link" target="_blank" href="https://github.com/joycechen721">
               github
             </a>
           </div>
