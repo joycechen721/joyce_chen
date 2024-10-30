@@ -190,16 +190,15 @@ const MainContent = () => {
             <div className="skills">
             <div className="skill-row">
                 <h3>
-                  <a href="https://elfin.igpp.ucla.edu/" target="_blank">
+                  <a href="https://www.google.com/" target="_blank">
                     Google
                   </a>
                 </h3>
                 <ul>
                   <li className="flower-item">
-                    <mark>ProfileService STEP Intern,</mark> June &apos;24 - Sept &apos;24
+                    <mark>STEP Intern,</mark> June &apos;24 - Sept &apos;24 (Kirkland)
                     <p>
-                      Hi.
-                    </p>
+                      Worked on a cool database optimization project. Learned a lot about Google internal tools and had WAY too many coffee chats. Also made lifelong memories playing Squid Game VR (TEAM SQUIGGLER!!) 🦑, go-karting (fell in love with Formula 1 after this) 🏎️, clearing a museum escape room (level impossible) 🖼️, and checking out red pandas at the zoo 🐼!</p>
                   </li>
                 </ul>
               </div>
@@ -213,8 +212,8 @@ const MainContent = () => {
                   <li className="flower-item">
                     <mark>Flight Software Engineer,</mark> Oct &apos;23 - Present
                     <p>
-                      Writing the flight sofware for a satellite mission at
-                      UCLA.
+                      Writing the flight software for a satellite mission at
+                      UCLA. Designed data handling layers between ground servers and flight computers.
                     </p>
                   </li>
                 </ul>
@@ -230,20 +229,19 @@ const MainContent = () => {
                     <mark>End Overdose Project Lead,</mark> Sept &apos;24 - Present
                     <p>
                       Continuing the Blueprint mission of creating tech for good
-                      in our upcoming projects!
+                      in our upcoming project with End Overdose!
                     </p>
                   </li>
                   <li className="flower-item">
                     <mark>IDONTMIND Developer,</mark> Sept &apos;23 - July &apos;24
                     <p>
-                      Continuing the Blueprint mission of creating tech for good
-                      in our upcoming projects!
+                    Developed a React Native app for logging health habits, mental health check-ins, and daily journaling, designed to be eventually deleted as users progress into healthier mental states ❤️‍🩹.
                     </p>
                   </li>
                   <li className="flower-item">
                     <mark>FOTC Developer,</mark> Sept. &apos;22 - July &apos;23
                     <p>
-                      Built a React app to serve as a centralized resource bank
+                      Built a React web app to serve as a centralized resource bank
                       for the &quot;Friends of the Children&quot; nonprofit. Worked with 6
                       developers in weekly 6-hour sprints, creating software
                       deliverables across a 7-month period.
@@ -284,7 +282,7 @@ const MainContent = () => {
                 </h3>
                 <ul>
                   <li className="flower-item">
-                    <mark>Software Engineer Intern,</mark> June &apos;23 - Sept &apos;23
+                    <mark>Software Engineer Intern,</mark> June &apos;23 - Sept &apos;23 (Taipei)
                     <p>
                       Engineered CRUD API’s using Hibernate ORM and Spring to
                       track client product statuses. Developed Node.js scripts
@@ -573,7 +571,7 @@ const MainContent = () => {
                   <li>
                     kpop: enhypen (ddeonuuwu), le sserafim, newjeans, gidle
                   </li>
-                  <li>people: linh truong, IU, zhao lusi, my mum, + YOU! 🫶</li>
+                  <li>people: linh truong, IU, zhao lusi, my mum, YOU! 🫶</li>
                 </ul>
               </div>
             </div>
