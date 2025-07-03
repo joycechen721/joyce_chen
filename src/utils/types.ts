@@ -21,6 +21,8 @@ export interface PlaylistItem {
     images: Array<PlaylistImage>;
     name: string;
     owner: Owner;
+    public: boolean;
+    uri: string;
 }
 
 export interface PlaylistImage {
@@ -33,4 +35,6 @@ export interface Playlist {
     image: PlaylistImage;
     name: string;
     owner: string;
+    public: boolean;
+    uri: string;
 }

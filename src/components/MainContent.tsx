@@ -49,11 +49,11 @@ const MainContent = () => {
               hi! I&apos;m <span className="animate-text">Joyce Chen.</span>
             </h1>
             <Image
-              src="/images/main/pfp.jpg"
+              src="/images/main/pfp_lnkin.jpeg"
               className="crop"
               alt="joyce chen"
-              width={230}
-              height={230}
+              width={220}
+              height={220}
             />
             <div className="separator"></div>
 
@@ -195,8 +195,12 @@ const MainContent = () => {
                   </a>
                 </h3>
                 <ul>
+                   <li className="flower-item">
+                    <mark>Software Engineer Intern,</mark> June &apos;24 - Sept &apos;24, Sunnyvale
+                    <p></p>
+                  </li>
                   <li className="flower-item">
-                    <mark>STEP Intern,</mark> June &apos;24 - Sept &apos;24 (Kirkland)
+                    <mark>STEP Intern,</mark> June &apos;24 - Sept &apos;24, Kirkland
                     <p>
                       Worked on a cool database optimization project. Learned a lot about Google internal tools and had WAY too many coffee chats. Also made lifelong memories playing Squid Game VR (TEAM SQUIGGLER!!) 🦑, go-karting (fell in love with Formula 1 after this) 🏎️, clearing a museum escape room (level impossible) 🖼️, and checking out red pandas at the zoo 🐼!</p>
                   </li>
@@ -251,7 +255,7 @@ const MainContent = () => {
               </div>
               <div className="skill-row">
                 <h3>
-                  <a href="https://new.dailybruin.com/" target="_blank">
+                  <a href="https://dailybruin.com/" target="_blank">
                     Daily Bruin
                   </a>
                 </h3>
@@ -401,7 +405,7 @@ const MainContent = () => {
           <div className="frame">
             <h2>projects.</h2>
             <div className="separator"></div>
-            <CardCarousel cards={ProjectCards()} showNum={8} />
+            <CardCarousel cards={ProjectCards()} showNum={15} />
           </div>
         </div>
       </section>

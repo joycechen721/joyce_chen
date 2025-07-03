@@ -478,13 +478,13 @@ textarea {
 }
 
 .crop {
-  width: 200px;
+  width: 220px;
   border-radius: 10%;
   margin: 20px;
   border: 1px solid;
   border-color: #8d99ae;
-  -webkit-box-shadow: -20px 12px var(--cutepink);
-  box-shadow: -20px 12px var(--cutepink);
+  -webkit-box-shadow: -15px 12px var(--cutepink);
+  box-shadow: -15px 12px var(--cutepink);
 }
 
 .hide {
@@ -1582,16 +1582,17 @@ td {
 
 .playlist-container {
   margin: 20px;
+  color: black;
+  width: 100px;
+  min-width: 100px;
+  cursor: pointer;
+  text-align: center;
 }
 
 .playlist-gallery {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
   border-radius: 20px;
-  background: black;
   color: white;
-  overflow-y: auto;
-  height: 70vh;
   margin-top: 20px;
 }

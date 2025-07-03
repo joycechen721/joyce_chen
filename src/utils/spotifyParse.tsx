@@ -56,10 +56,14 @@ export async function getPlaylists(): Promise<Array<Playlist>> {
         const { items } = data;
         const playlists: Array<Playlist> = [];
         items.forEach((item: PlaylistItem) => {
-            const image = item.images[0];
-            const name = item.name;
             const owner = item.owner;
-            playlists.push({ image, name, owner: owner.display_name });
+            const isPublic = item.public;
+            if (isPublic === true && owner.display_name === 'joyce ☽') {
+                const image = item.images[0];
+                const name = item.name;
+                const uri = item.uri;
+                playlists.push({ image, name, owner: owner.display_name, public: isPublic, uri });
+            }
         })
 
         return playlists;

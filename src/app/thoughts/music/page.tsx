@@ -37,15 +37,23 @@ export default function Page() {
                 <h2>🎧🎤🎵🎹🎙️🎼📻🎺🎶🎷🪕</h2>
                 <p><em>more like a spotify dump... ahem good music should be shared.</em></p>
                 <h3>playlist gallery!</h3>
+                <p>music is my peace and muse. it heals, rejuvenates, unravels a space for me to sob my heart out or just vibe about a good day. i&apos;m a really big fan of relaxing, acoustic, less-than-150-bpm music, because they resemble my typical energy level: sloth-y. here are some of the playlists i created on spotify, more or less just permutations of the same vibe, featuring my fav artists like dpr ian, gemini, and iu.</p>
                 <div className="playlist-gallery">
                     {playlists && playlists.map((playlist) => (
-                        <div key={playlist.name} className="playlist-container">
-                            <img src={playlist.image.url} />
+                        <div 
+                            key={playlist.name} 
+                            className="playlist-container" 
+                            onClick={() => window.open(playlist.uri, "_blank")}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            <img style={{width: '140%'}} src={playlist.image.url} />
                             <p>{playlist.name}</p>
-                            <p>by: {playlist.owner}</p>
+                            {/* <p>by: {playlist.owner}</p> */}
                         </div>
                     ))}
                 </div>
+                <h3>spotify...WRAPPED</h3>
+
                 {/* <SpotifyTrack /> */}
             </div>
         </div>

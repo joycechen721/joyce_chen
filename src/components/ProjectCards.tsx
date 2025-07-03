@@ -67,13 +67,13 @@ const ProjectCards = () => {
       backDiv={
         <div>
           <p>
-            <b>about</b>: in progress
+            <b>about</b>: a mobile app i built for blueprint ('23-24)! done in partnership with the nonprofit "iDontMind," which aims to destigmatize mental health and provide resources for those struggling. our app serves as a centralized resource bank for mental health resources, and a platform for users to anonymously share their stories.
           </p>
           <p>
-            <b>features</b>: in progress
+            <b>features</b>: journaling system, mood tracker, habit tracker visualization, resource bank, filterable story wall, and more!
           </p>
           <p>
-            <b>built with</b>: react native, mongodb, express
+            <b>built with</b>: react native, mongodb, aws s3, express, nodejs
           </p>
         </div>
       }
@@ -222,7 +222,7 @@ const ProjectCards = () => {
       frontDiv={
         <div>
           <img src="images/main/bruinshare.png" alt="" />
-          <h3>BruinShare 🚌</h3>
+          <h3>BruinShare 🚗</h3>
           <a href="https://github.com/rolandyangg/BruinShare" target="_blank">
             GitHub
           </a>
@@ -325,8 +325,8 @@ const ProjectCards = () => {
       id="9"
       frontDiv={
         <div>
-          <img src="images/main/plantingo.png" alt="" />
-          <h3>Plantingo 💭</h3>
+          <img src="images/main/gallery.jpg" alt="" />
+          <h3>Plantingo 🌱</h3>
           <a href="https://github.com/angelahao6/Plantingo" target="_blank">
             GitHub
           </a>{" "}
@@ -339,13 +339,137 @@ const ProjectCards = () => {
       backDiv={
         <div>
           <p>
-            <b>about</b>: in progress
+            <b>about</b>: submitted to LA Hacks 2024, this mobile app takes outdoor exploration to a new level by gamifying the process of identifying plants and trees. users scan a plant in real-time, and we spin up a fun, persona-based chatbot with the plant, allowing users to learn more about the plant and its ecosystem. users can also earn points by identifying plants, and compete with friends on a leaderboard.
+          </p>
+          <br></br>
+          <p>
+            <b>built with</b>: reactjs, flask, gemini api, mongodb, a group of 4 very talented friends and teammates
+          </p>
+        </div>
+      }
+    />
+  );
+
+  const duckyoumean = (
+    <FlipCard
+      id="10"
+      frontDiv={
+        <div>
+          <img src="images/main/dym.jpg" alt="" />
+          <h3>The Duck You Mean? 💬</h3>
+          <a href="https://github.com/joycechen721/duck-you-mean" target="_blank">
+            GitHub
+          </a>{" "}
+          |{" "}
+          <a href="https://devpost.com/software/the-duck-you-mean" target="_blank">
+            Devpost
+          </a>
+        </div>
+      }
+      backDiv={
+        <div>
+          <p>
+            <b>about</b>: winner of "Best Use of ElevenLabs" in TreeHacks 2025! a voice AI duckie inspired by the concept of "rubber duck debugging," that reverses the roles of a learner and teacher, personalizes the educational experience, and encourages active recall. the duckie asks you questions about a topic of your choice, and you answer them. it then uses AI to analyze your responses and provide feedback on how to improve your understanding of the topic.
           </p>
           <p>
-            <b>features</b>: in progress
+            <b>built with</b>: nextjs, elevenlabs api, openai api, mistralai api, zoom api
+          </p>
+        </div>
+      }
+    />
+  );
+
+  const endoverdose = (
+    <FlipCard
+      id="11"
+      frontDiv={
+        <div>
+          <img src="images/main/Home Map.png" alt="" />
+          <h3>End Overdose ❤️‍🩹</h3>
+          <a href="https://github.com/lablueprint/end-overdose" target="_blank">
+            GitHub
+          </a>{" "}
+          |{" "}
+          <a href="https://www.figma.com/design/hgXI30qSTZvVKKGg1rnrGL/EO-Designs?node-id=4280-61927&t=KwOer9xSGAwqcDRc-1" target="_blank">
+            Figma
+          </a>
+        </div>
+      }
+      backDiv={
+        <div>
+          <p>
+            <b>about</b>: project i led for blueprint ('24-25)! follow along as mr. narcat teaches you about the dangers of fentanyl and how to prevent overdoses. in partnership with End Overdose, this web app is designed to be used in LAUSD high schools, and built by my team of 12 student developers/designers.
+          </p>
+          <br></br>
+          <p>
+            <b>features</b>: interactive lessons, quizzes, points system, admin dashboard to track student progress and view analytics
           </p>
           <p>
-            <b>built with</b>: reactjs, flask, gemini api, mongodb
+            <b>built with</b>: nextjs, firebase, react, mui
+          </p>
+        </div>
+      }
+    />
+  );
+
+  const ghostface = (
+    <FlipCard
+      id="12"
+      frontDiv={
+        <div>
+          <img src="images/main/ghostie.jpg" alt="" />
+          <h3>Ghostface Cookah 🍳</h3>
+          <a href="https://github.com/joycechen721/lahacks25-spectacles" target="_blank">
+            GitHub
+          </a>{" "}
+          |{" "}
+          <a href="https://devpost.com/software/ghostface-cookah" target="_blank">
+            Devpost
+          </a>
+        </div>
+      }
+      backDiv={
+        <div>
+          <p>
+            <b>about</b>: winner of Snapchat's Challenge “Dream it. Build it.” in LA Hacks 2025! an AR cooking assistant for Snapchat Spectacles that overlays step-by-step video instructions, cooking timers, and voice-controlled navigation. a response to the challenge of cooking with your hands full, this lens allows you to cook hands-free and without needing to look at your phone.
+          </p>
+          <br></br>
+          <p>
+            <b>built with</b>: whispier (via groq), snap lens studio, gemini api, typescript
+          </p>
+        </div>
+      }
+    />
+  );
+
+  const transport = (
+    <FlipCard
+      id="13"
+      frontDiv={
+        <div>
+          <img src="images/main/transit.png" alt="" />
+          <h3>Metro Bruin 🚌</h3>
+          <a href="https://github.com/yashgoy41/metro-bruin" target="_blank">
+            GitHub
+          </a>{" "}
+          |{" "}
+          <a href="https://www.canva.com/design/DAGpUcAv6AQ/gwrX3KG_M1v9RSoo-DdOaA/watch?utm_content=DAGpUcAv6AQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hcfc1feb270" target="_blank">
+            Poster
+          </a>{" "}
+          |{" "}
+          <a href="https://www.notion.so/anika-bala/Final-Evaluation-Blog-Post-2099ad9f08cf802591faccb0d8cb29fd?source=copy_link" target="_blank">
+            Blog
+          </a>
+        </div>
+      }
+      backDiv={
+        <div>
+          <p>
+            <b>about</b>: 3-month research project for cs 188, human-computer interaction with professor eunice jun! aimed to increase public transportation ridership among UCLA students, this mobile app provides an overlay of trendy cafes, restaurants, and shops along the LA bus routes, encouraging students to explore the city while commuting.
+          </p>
+          <br></br>
+          <p>
+            <b>built with</b>: lovable, react, typescript, an awesome team of 4 students
           </p>
         </div>
       }
@@ -353,15 +477,19 @@ const ProjectCards = () => {
   );
 
   return [
+    transport,
+    endoverdose,
+    duckyoumean,
+    ghostface,
     plantingo,
     idontmind,
     fotc,
     bruinshare,
     mapify,
-    peachparty,
+    // peachparty,
     gui,
-    misc,
-    pnetphlix,
+    // misc,
+    // pnetphlix,
   ];
 };
 
