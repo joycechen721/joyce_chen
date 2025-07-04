@@ -173,6 +173,10 @@ textarea {
   flex-direction: row;
 }
 
+.gap {
+  gap: 20px;
+}
+
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {
   .container {
@@ -891,6 +895,31 @@ textarea {
 
 .hidden {
   display: none;
+}
+
+.archive-button {
+  font-family: '__Inter_aaf875', '__Inter_Fallback_aaf875';
+  font-style: normal;
+  font-weight: var(--fw-300);
+  background: var(--pinkgradient);
+  border-style: solid;
+  border-width: 0.5px;
+  border-radius: 5px;
+  padding: 0.6rem 1.3rem;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  color: #2e3440;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.archive-button-selected {
+  background: rgb(231, 182, 227);
+  color: white;
+  box-shadow: 0 2px 8px rgba(213, 151, 151, 0.18);
+  transition: background 0.2s, color 0.2s, text 0.2s, box-shadow 0.2s;
 }
 
 #pie .flex-container {
