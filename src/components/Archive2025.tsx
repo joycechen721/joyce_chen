@@ -5,30 +5,26 @@ const Archive2025: React.FC = () => (
         <div className="frame2">
             <h3>food rec&apos;s 😋</h3>
             <ul>
-                <li>
-                </li>
+                <li>bplate</li>
             </ul>
         </div>
         <div className="frame2">
             <h3>tokyo rec&apos;s 🌸</h3>
             <ul>
-                <li>
-                    
-                </li>
+                <li>pokemon store :D</li>
             </ul>
         </div>
         <div className="frame2">
             <h3>inspiring media ✨</h3>
             <ul>
-                <li>
-                </li>
+                <li>squid games s3</li>
             </ul>
         </div>
         <div className="frame2">
             <h3>favorite... 💛</h3>
             <ul>
                 <li>games: poker, nyt mini, connections, cookie clicker</li>
-                <li>cafes: MUD/WTR, bonsai, rny coffee </li>
+                <li>cafes: MUD/WTR, bonsai, rny, tom n toms black</li>
                 <li>emojis: 💀😭🧍‍♂️🙏🤔🤓☝️🙇‍♀️</li>
                 <li>
                     ucla spots: northern lights cafe, rosenfield library, kerkhoff upper floor, night powell

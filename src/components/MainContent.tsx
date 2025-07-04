@@ -106,7 +106,7 @@ const MainContent = () => {
             <div className="frame">
               <h2>intro 👋</h2>
               <p>
-                Hello! I&apos;m Joyce—your friendly neighborhood cat-lover and (struggling) computer science student. From building apps with friends to tackling class projects, I&apos;ve come to love how coding brings ideas to life and connects people in the process. I&apos;m all about collaboration and learning from new perspectives, and my goal is to keep creating technology that sparks joy—whether it&apos;s a simple tool or something with the potential to make a bigger impact. 🌎 ❤️ <br></br>
+                Hello! I&apos;m Joyce—your friendly neighborhood cat-lover and (struggling) computer science student. From building apps with friends to tackling class projects, I&apos;ve come to love how coding brings ideas to life and connects people in the process. My goal is to keep creating technology that sparks joy—whether it&apos;s a simple tool or something with the potential to make a bigger impact. 🌎 ❤️ <br></br>
 
                Outside of work, you can catch me exercising, watching F1, cafe hopping, and enjoying anime! I also love travelling and exploring new places, most recently Japan (in April) and Switzerland (in my dreams). I&apos;m always looking for new adventures and tasty food, so reach out if you have any recs and let&apos;s chat! 😊
               </p>
@@ -165,7 +165,7 @@ const MainContent = () => {
                       </div>
                     </div>
                     <p>
-                      Eating good food.</p>
+                      50% working and 50% eating good food.</p>
                   </li>
                   <li className="flower-item">
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
@@ -271,7 +271,7 @@ const MainContent = () => {
                       Sept &apos;23 - Present
                       </div>
                     </div>
-                    <p>Dev-ops for the bruinwalk.com site.</p>
+                    <p>Dev-ops for bruinwalk.com, UCLA&apos;s student-run professor rating site. Met cool people and doomed about classes with them</p>
                     </li>
                     <li className="flower-item">
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
