@@ -11,7 +11,7 @@ const Archive2025: React.FC = () => (
         <div className="frame2">
             <h3>tokyo rec&apos;s 🌸</h3>
             <ul>
-                <li>pokemon store :D</li>
+                <li></li>
             </ul>
         </div>
         <div className="frame2">

@@ -149,9 +149,10 @@ const MainContent = () => {
             <div className="separator"></div>
             <div className="skills">
             <div className="skill-row">
-                <h3>
+                <h3 style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                <Image src="/images/logos/google.png" alt="Google Logo" width={30} height={30} />
                   <a href="https://www.google.com/" target="_blank">
-                    Oogle, Gogle, Goole, Googl
+                    Google
                   </a>
                 </h3>
                 <ul>
@@ -161,7 +162,7 @@ const MainContent = () => {
                         <mark>Software Engineer Intern</mark>
                       </div>
                       <div style={{ marginLeft: "1rem", whiteSpace: "nowrap" }}>
-                        May &apos;24 - Aug &apos;24
+                        June &apos;25 - Sept &apos;25
                       </div>
                     </div>
                     <p>
@@ -182,9 +183,10 @@ const MainContent = () => {
                 </ul>
               </div>
               <div className="skill-row">
-                <h3>
+               <h3 style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                <Image src="/images/logos/elfin.png" alt="ELFIN Logo" width={30} height={30} />
                   <a href="https://elfin.igpp.ucla.edu/" target="_blank">
-                    ELFIN, CEPHEIDS Satellite Mission
+                    ELFIN, CEPHEIDS Cubesat Mission
                   </a>
                 </h3>
                 <ul>
@@ -205,7 +207,8 @@ const MainContent = () => {
                 </ul>
               </div>
               <div className="skill-row">
-                <h3>
+                <h3 style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                <Image src="/images/logos/blueprint.png" alt="LA Blueprint Logo" width={30} height={30} />
                   <a href="https://lablueprint.org/" target="_blank">
                     LA Blueprint, Tech for Social Good
                   </a>
@@ -256,9 +259,10 @@ const MainContent = () => {
                   </ul>
                   </div>
                   <div className="skill-row">
-                  <h3>
+                  <h3 style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                    <Image src="/images/logos/dailybruin.png" alt="Daily Bruin Logo" width={30} height={30} />
                     <a href="https://dailybruin.com/" target="_blank">
-                    Daily Bruin, A Beary Old Newspaper
+                    The Daily Bruin
                     </a>
                   </h3>
                   <ul className="list-items">
@@ -292,7 +296,8 @@ const MainContent = () => {
                   </ul>
                   </div>
                   <div className="skill-row">
-                  <h3>
+                  <h3 style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                <Image src="/images/logos/perfectcorp.jpeg" alt="Perfect Corp Logo" width={30} height={30} />
                     <a
                     href="https://www.perfectcorp.com/business"
                     target="_blank"
