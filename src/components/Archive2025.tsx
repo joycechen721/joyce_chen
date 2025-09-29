@@ -14,7 +14,7 @@ const Archive2025: React.FC = () => (
             <h3>tokyo/kyoto rec&apos;s 🌸</h3>
             <ul>
                 <li>attractions: ghibli museum, metropolitan government building, teamlab planets</li>
-                <li>nature: kamakura, shinjuku gyoen, philospher's path, meguro river sakura festival</li>
+                <li>nature: kamakura, shinjuku gyoen, philospher&apos;s path, meguro river sakura festival</li>
                 <li>food:  nishiki market, city bakery strawberry bagels, giant sake pocky, uji matcha, wasabi ice cream</li>
             </ul>
         </div>
