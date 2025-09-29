@@ -30,14 +30,14 @@ const MainContent = () => {
         <div className="landing-container flex-container">
           <div className="left-landing frame">
             <h1>
-              hi! I&apos;m <span className="animate-text">Joyce Chen.</span>
+              Hi! I&apos;m <span className="animate-text">Joyce Chen.</span>
             </h1>
             <Image
-              src="/images/main/pfp_lnkin.jpeg"
+              src="/images/main/hi.jpg"
               className="crop"
               alt="joyce chen"
-              width={220}
-              height={220}
+              width={210}
+              height={210}
             />
             <div className="separator"></div>
 
@@ -119,19 +119,19 @@ const MainContent = () => {
               <ul>
                 <li className="flower-item">
                 <SpotifyTrack />
-                  interning for Google Workspace in Sunnyvale, CA and chatting with crazy smart people everyday 💻
+                  back at UCLA for my final year, enjoying life with friends and joining new recreational clubs 🏫
                 </li>
                 <li className="flower-item">
-                  watching the great british baking show and running man china with my family 🍰
+                  watching the great british baking show & reading the 48 laws of power 🍰
                 </li>
                 <li className="flower-item">
                   listening to these dope artists - lil ghost, hua chenyu, zhou shen 🎵
                 </li>
                 <li className="flower-item">
-                  attempting to learn how to cook and drive (and failing miserably) 🍳
+                  attempting to learn how to cook and drive (and making some progress!) 🍳
                 </li>
                 <li className="flower-item">
-                  working on this website 💖 and having fun!
+                  last updated 9/29/2025 💖
                 </li>
               </ul>
             </div>
@@ -166,7 +166,7 @@ const MainContent = () => {
                       </div>
                     </div>
                     <p>
-                      50% working and 50% eating good food.</p>
+                      Developed an end-to-end solution for image attachment optimizations in Google Chat (backend server & Android app). Featuring whimsy g-bikes 🚲, team sailboating in SF, Gordon Ramsey breakfast eggs, dried pineapple, sneaking into Meta and Slack, and more~ 😉</p>
                   </li>
                   <li className="flower-item">
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
@@ -328,45 +328,33 @@ const MainContent = () => {
             <div className="frame2">
               <h3>relevant skills </h3>
               <ul>
-              <li><b>languages</b>: c/c++, java, javascript, python, typescript, golang, ocaml, html/css</li>
+              <li><b>languages</b>: c/c++, java, javascript, python, typescript, golang, ocaml, html/css, kotlin</li>
               <li><b>frameworks</b>: node.js, next.js, react.js, react native, express, spring</li>
-              <li><b>other technologies</b>: mysql, mongodb, firebase, hibernate, rest api&apos;s, git/github</li>
+              <li><b>other technologies</b>: mysql, mongodb, firebase, hibernate, rest api&apos;s, git/github, android studio</li>
               </ul>
             </div>
 
             <div className="frame2">
               <h3>coursework 📚</h3>
               <div className="flex-row courses">
-              <div className="">
-                <Link href="/courses/cs31">CS 31</Link>
-              </div>
-              <div className="">
-                <Link href="/courses/cs32">CS 32</Link>
-              </div>
-              <div className="">
-                <Link href="/courses/cs33">CS 33</Link>
-              </div>
-              <div className="">
-                <Link href="/courses/cs35l">CS 35L</Link>
-              </div>
-              <div className="">
-                <Link href="/courses/cs180">CS 180</Link>
-              </div>
-              <div className="">
-                <Link href="/courses/cs111">CS 111</Link>
-              </div>
-              <div className="">
-                <Link href="/courses/cs181">CS 181</Link>
-              </div>
-              <div className="">
-                <Link href="/courses/csm146">CS M146</Link>
-              </div>
-              <div className="">
-                <Link href="/courses/cs174a">CS 174A</Link>
-              </div>
-              <div className="">
-                <Link href="/courses/cs118">CS 118</Link>
-              </div>
+              {[
+                { href: "/courses/cs31", label: "CS 31" },
+                { href: "/courses/cs32", label: "CS 32" },
+                { href: "/courses/cs33", label: "CS 33" },
+                { href: "/courses/cs35l", label: "CS 35L" },
+                { href: "/courses/cs180", label: "CS 180" },
+                { href: "/courses/cs111", label: "CS 111" },
+                { href: "/courses/cs181", label: "CS 181" },
+                { href: "/courses/csm146", label: "CS M146" },
+                { href: "/courses/cs174a", label: "CS 174A" },
+                { href: "/courses/cs118", label: "CS 118" },
+              ].map(course => (
+                <div key={course.href}>
+                  <Link href={course.href}>
+                    {course.label}
+                  </Link>
+                </div>
+              ))}
               </div>
 
               <br />
