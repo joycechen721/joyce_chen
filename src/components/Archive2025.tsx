@@ -21,7 +21,7 @@ const Archive2025: React.FC = () => (
         <div className="frame2">
             <h3>inspiring media ✨</h3>
             <ul>
-                <li>books: man's search for meaning, tuesdays with morrie</li>
+                <li>books: man&apos;s search for meaning, tuesdays with morrie</li>
                 <li>shows: frieren, 山花烂漫时, ...</li>
             </ul>
         </div>
