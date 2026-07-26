@@ -3,8 +3,9 @@ import Image from "next/image";
 import CardCarousel from "./CardCarousel";
 import ProjectCards from "./ProjectCards";
 import CloudsLanding from "./CloudsLanding";
-import Archive2022 from "./Archive2022";
-import Archive2025 from "./Archive2025";
+import Archive2022 from "./archives/Archive2022";
+import Archive2025 from "./archives/Archive2025";
+import Archive2026 from "./archives/Archive2026";
 import {
   faSchool,
   faEnvelope,
@@ -119,19 +120,19 @@ const MainContent = () => {
               <ul>
                 <li className="flower-item">
                 <SpotifyTrack />
-                  back at UCLA for my final year, enjoying life with friends and joining new recreational clubs 🏫
+                  scrolling cute cat videos 🏫
                 </li>
                 <li className="flower-item">
-                  watching the great british baking show & reading the 48 laws of power 🍰
+                  doing crosswords 🍰
                 </li>
                 <li className="flower-item">
-                  listening to these dope artists - lil ghost, hua chenyu, zhou shen 🎵
+                  listening to music 🎵
                 </li>
                 <li className="flower-item">
-                  attempting to learn how to cook and drive (and making some progress!) 🍳
+                   cooking 🍳
                 </li>
                 <li className="flower-item">
-                  last updated 9/29/2025 💖
+                  last updated July 2026 💖
                 </li>
               </ul>
             </div>
@@ -200,7 +201,7 @@ const MainContent = () => {
                       </div>
                     </div>
                     <p>
-                      Wrote the flight software for a cubesat mission at
+                      Wrote flight software for a cubesat mission at
                       UCLA. Designed data handling layers between ground servers and flight computers. 
                     </p>
                   </li>
@@ -394,6 +395,10 @@ const MainContent = () => {
                 {
                   label: "2025",
                   content: <Archive2025 />,
+                },
+                {
+                  label: "2026",
+                  content: <Archive2026 />,
                 },
               ];
 

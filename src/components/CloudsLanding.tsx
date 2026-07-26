@@ -35,7 +35,7 @@ const CloudsLanding: React.FC = () => {
   return (
     <div className={`frame cloudlayout ${isDarkTheme ? "dark-theme" : ""}`}>
       <div className="clouds-heading">
-        <h2>thoughts.</h2>
+        <h2>blog of thoughts.</h2>
         ☀️
         <label
           className="switch"
@@ -56,7 +56,7 @@ const CloudsLanding: React.FC = () => {
               key={item}
               className="cloud"
               onClick={() => {
-                router.push(`/thoughts/${item}`);
+                router.push(`/blog/${item}`);
               }}
             >
               <span>{item}</span>
