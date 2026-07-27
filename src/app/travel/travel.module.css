@@ -1,0 +1,126 @@
+.page {
+  --ink: #28424e;
+  --coral: #ee7c69;
+  min-height: calc(100vh - 66px);
+  overflow: hidden;
+  position: relative;
+  color: var(--ink);
+}
+
+.stopHeading {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  padding-top: clamp(54px, 11vh, 132px);
+  color: var(--ink);
+  font-size: clamp(38px, 6vw, 82px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.055em;
+  text-align: center;
+}
+
+.intro {
+  position: relative;
+  z-index: 2;
+  width: min(700px, calc(100% - 40px));
+  margin: 0 auto;
+  padding-top: clamp(42px, 7vh, 82px);
+}
+
+.eyebrow {
+  /* margin: 0 0 7px; */
+  color: #d66c5e;
+  text-transform: uppercase;
+  letter-spacing: .17em;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.intro h1 {
+  color: var(--ink);
+  font-size: clamp(42px, 6vw, 76px);
+  font-weight: 700;
+  line-height: .96;
+  letter-spacing: -.055em;
+}
+
+.instruction {
+  margin: 18px auto 0;
+  max-width: 360px;
+  text-align: center;
+  color: #58717a;
+  line-height: 1.55;
+}
+
+.activeStop {
+  width: min(390px, 100%);
+  min-height: 61px;
+  box-sizing: border-box;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: 25px auto 0;
+  padding: 10px 16px;
+  border: 1px solid rgba(62, 117, 127, .18);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .54);
+  box-shadow: 0 8px 20px rgba(94, 126, 121, .08);
+  text-align: left;
+}
+
+.activeStop > span { font-size: 27px; text-decoration: none; }
+.activeStop strong { display: block; font-size: 14px; font-weight: 700; }
+.activeStop p { margin: 1px 0 0; color: #60777c; font-size: 12px; line-height: 1.45; }
+
+.globeStage {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  width: max(1040px, 50vw);
+  transform: translateX(-50%) scaleX(1.32) translateY(10%) scaleY(1.15);
+  transform-origin: center bottom;
+  user-select: none;
+}
+
+.globe {
+  display: block;
+  width: 100%;
+  overflow: visible;
+  touch-action: none;
+  outline: none;
+}
+.globe:focus-visible { filter: drop-shadow(0 0 0.5rem rgba(238, 124, 105, .6)); }
+
+.globeShape { fill: url(#ocean); }
+.horizon { fill: none; stroke: #367f91; stroke-width: 5; }
+.mapLines { fill: none; stroke: rgba(255,255,255,.38); stroke-width: 2; }
+.land { fill: #98c983; stroke: rgba(68, 125, 85, .3); stroke-width: 2; }
+.landLight { fill: #b5d995; stroke: rgba(68, 125, 85, .3); stroke-width: 2; }
+.cloud { fill: rgba(255,255,255,.67); stroke: none; }
+.flightPath { fill: none; stroke: rgba(238, 124, 105, .55); stroke-width: 2; stroke-dasharray: 6 9; }
+.plane { fill: var(--coral); stroke: #fff8ee; stroke-width: 3; stroke-linejoin: round; pointer-events: none; }
+.plane path:last-child { stroke: rgba(116, 55, 51, .35); stroke-width: 2; }
+.planeHitArea { cursor: grab; }
+.planeHitArea:active { cursor: grabbing; }
+.planeGrabZone { fill: transparent; stroke: none; }
+
+.stop { cursor: pointer; }
+.stopHitArea { fill: transparent; pointer-events: all; }
+.stopDot { fill: #fffaf0; stroke: #d66656; stroke-width: 3; transition: r .2s ease; }
+.stopActive { fill: #ee7c69; stroke: #fffaf0; stroke-width: 4; transition: r .2s ease; }
+@media (max-width: 620px) {
+  .page { min-height: calc(100vh - 55px); }
+  .stopHeading { padding-top: 42px; }
+  .intro { padding-top: 31px; }
+  .instruction { font-size: 13px; }
+  .activeStop { margin-top: 17px; }
+  .globeStage { width: 157vw; bottom: 0; }
+}
+
+@media (max-height: 750px) and (min-width: 621px) {
+  .intro { padding-top: 26px; }
+  .activeStop { margin-top: 14px; }
+  .globeStage { width: max(1040px, 110vw); }
+}

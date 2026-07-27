@@ -8,6 +8,9 @@ const NavBar = () => {
           </a>
         </li>
         <li className="nav-link">
+          <a href="/travel">travel ˙ᵕ˙</a>
+        </li>
+        <li className="nav-link">
           <a href="/#blog">blog ༺</a>
         </li>
         <li className="nav-link">

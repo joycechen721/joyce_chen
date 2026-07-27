@@ -1,4 +1,4 @@
-import Itinerary from "@/components/Itinerary";
+import Itinerary from "@/components/travel/Itinerary";
 import { japanTrip } from "./data";
 
 export default function Page() {
