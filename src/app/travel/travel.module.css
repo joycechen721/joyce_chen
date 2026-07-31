@@ -1,23 +1,82 @@
 .page {
   --ink: #28424e;
-  --coral: #ee7c69;
-  min-height: calc(100vh - 66px);
+  height: calc(100dvh - 80px);
   overflow: hidden;
   position: relative;
   color: var(--ink);
 }
 
-.stopHeading {
+.stopHeadingRow {
   position: relative;
   z-index: 2;
+  padding-top: clamp(10px, 7vh, 82px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.titleControls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 2vw, 22px);
+}
+
+.stopHeading {
   margin: 0;
-  padding-top: clamp(54px, 11vh, 132px);
   color: var(--ink);
-  font-size: clamp(38px, 6vw, 82px);
+  font-size: clamp(20px, 4vw, 58px);
   font-weight: 700;
   line-height: 1;
-  letter-spacing: -.055em;
   text-align: center;
+}
+
+.tripArrow {
+  width: 56px;
+  height: 56px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 34px;
+  line-height: 1;
+  transition: transform .16s ease;
+  margin: 0px 20px;
+}
+.tripArrow:not(:disabled):hover { transform: translateY(-2px); }
+.tripArrow:not(:disabled):active { transform: translateY(1px); }
+.tripArrow:disabled { cursor: default; opacity: .35; }
+.tripArrow:focus-visible { outline: 2px solid var(--cutepink); outline-offset: 3px; }
+
+.stopLink {
+  margin-top: 30px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 38px;
+  border-radius: 999px;
+  background: #fea2ce;
+  box-shadow: 0 5px 0 hotpink, 0 10px 18px rgba(255, 115, 183, .22);
+  color: white;
+  font-size: 1.4vw;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  text-decoration: none;
+  animation: trip-button-bounce 1.05s ease-in-out infinite;
+}
+.stopLink:hover { background: #b84d93; }
+.stopLink:active { animation-play-state: paused; transform: translateY(4px); box-shadow: 0 1px 0 #873754; }
+.stopLink:focus-visible { outline: 2px solid var(--cutepink); outline-offset: 4px; }
+
+@keyframes trip-button-bounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-6px) scale(1.035); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stopLink { animation: none; }
 }
 
 .intro {
@@ -30,7 +89,7 @@
 
 .eyebrow {
   /* margin: 0 0 7px; */
-  color: #d66c5e;
+  color: var(--cutepink);
   text-transform: uppercase;
   letter-spacing: .17em;
   font-size: 11px;
@@ -54,26 +113,6 @@
   line-height: 1.55;
 }
 
-.activeStop {
-  width: min(390px, 100%);
-  min-height: 61px;
-  box-sizing: border-box;
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  margin: 25px auto 0;
-  padding: 10px 16px;
-  border: 1px solid rgba(62, 117, 127, .18);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, .54);
-  box-shadow: 0 8px 20px rgba(94, 126, 121, .08);
-  text-align: left;
-}
-
-.activeStop > span { font-size: 27px; text-decoration: none; }
-.activeStop strong { display: block; font-size: 14px; font-weight: 700; }
-.activeStop p { margin: 1px 0 0; color: #60777c; font-size: 12px; line-height: 1.45; }
-
 .globeStage {
   position: absolute;
   z-index: 1;
@@ -91,7 +130,7 @@
   touch-action: none;
   outline: none;
 }
-.globe:focus-visible { filter: drop-shadow(0 0 0.5rem rgba(238, 124, 105, .6)); }
+.globe:focus-visible { filter: drop-shadow(0 0 0.5rem var(--cutepink)); }
 
 .globeShape { fill: url(#ocean); }
 .horizon { fill: none; stroke: #367f91; stroke-width: 5; }
@@ -99,20 +138,21 @@
 .land { fill: #98c983; stroke: rgba(68, 125, 85, .3); stroke-width: 2; }
 .landLight { fill: #b5d995; stroke: rgba(68, 125, 85, .3); stroke-width: 2; }
 .cloud { fill: rgba(255,255,255,.67); stroke: none; }
-.flightPath { fill: none; stroke: rgba(238, 124, 105, .55); stroke-width: 2; stroke-dasharray: 6 9; }
-.plane { fill: var(--coral); stroke: #fff8ee; stroke-width: 3; stroke-linejoin: round; pointer-events: none; }
-.plane path:last-child { stroke: rgba(116, 55, 51, .35); stroke-width: 2; }
+.planeEmoji, .stopFlagEmoji {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  pointer-events: none;
+  user-select: none;
+}
+.planeEmoji { font-size: 64px; }
+.stopFlagEmoji { font-size: 32px; }
 .planeHitArea { cursor: grab; }
 .planeHitArea:active { cursor: grabbing; }
 .planeGrabZone { fill: transparent; stroke: none; }
 
 .stop { cursor: pointer; }
 .stopHitArea { fill: transparent; pointer-events: all; }
-.stopDot { fill: #fffaf0; stroke: #d66656; stroke-width: 3; transition: r .2s ease; }
-.stopActive { fill: #ee7c69; stroke: #fffaf0; stroke-width: 4; transition: r .2s ease; }
 @media (max-width: 620px) {
-  .page { min-height: calc(100vh - 55px); }
-  .stopHeading { padding-top: 42px; }
+  .stopHeadingRow { padding-top: 42px; }
   .intro { padding-top: 31px; }
   .instruction { font-size: 13px; }
   .activeStop { margin-top: 17px; }
