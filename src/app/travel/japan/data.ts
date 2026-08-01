@@ -1,8 +1,12 @@
-import type { TravelItineraryConfig } from "@/components/travel/types";
+import type {
+  TravelFoodFavorite,
+  TravelItineraryConfig,
+  TravelRecommendation,
+} from "@/components/travel/types";
 
 const stops = [
   {
-    day: "Day 1 🌇",
+    day: "Day 1 🌤️",
     date: "March 23",
     city: "Tokyo",
     place: "Jimbocho",
@@ -30,7 +34,7 @@ const stops = [
     highlights: ["Hamarikyu Gardens", "Nakajima no Ochaya teahouse", "Tidal duck ponds", "Views of Tokyo Bay"],
   },
   {
-    day: "Day 2 🌇",
+    day: "Day 2 🌤️",
     date: "March 24",
     city: "Tokyo",
     place: "Ginza",
@@ -254,6 +258,27 @@ const stops = [
     highlights: ["Depachika souvenir shopping", "Final Tokyo coffee", "Ginza department stores", "Narita Express farewell"],
   },
 ];
+
+export const japanFavoriteEats = [
+  { emoji: "🍜", caption: "late-night ramen", border: "#ef6f6c", fill: "#ffe3c3" },
+  { emoji: "🍣", caption: "the tiniest sushi", border: "#4ca8a6", fill: "#d8f2ef" },
+  { emoji: "🍵", caption: "matcha everything", border: "#799a5a", fill: "#eaf3c8" },
+  { emoji: "🍡", caption: "market snack break", border: "#c57bb3", fill: "#fae0f3" },
+  { emoji: "🍛", caption: "cozy curry", border: "#e1a53b", fill: "#fff0bd" },
+  { emoji: "🍓", caption: "strawberry soft serve", border: "#ed7792", fill: "#ffe0e7" },
+] satisfies readonly TravelFoodFavorite[];
+
+export const japanRecommendations = [
+  { name: "Jimbocho Book Town", emoji: "📚", color: "#f2b45d", detail: "Rows and rows of tiny bookshops, plus a very good excuse to lose track of time.", mapHref: "/" },
+  { name: "Hamarikyu Gardens", emoji: "🌿", color: "#75b69e", detail: "A quiet green pocket with tidal ponds and matcha breaks beside Tokyo Bay.", mapHref: "/" },
+  { name: "Ginza", emoji: "🛍️", color: "#d989a6", detail: "For stationery, window shopping, and a slow wander through polished side streets.", mapHref: "/" },
+  { name: "teamLab Planets", emoji: "🪐", color: "#8674bd", detail: "Bare feet, immersive light, and rooms that feel like another planet.", mapHref: "/" },
+  { name: "Suga Shrine", emoji: "⛩️", color: "#d76758", detail: "A tiny shrine staircase with a big movie-magic payoff.", mapHref: "/" },
+  { name: "Ghibli Museum", emoji: "🍃", color: "#93aa5c", detail: "Handmade details everywhere, including the rooftop robot and a little cinema.", mapHref: "/" },
+  { name: "Kamakura", emoji: "🌊", color: "#6ba7c9", detail: "Temple trails, a giant Buddha, and the sea all in one dreamy day trip.", mapHref: "/" },
+  { name: "Akihabara", emoji: "⚡", color: "#e6a33f", detail: "Retro games, arcades, and enough neon to power a whole afternoon.", mapHref: "/" },
+  { name: "Fushimi Inari", emoji: "🦊", color: "#e26c47", detail: "The torii gates are even better when you keep walking past the first crowd.", mapHref: "/" },
+] satisfies readonly TravelRecommendation[];
 
 export const japanTrip = {
   id: "japan-2025",

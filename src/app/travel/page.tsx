@@ -1,5 +1,5 @@
-import TravelGlobe from "@/components/travel/TravelGlobe";
+import TravelMain from "@/components/travel/TravelMain";
 
 export default function TravelPage() {
-  return <TravelGlobe />;
+  return <TravelMain />;
 }

@@ -1,4 +1,4 @@
-export type TravelTimeOfDay = "day" | "afternoon" | "night";
+export type TravelTimeOfDay = "morning" | "afternoon" | "evening";
 
 export type TravelStop = {
   day: string;
@@ -19,6 +19,21 @@ export type TravelReflectionCard = {
   eyebrow: string;
   title: string;
   description: string;
+};
+
+export type TravelFoodFavorite = {
+  emoji: string;
+  caption: string;
+  border: string;
+  fill: string;
+};
+
+export type TravelRecommendation = {
+  name: string;
+  emoji: string;
+  color: string;
+  detail: string;
+  mapHref: string;
 };
 
 export type TravelItineraryConfig = {

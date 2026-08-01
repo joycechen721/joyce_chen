@@ -24,20 +24,20 @@ const getDayColors = (stops: TravelStop[], configuredColors: Record<string, stri
 
 const getTimeOfDay = (stop: TravelStop): TravelTimeOfDay => {
   if (stop.timeOfDay) return stop.timeOfDay;
-  if (stop.day.includes("🌇")) return "afternoon";
-  if (stop.day.includes("🌙")) return "night";
-  return "day";
+  if (stop.day.includes("🌤️")) return "afternoon";
+  if (stop.day.includes("🌙")) return "evening";
+  return "morning";
 };
 
 const getTimeLabel = (timeOfDay: TravelTimeOfDay) => {
   if (timeOfDay === "afternoon") return "Afternoon";
-  if (timeOfDay === "night") return "Night";
+  if (timeOfDay === "evening") return "Evening";
   return "Morning";
 };
 
 const getTimeIcon = (timeOfDay: TravelTimeOfDay) => {
-  if (timeOfDay === "afternoon") return "🌇";
-  if (timeOfDay === "night") return "🌙";
+  if (timeOfDay === "afternoon") return "🌤️";
+  if (timeOfDay === "evening") return "🌙";
   return "☀️";
 };
 
@@ -410,7 +410,7 @@ export default function Itinerary({ trip }: { trip: TravelItineraryConfig }) {
 
           <p style={{
              fontSize: 11,
-            letterSpacing: "0.3em", color: accentColor,
+             color: accentColor,
             marginBottom: 8, textTransform: "uppercase",
           }}>{trip.dates}</p>
 

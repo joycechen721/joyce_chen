@@ -1,6 +1,12 @@
-import Itinerary from "@/components/travel/Itinerary";
-import { japanTrip } from "./data";
+import JapanWheelExperience from "@/components/travel/JapanWheelExperience";
+import { japanFavoriteEats, japanRecommendations, japanTrip } from "./data";
 
-export default function Page() {
-    return <Itinerary trip={japanTrip} />
+export default function JapanPage() {
+  return (
+    <JapanWheelExperience
+      trip={japanTrip}
+      favoriteEats={japanFavoriteEats}
+      recommendations={japanRecommendations}
+    />
+  );
 }

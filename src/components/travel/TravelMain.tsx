@@ -47,7 +47,7 @@ function nearestStop(angle: number): PositionedStop {
   );
 }
 
-export default function TravelGlobe() {
+export default function TravelMain() {
   const svgRef = useRef<SVGSVGElement>(null);
   const angleRef = useRef(STOPS[0].angle);
   const isDraggingRef = useRef(false);
