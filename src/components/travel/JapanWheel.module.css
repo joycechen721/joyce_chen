@@ -2,7 +2,9 @@
   --ink: #342a29;
   --accent: #e63839;
   min-height: calc(100dvh - 80px);
-  overflow: visible;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
   background: transparent;
   color: var(--ink);
 }
@@ -33,14 +35,14 @@
 .tripName {
   margin: 0;
   color: var(--ink);
-  font-size: clamp(20px, 2.4vw, 28px);
+  font-size: clamp(25px, 2.4vw, 30px);
   font-weight: 800;
   letter-spacing: -.055em;
 }
 .tripName span { color: var(--accent); text-decoration: none; }
-.tripDates { margin: 5px 0 0; color: #786967; font-size: 15px; font-weight: 700; letter-spacing: .08em; }
+.tripDates { margin: 5px 0 0; color: #786967; font-size: 15px; font-weight: 700; }
 .dates, .instruction { margin: 0; text-align: center; }
-.dates { color: var(--accent); font-size: 15px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+.dates { color: var(--accent); font-size: 20px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .instruction { margin-top: 12px; color: #786967; font-size: 13px; }
 
 .stage {
@@ -51,7 +53,7 @@
   align-items: center;
   gap: clamp(18px, 4vw, 72px);
   max-width: 1320px;
-  margin: -44px auto 0;
+  margin: -60px auto 0;
   padding: 28px clamp(24px, 5vw, 72px) 48px;
 }
 
@@ -88,12 +90,13 @@
 
 .wheelArea { position: relative; z-index: 2; display: grid; justify-items: center; }
 .dialWrap {
-  --jp-dial-handle-radius: calc(50% - 34px);
+  --jp-dial-pin-radius: clamp(138px, 16vw, 178px);
+  --jp-dial-pin-tip-offset: 21px;
   width: clamp(310px, 34vw, 390px) !important;
   height: clamp(310px, 34vw, 390px) !important;
 }
 .dialWrap :global(.jp-day-dial-handle) {
-  top: calc(50% - var(--jp-dial-handle-radius) - 38px);
+  top: calc(50% - var(--jp-dial-pin-radius) - var(--jp-dial-pin-tip-offset));
   width: 46px;
   height: 46px;
   border: 0;
@@ -106,7 +109,7 @@
   transition: transform 820ms cubic-bezier(.22, .8, .28, 1);
 }
 .dialWrap :global(.jp-day-dial) {
-  --jp-dial-tick-radius: clamp(138px, 16vw, 178px);
+  --jp-dial-tick-radius: var(--jp-dial-pin-radius);
   transition: background .68s cubic-bezier(.22, .75, .3, 1), border-color .68s cubic-bezier(.22, .75, .3, 1), box-shadow .68s cubic-bezier(.22, .75, .3, 1);
 }
 .dialWrap :global(.jp-day-dial-sun),
@@ -164,7 +167,8 @@
   height: 16px;
   box-shadow: 0 0 0 4px rgba(255, 255, 255, .34), 0 2px 6px rgba(26, 31, 48, .3);
 }
-.tickButton:focus-visible { outline: 2px solid #e63839; outline-offset: 3px; }
+.tickButton:focus,
+.tickButton:focus-visible { outline: none; }
 /* .wheelLabel { margin: 22px 0 0; color: #7d6660; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-align: center; text-transform: uppercase; } */
 
 .popout {
@@ -180,37 +184,42 @@
 
 .imagePopout {
   align-self: end;
-  width: min(100%, 285px);
+  width: 320px;
   justify-self: end;
-  padding: 0;
-  overflow: hidden;
+  overflow: visible;
   transform-origin: right center;
   animation: image-popout .58s cubic-bezier(.17, .89, .32, 1.26) both;
 }
 
-.imagePopout > p { margin: 0; padding: 12px 16px 14px; color: var(--accent); font-size: 13px; font-weight: 700; text-align: center; }
-.placeholderImage { aspect-ratio: 1.1; display: grid; place-items: center; align-content: center; gap: 10px; color: #fff; background: linear-gradient(135deg, #ffc879, #ef806a); }
+.placeholderImage { position: relative; display: block; aspect-ratio: 1.1; overflow: hidden; background: transparent; }
 .placeholderImage.morning { background: linear-gradient(135deg, #9bd8fa, #f6d77f); }
 .placeholderImage.afternoon { background: linear-gradient(135deg, #f8b16c, #df705f); }
 .placeholderImage.evening { background: linear-gradient(135deg, #172d57, #6574a3); }
-.placeholderImage span { font-size: clamp(76px, 10vw, 130px); filter: drop-shadow(0 6px 12px rgba(0,0,0,.18)); }
-.placeholderImage small { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.tripImage { object-fit: cover; }
+.imageStack { position: relative; width: 100%; }
+.imageStackPreview,
+.imageStackFront { position: absolute; overflow: hidden; }
+.imageStackFront { position: relative; z-index: 1; padding: 0; animation: stack-photo-in .44s cubic-bezier(.22, .8, .25, 1) both; }
+.imageStackPreview { z-index: 0; inset: -30px -34px 38px 42px; padding: 0; cursor: pointer; transform: rotate(3.2deg); }
+.imageStackPreview .placeholderImage { width: 100%; height: 100%; aspect-ratio: auto; border-radius: inherit; }
+.imageStackCaption { margin: 0; padding: 12px 16px 14px; color: var(--accent); font-size: 13px; font-weight: 700; text-align: center; }
 
 .detailsPopout {
   width: min(100%, 360px);
   justify-self: start;
+  margin-left: -12px;
   padding: 24px 26px;
   transform-origin: left center;
   animation: details-popout .58s cubic-bezier(.17, .89, .32, 1.26) both;
 }
 
-.day { margin: 0; color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.day { margin: 0; color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
 .detailsPopout h2 { display: flex; align-items: center; gap: 10px; margin: 9px 0 4px; color: var(--ink); font-size: clamp(21px, 2.4vw, 29px); line-height: 1.05; }
 .stopEmoji { font-size: 28px; text-decoration: none; }
 .locationHeading { display: grid; gap: 3px; text-decoration: none; }
 .locationHeading small { color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
 .stopTitle { margin: 0 0 13px; color: #7d6660; font-size: 13px; font-weight: 700; text-transform: capitalize; }
-.description { margin: 0; color: #5f514e; font-size: 14px; line-height: 1.66; text-align: left; }
+.description { margin: 15px 0 15px 0; color: #5f514e; font-size: 14px; line-height: 1.66; text-align: left; }
 .detailsPopout ul { display: flex; flex-wrap: wrap; gap: 7px; margin: 18px 0 0; padding: 0; list-style: none; }
 .detailsPopout li { padding: 5px 8px; border-radius: 999px; background: #fff0eb; color: #bd3637; font-size: 11px; font-weight: 700; }
 
@@ -231,9 +240,17 @@
 .favEatsHeading { max-width: 1080px; margin: 0 auto 22px; text-align: center; }
 .favEatsHeading p { margin: 0 0 8px; color: #c45b76; font-size: 12px; font-weight: 800; letter-spacing: .17em; text-align: center; text-transform: uppercase; }
 .favEatsHeading h2 { margin-bottom: 20px; color: #ec3b3b; font-size: clamp(30px, 4vw, 47px); font-weight: 500; line-height: .9; text-align: center; letter-spacing: -0.025em}
-.foodGrid { width: min(1080px, 100%); flex: 1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: clamp(18px, 2.4vw, 32px); max-width: 1080px; margin: 0 auto; }
-.foodCard { position: relative; min-height: 0; display: flex; flex-direction: column; margin: 0; transform: rotate(-2deg); }
+.foodGrid { width: min(1200px, 100%); flex: 1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: clamp(18px, 2.4vw, 32px); max-width: 1200px; margin: 0 auto; }
+.foodCard { position: relative; min-height: 0; display: flex; flex-direction: column; margin: 0; transform: rotate(-2deg); transform-origin: 50% -15px; transition: transform .38s cubic-bezier(.22, .8, .25, 1); will-change: transform; }
 .foodCard:nth-child(even) { transform: rotate(3deg); }
+.foodCard:nth-child(1):hover { transform: rotate(-7deg); }
+.foodCard:nth-child(2):hover { transform: rotate(9deg); }
+.foodCard:nth-child(3):hover { transform: rotate(-8deg); }
+.foodCard:nth-child(4):hover { transform: rotate(7deg); }
+.foodCard:nth-child(5):hover { transform: rotate(-6deg); }
+.foodCard:nth-child(6):hover { transform: rotate(8deg); }
+.foodCard:nth-child(7):hover { transform: rotate(-9deg); }
+.foodCard:nth-child(8):hover { transform: rotate(7deg); }
 .foodCard::before {
   position: absolute;
   z-index: 2;
@@ -249,6 +266,7 @@
 }
 .foodCard:nth-child(even)::before { transform: translateX(-50%) rotate(14deg); }
 .foodPlaceholder {
+  position: relative;
   display: grid;
   min-height: 0;
   flex: 1;
@@ -259,15 +277,20 @@
   box-shadow: 7px 8px 0 rgba(70, 57, 57, .12);
   overflow: hidden;
 }
-.foodPlaceholder span { font-size: clamp(74px, 10vw, 130px); text-decoration: none; filter: drop-shadow(0 5px 0 rgba(70, 57, 57, .12)); }
-.foodPlaceholder small { color: rgba(70, 57, 57, .62); font-size: 10px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+.foodPlaceholder .tripImage { object-position: center 80%; }
+.foodCard2 .tripImage { object-position: center 100%; }
+.foodCard4 .tripImage { object-position: center 55%; }
 .foodCard1 .foodPlaceholder { border-radius: 48% 52% 39% 61% / 42% 43% 57% 58%; }
 .foodCard2 .foodPlaceholder { border-radius: 28px 58px 30px 64px; }
 .foodCard3 .foodPlaceholder { border-radius: 50% 45% 50% 36%; }
 .foodCard4 .foodPlaceholder { border-radius: 60% 35% 52% 42%; }
 .foodCard5 .foodPlaceholder { border-radius: 24px 48px 54px 38px; }
 .foodCard6 .foodPlaceholder { border-radius: 44% 56% 34% 66%; }
-.foodCard figcaption { margin-top: 8px; color: #463939; font-size: clamp(14px, 1.5vw, 18px); font-weight: 800; text-align: center; text-transform: lowercase; }
+.foodCard7 .foodPlaceholder { border-radius: 62% 38% 46% 54% / 42% 58% 42% 58%; }
+.foodCard8 .foodPlaceholder { border-radius: 34px 58px 44px 64px; }
+.foodCard figcaption { margin-top: 8px; color: #463939; font-size: clamp(12px, 1.3vw, 16px); font-weight: 600; text-align: center; text-transform: lowercase; }
+.foodLocationLink { display: inline-block; margin-left: 5px; text-decoration: none; transition: transform .18s ease; }
+.foodLocationLink:hover { transform: translateY(-2px) scale(1.12); }
 
 .recommendations {
   position: relative;
@@ -343,11 +366,14 @@
   height: 12px;
   border: 1.8px solid #e88d8d;
   border-radius: 50%;
-  background: #fff3a6;
-  box-shadow: 0 0 13px 4px rgba(255, 226, 111, .72);
+  background: #6e6885;
+  box-shadow: none;
   transform: translateX(-50%);
+  transition: background .24s ease, box-shadow .24s ease;
 }
 .fairyBulb::before { position: absolute; top: -8px; left: 50%; width: 8px; height: 7px; content: ""; border-radius: 2px; background: #e88d8d; transform: translateX(-50%); }
+.recommendationCard:hover .fairyBulb,
+.recommendationCardFlipped .fairyBulb { background: #fff3a6; box-shadow: 0 0 13px 4px rgba(255, 226, 111, .72); }
 .recommendationInner { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform .7s cubic-bezier(.2, .8, .2, 1); }
 .recommendationCardFlipped .recommendationInner { transform: rotateY(180deg); }
 .recommendationFront, .recommendationBack { position: absolute; inset: 0; border: 3px solid var(--card-color); border-radius: 26px; overflow: hidden; backface-visibility: hidden; box-shadow: 5px 6px 0 rgba(75, 69, 68, .11); }
@@ -355,9 +381,7 @@
 .recommendationBack { display: grid; place-items: center; padding: 0; background: color-mix(in srgb, var(--card-color) 25%, #fffdf9); transform: rotateY(180deg); }
 .recommendationToggle { width: 100%; border: 0; padding: 0; background: transparent; color: inherit; cursor: pointer; font: inherit; text-align: inherit; }
 .recommendationFront .recommendationToggle { flex: 1; min-height: 0; }
-.recommendationImage { width: 100%; height: 100%; display: grid; place-content: center; gap: 7px; background: linear-gradient(140deg, color-mix(in srgb, var(--card-color) 78%, white), color-mix(in srgb, var(--card-color) 35%, #fff8d9)); }
-.recommendationImage span { font-size: clamp(60px, 6.5vw, 98px); filter: drop-shadow(0 5px 0 rgba(75, 69, 68, .14)); text-decoration: none; }
-.recommendationImage small { color: rgba(75, 69, 68, .68); font-size: 9px; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+.recommendationImage { position: relative; width: 100%; height: 100%; overflow: hidden; background: linear-gradient(140deg, color-mix(in srgb, var(--card-color) 78%, white), color-mix(in srgb, var(--card-color) 35%, #fff8d9)); }
 .recommendationLink { display: block; padding: 13px 11px; color: #403a39; font-size: clamp(13px, 1.35vw, 17px); font-weight: 800; line-height: 1.1; text-align: center; text-decoration: none; }
 .recommendationLink:hover { color: #e63839; text-decoration: underline; text-underline-offset: 3px; }
 .recommendationBack .recommendationToggle { display: grid; align-content: center; min-height: 100%; gap: 10px; padding: 22px; }
@@ -369,6 +393,10 @@
 @keyframes image-popout {
   from { opacity: 0; transform: translateX(115%) scale(.18) rotate(8deg); }
   to { opacity: 1; transform: translateX(0) scale(1) rotate(-2deg); }
+}
+@keyframes stack-photo-in {
+  from { opacity: .35; transform: translate3d(22px, 0, 0) scale(.975) rotate(1.6deg); }
+  to { opacity: 1; transform: translateX(0) rotate(0); }
 }
 
 @keyframes details-popout {
@@ -387,7 +415,7 @@
 }
 
 @media (max-width: 900px) {
-  .page { overflow: auto; }
+  .page { overflow-x: clip; overflow-y: visible; }
   .popout { top: 0; }
   .stage { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 0; margin-top: 0; padding-bottom: 58px; }
   .wheelArea { grid-column: 1 / -1; grid-row: 1; margin-bottom: 12px; }
@@ -404,7 +432,7 @@
   .tripInfo { position: static; margin-bottom: 18px; text-align: left; }
   .stage { grid-template-columns: 1fr; padding-inline: 20px; }
   .dialWrap { width: 286px !important; height: 286px !important; }
-  .dialWrap :global(.jp-day-dial) { --jp-dial-tick-radius: 126px; }
+  .dialWrap { --jp-dial-pin-radius: 126px; }
   .dialWrap :global(.jp-day-dial-sun),
   .dialWrap :global(.jp-day-dial-moon) { width: 42px; height: 42px; }
   .dialWrap :global(.jp-day-dial-cloud) { width: 54px; height: 17px; }

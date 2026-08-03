@@ -1,15 +1,17 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { CSSProperties, KeyboardEvent as ReactKeyboardEvent, PointerEvent as ReactPointerEvent } from "react";
+import Image from "next/image";
+import type { CSSProperties, KeyboardEvent as ReactKeyboardEvent, PointerEvent as ReactPointerEvent, WheelEvent as ReactWheelEvent } from "react";
 import type {
   TravelFoodFavorite,
   TravelItineraryConfig,
+  TravelImage,
   TravelRecommendation,
   TravelStop,
   TravelTimeOfDay,
 } from "@/components/travel/types";
-import styles from "./JapanWheelExperience.module.css";
+import styles from "./JapanWheel.module.css";
 
 const getDayKey = (dayLabel: string) => dayLabel.match(/^Day\s+\d+/i)?.[0] ?? dayLabel;
 
@@ -18,6 +20,11 @@ const getTimeOfDay = (stop: TravelStop): TravelTimeOfDay => {
   if (stop.day.includes("🌤️")) return "afternoon";
   if (stop.day.includes("🌙")) return "evening";
   return "morning";
+};
+
+const getImageStack = (image: TravelStop["image"] | undefined): readonly TravelImage[] => {
+  if (!image) return [];
+  return "src" in image ? [image] : image;
 };
 
 const getTimeLabel = (timeOfDay: TravelTimeOfDay) => {
@@ -32,17 +39,109 @@ const getTimeIcon = (timeOfDay: TravelTimeOfDay) => {
   return "☀️";
 };
 
-type JapanWheelExperienceProps = {
+function StopImageStack({
+  images,
+  timeOfDay,
+}: {
+  images: readonly TravelImage[];
+  timeOfDay: TravelTimeOfDay;
+}) {
+  const [activeImage, setActiveImage] = useState(0);
+  const horizontalWheelDistance = useRef(0);
+  const wheelGestureLocked = useRef(false);
+  const wheelResetTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const hasMultipleImages = images.length > 1;
+  const image = images[activeImage];
+  const nextImage = hasMultipleImages ? images[(activeImage + 1) % images.length] : null;
+
+  useEffect(() => () => {
+    if (wheelResetTimer.current !== null) clearTimeout(wheelResetTimer.current);
+  }, []);
+
+  useEffect(() => {
+    images.forEach((image) => {
+      const preload = new window.Image();
+      preload.decoding = "async";
+      preload.src = image.src;
+    });
+  }, [images]);
+
+  if (!image) return null;
+
+  const handleWheel = (event: ReactWheelEvent<HTMLDivElement>) => {
+    if (!hasMultipleImages) return;
+    if (Math.abs(event.deltaX) <= Math.abs(event.deltaY)) return;
+
+    event.preventDefault();
+    if (wheelResetTimer.current !== null) clearTimeout(wheelResetTimer.current);
+    wheelResetTimer.current = setTimeout(() => {
+      horizontalWheelDistance.current = 0;
+      wheelGestureLocked.current = false;
+    }, 220);
+
+    if (wheelGestureLocked.current) return;
+    const previousDistance = horizontalWheelDistance.current;
+    horizontalWheelDistance.current = Math.sign(previousDistance) === Math.sign(event.deltaX)
+      ? previousDistance + event.deltaX
+      : event.deltaX;
+
+    if (Math.abs(horizontalWheelDistance.current) < 5) return;
+    const direction = horizontalWheelDistance.current;
+    horizontalWheelDistance.current = 0;
+    wheelGestureLocked.current = true;
+    setActiveImage((current) => (direction > 0
+      ? (current + 1) % images.length
+      : (current - 1 + images.length) % images.length));
+  };
+
+  return (
+    <div
+      className={`${styles.imageStack} ${hasMultipleImages ? styles.imageStackMultiple : styles.imageStackSingle}`}
+      aria-label={hasMultipleImages ? `Photo ${activeImage + 1} of ${images.length}. Swipe horizontally on a touchpad to see more photos.` : undefined}
+      onWheel={handleWheel}
+    >
+      {nextImage && (
+        <button
+          type="button"
+          className={`${styles.popout} ${styles.imageStackPreview}`}
+          aria-label={`Show next photo, ${activeImage + 2 > images.length ? 1 : activeImage + 2} of ${images.length}`}
+          onClick={() => setActiveImage((current) => (current + 1) % images.length)}
+        >
+          <span className={`${styles.placeholderImage} ${styles[timeOfDay]}`}>
+            <Image src={nextImage.src} alt="" fill sizes="(max-width: 700px) 360px, 310px" quality={65} unoptimized className={styles.tripImage} />
+          </span>
+        </button>
+      )}
+      <article key={image.src} className={`${styles.popout} ${styles.imageStackFront}`}>
+        <div className={`${styles.placeholderImage} ${styles[timeOfDay]}`}>
+          <Image
+            src={image.src}
+            alt={image.alt}
+            fill
+            sizes="(max-width: 700px) 360px, 310px"
+            quality={65}
+            priority
+            unoptimized
+            className={styles.tripImage}
+          />
+        </div>
+        <p className={styles.imageStackCaption}>{image.caption}</p>
+      </article>
+    </div>
+  );
+}
+
+type JapanWheelProps = {
   trip: TravelItineraryConfig;
   favoriteEats: readonly TravelFoodFavorite[];
   recommendations: readonly TravelRecommendation[];
 };
 
-export default function JapanWheelExperience({
+export default function JapanWheel({
   trip,
   favoriteEats,
   recommendations,
-}: JapanWheelExperienceProps) {
+}: JapanWheelProps) {
   const { stops } = trip;
   const dialWrapRef = useRef<HTMLDivElement>(null);
   const dialDragRef = useRef<number | null>(null);
@@ -143,6 +242,23 @@ export default function JapanWheelExperience({
     return () => window.removeEventListener("keydown", handlePageKeyDown);
   }, [moveWheel]);
 
+  useEffect(() => {
+    const nearbyStops = [-1, 1, 2, 3].map((offset) => (
+      stops[(activeStop + offset + stops.length) % stops.length]
+    ));
+    const timer = window.setTimeout(() => {
+      new Set(nearbyStops.map((nearbyStop) => (
+        getImageStack(nearbyStop.image)[0]?.src
+      )).filter((src): src is string => Boolean(src))).forEach((src) => {
+        const preload = new window.Image();
+        preload.decoding = "async";
+        preload.src = src;
+      });
+    }, 100);
+
+    return () => window.clearTimeout(timer);
+  }, [activeStop, stops]);
+
   const stop = stops[activeStop];
   const timeOfDay = getTimeOfDay(stop);
   const highlights = stop.highlights.slice(0, 3);
@@ -166,13 +282,13 @@ export default function JapanWheelExperience({
           <span className={styles.stampDay}>{getDayKey(stop.day)}</span>
         </div>
 
-        <article key={`image-${activeStop}`} className={`${styles.popout} ${styles.imagePopout}`}>
-          <div className={`${styles.placeholderImage} ${styles[timeOfDay]}`}>
-            <span aria-hidden="true">{stop.emoji}</span>
-            <small>placeholder image</small>
-          </div>
-          <p>{stop.place}, {stop.city}</p>
-        </article>
+        <div key={`image-${activeStop}`} className={styles.imagePopout}>
+          <StopImageStack
+            key={activeStop}
+            images={getImageStack(stop.image)}
+            timeOfDay={timeOfDay}
+          />
+        </div>
 
         <div className={styles.wheelArea}>
           <div
@@ -219,13 +335,8 @@ export default function JapanWheelExperience({
                 <span className="jp-day-dial-cloud cloud-one" />
                 <span className="jp-day-dial-cloud cloud-two" />
               </div>
-              {/* <div className="jp-day-dial-center">
-                <span>{getDayKey(stop.day)}</span>
-                <strong>{getTimeIcon(timeOfDay)} {getTimeLabel(timeOfDay)}</strong>
-              </div> */}
             </div>
           </div>
-          {/* <p className={styles.wheelLabel}>{stop.date} · {stop.city}</p> */}
         </div>
 
         <article key={`details-${activeStop}`} className={`${styles.popout} ${styles.detailsPopout}`}>
@@ -237,7 +348,6 @@ export default function JapanWheelExperience({
               {/* <small>{stop.date}</small> */}
             </span>
           </h2>
-          {/* <p className={styles.stopTitle}>{stop.title}</p> */}
           <p className={styles.description}>{stop.description}</p>
           <ul>
             {highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
@@ -256,11 +366,21 @@ export default function JapanWheelExperience({
               className={`${styles.foodCard} ${styles[`foodCard${index + 1}`]}`}
               style={{ "--frame-color": food.border, "--frame-fill": food.fill } as CSSProperties}
             >
-              <div className={styles.foodPlaceholder} role="img" aria-label={`Placeholder for ${food.caption}`}>
-                <span aria-hidden="true">{food.emoji}</span>
-                <small>placeholder</small>
+              <div className={styles.foodPlaceholder}>
+                <Image
+                  src={food.image.src}
+                  alt={food.image.alt}
+                  fill
+                  sizes="(max-width: 620px) 360px, (max-width: 900px) calc((100vw - 58px) / 2), 338px"
+                  quality={65}
+                  unoptimized
+                  className={styles.tripImage}
+                />
               </div>
-              <figcaption>{food.caption}</figcaption>
+              <figcaption>
+                {food.caption}
+                <a className={styles.foodLocationLink} href={food.mapHref} target="_blank" rel="noreferrer" aria-label={`Open the location for ${food.caption}`}>📍</a>
+              </figcaption>
             </figure>
           ))}
         </div>
@@ -297,8 +417,14 @@ export default function JapanWheelExperience({
                           onClick={() => setFlippedRecommendations((previous) => new Set(previous).add(cardIndex))}
                         >
                           <div className={styles.recommendationImage}>
-                            <span aria-hidden="true">{recommendation.emoji}</span>
-                            <small>placeholder image</small>
+                            <Image
+                              src={recommendation.image.src}
+                              alt={recommendation.image.alt}
+                              fill
+                              sizes="(max-width: 620px) calc((100vw - 58px) / 2), (max-width: 900px) calc((100vw - 96px) / 3), 250px"
+                              quality={65}
+                              className={styles.tripImage}
+                            />
                           </div>
                         </button>
                         <a className={styles.recommendationLink} href={recommendation.mapHref} onClick={(event) => event.stopPropagation()}>

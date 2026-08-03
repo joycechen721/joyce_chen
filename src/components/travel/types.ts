@@ -1,6 +1,15 @@
 export type TravelTimeOfDay = "morning" | "afternoon" | "evening";
 
+export type TravelImage = {
+  src: string;
+  alt: string;
+  caption: string;
+};
+
+export type TravelImageSet = TravelImage | readonly TravelImage[];
+
 export type TravelStop = {
+  id: number;
   day: string;
   date: string;
   city: string;
@@ -12,6 +21,7 @@ export type TravelStop = {
   title: string;
   description: string;
   highlights: string[];
+  image: TravelImageSet;
   timeOfDay?: TravelTimeOfDay;
 };
 
@@ -22,18 +32,19 @@ export type TravelReflectionCard = {
 };
 
 export type TravelFoodFavorite = {
-  emoji: string;
   caption: string;
   border: string;
   fill: string;
+  image: TravelImage;
+  mapHref: string;
 };
 
 export type TravelRecommendation = {
   name: string;
-  emoji: string;
   color: string;
   detail: string;
   mapHref: string;
+  image: TravelImage;
 };
 
 export type TravelItineraryConfig = {
@@ -41,15 +52,6 @@ export type TravelItineraryConfig = {
   title: string;
   nativeTitle?: string;
   dates: string;
-  intro: string;
-  heroCharacter?: string;
-  accentColor?: string;
   stops: TravelStop[];
-  afterRoute: {
-    eyebrow: string;
-    title: string;
-    description: string;
-    cards: TravelReflectionCard[];
-  };
   dayColors?: Record<string, string>;
 };

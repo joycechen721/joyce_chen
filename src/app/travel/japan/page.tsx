@@ -1,9 +1,9 @@
-import JapanWheelExperience from "@/components/travel/JapanWheelExperience";
+import JapanWheel from "@/components/travel/JapanWheel";
 import { japanFavoriteEats, japanRecommendations, japanTrip } from "./data";
 
 export default function JapanPage() {
   return (
-    <JapanWheelExperience
+    <JapanWheel
       trip={japanTrip}
       favoriteEats={japanFavoriteEats}
       recommendations={japanRecommendations}

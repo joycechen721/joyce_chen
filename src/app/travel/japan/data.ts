@@ -1,12 +1,16 @@
 import type {
   TravelFoodFavorite,
+  TravelImage,
+  TravelImageSet,
   TravelItineraryConfig,
   TravelRecommendation,
+  TravelStop,
 } from "@/components/travel/types";
 
-const stops = [
+const stopDetails = [
   {
-    day: "Day 1 🌤️",
+    id: 1,
+    day: "Day 1 🌙",
     date: "March 23",
     city: "Tokyo",
     place: "Jimbocho",
@@ -16,10 +20,11 @@ const stops = [
     emoji: "📚",
     title: "book town!",
     description:
-      "Landed at Narita after 14 hours, took the Narita Express straight to Shinjuku. Dropped bags at the hotel and made a beeline for Jimbocho — Tokyo's legendary book town, where dozens of secondhand bookshops spill their wares onto the sidewalk. Grabbed a late ramen to cap the night.",
+      "landed in narita airport early evening~ we set up ubigi esims, bought round-trip discounted train tickets (each 500 yen), and headed to jimbocho, a smoll book town in central tokyo. stayed in a double room at sakura hotel, a hostel that's popular with young foreign travellers like us! jimbocho is full of cute secondhand bookshops so we wandered around for a bit and got some snacks and supa delicious corn tea drinks from the iconic vending machines. zzzzz.",
     highlights: ["Secondhand bookshops", "Sanseido Books", "Late-night ramen"],
   },
   {
+    id: 2,
     day: "Day 2 ☀️",
     date: "March 24",
     city: "Tokyo",
@@ -28,12 +33,28 @@ const stops = [
     lng: 139.762,
     zoom: 16,
     emoji: "🍣",
-    title: "fishy gardens",
+    title: "tsukiji fish market",
     description:
-      "Morning at Hamarikyu Gardens — a sprawling feudal-era garden right on Tokyo Bay, with tidal ponds, pine trees, and a teahouse on the water. The contrast between the green calm and the skyscrapers looming over the walls made it feel like a secret. Grabbed matcha and a wagashi sweet at the Nakajima no Ochaya teahouse.",
+      "woke up at 6AM to subway to tsukiji fish market (best time to go is 7-10AM), which used to be the biggest seafood market in the world :0 had some yummy 9AM sushi breakfast there with some matcha. things of note at the market: expensive wagyu skewers, viral egg rolls, cutesy ceramic shops, and lots of fresh fish.",
     highlights: ["Hamarikyu Gardens", "Nakajima no Ochaya teahouse", "Tidal duck ponds", "Views of Tokyo Bay"],
   },
   {
+    id: 3,
+    day: "Day 2 ☀️",
+    date: "March 24",
+    city: "Tokyo",
+    place: "Chuo",
+    lat: 35.66,
+    lng: 139.762,
+    zoom: 16,
+    emoji: "🍵",
+    title: "hamarikyo gardens",
+    description:
+      "bellies and hearts impossibly full, we walked over to hamarikyo gardens, a beautiful place smack in the middle of the city. we walked around the tidal duck ponds and had a supa zen matcha break at nakajima no ochaya teahouse. apparently the polite way to drink tea is to kneel on the tatami and sip from the cup using both hands.",
+    highlights: ["Hamarikyu Gardens", "Nakajima no Ochaya teahouse", "Tidal duck ponds", "Views of Tokyo Bay"],
+  },
+  {
+    id: 4,
     day: "Day 2 🌤️",
     date: "March 24",
     city: "Tokyo",
@@ -42,12 +63,13 @@ const stops = [
     lng: 139.765007,
     zoom: 16,
     emoji: "🛍️",
-    title: "shopping",
+    title: "ginza shopping",
     description:
-      "Afternoon in Ginza, Tokyo's most polished shopping district. All gleaming flagship stores, wide boulevards, and immaculate window displays. Wandered through the Itoya stationery store across six floors, then explored the Ginza Six complex and its rooftop garden.",
+      "after a busy morning we decided to take it chill and go window shopping in ginza, beelining thru the flagship uniqlo and muji, walking into random kawaii popups, ... truly a healing our inner child moment, letting the greatness of capitalism possess us for a good few hours, pretending to be rich trustfund babies strolling around their natural habitats. gucci smoochie <3",
     highlights: ["Ginza Six", "Itoya stationery store", "Chanel, Louis Vuitton flagships", "Ginza boulevard stroll"],
   },
   {
+    id: 5,
     day: "Day 2 🌙",
     date: "March 24",
     city: "Tokyo",
@@ -58,10 +80,11 @@ const stops = [
     emoji: "🪐",
     title: "teamlabs",
     description:
-      "Evening at teamLab Planets in Toyosu — a fully immersive digital art museum where you wade barefoot through knee-deep water that mirrors infinite koi, and lie on the floor staring up into cascading flower universes. One of those places that defies easy description. Absolutely worth the queue.",
+      "TEAMLABSS!! we went to the planets (not borderless) location and the experience turned out as iconic as expected :D it felt really surreal as if we were walking through different universes, the projections on the walls and ceilings featured flying flowers and quirky colorful shapes, bringing out that whimsy in us :p rlly interactive too: we got to explore a room full of mirrors, walk through different floor textures and wade through water, climb swinging ladders, jump through small mushroom bumps on the ground like we're in mario world. the whole place was like a big playground, 10/10 would recommend.",
     highlights: ["teamLab Planets", "Wading water installation", "Infinite crystal world", "Floating flower garden"],
   },
   {
+    id: 6,
     day: "Day 3 ☀️",
     date: "March 25",
     city: "Tokyo",
@@ -72,11 +95,40 @@ const stops = [
     emoji: "🎋",
     title: "our name",
     description:
-      "Morning pilgrimage to the Suga Shrine — famous as the real-world location from Your Name (Kimi no Na wa). Climbed the steps and tried to feel the Makoto Shinkai magic. Then strolled through Shinjuku Gyoen, one of Tokyo's finest parks, where early cherry blossoms were just beginning to open.",
+      "not about to leave japan without visiting the birthplace of unrealistic relationship expectations. your name is one of my favorite movies (howl's moving castle remains on TOP ^) so we had to recreate the staircase scene at the very place it was inspired by :) there's a small shrine at the top of the staircase where you can purchase good luck charms and hang a block of wood on the fence with your hopes and dreams written on it. we went pretty early in the morning like 8AM-ish so there weren't any tourists we had to fight against to get our pics taken ^_^",
     highlights: ["Suga Shrine (Your Name steps)", "Shinjuku Gyoen National Garden", "Early sakura blossoms", "French garden section"],
   },
   {
-    day: "Day 3 🌙",
+    id: 7,
+    day: "Day 3 ☀️",
+    date: "March 25",
+    city: "Tokyo",
+    place: "Shinjuku",
+    lat: 35.6812,
+    lng: 139.7671,
+    zoom: 13,
+    emoji: "🌷",
+    title: "shinjuku national garden",
+    description: "we randomly stumbled upon this gem and saw some rlly pretty cherry blossoms, a botanical garden with some exotic plants and flowers, and a lotta moms wheeling their babies around. it's a big peaceful public garden/park that you can walk around for at least an hour and even picnic on the grass in. the cherry blossoms were LIT but you have to come in season (march-april) to see them in full bloom. and beware of the menacing birds around... they shat on us...",
+    highlights: ["Placeholder"],
+  },
+  {
+    id: 8,
+    day: "Day 3 🌤️",
+    date: "March 25",
+    city: "Tokyo",
+    place: "Shinjuku",
+    lat: 35.6812,
+    lng: 139.7671,
+    zoom: 13,
+    emoji: "🐔",
+    title: "shinjuku downtown",
+    description: "we saw THE JJK KFC ft the goats gojo and geto. got the craziest best tasting soba at this hole in the wall restaurant. you know it boutta be good when you see corporate workers lining up for it; it's built for solo eaters who finish in 5-10 minutes and you just wait silently in line watching them eat. super goofy setup that you can't find in the states lol. also shinjuku downtown gotta be the most visually stimulating place i'd ever been up till that point - there were huge anime posters everywhere, my senses were literally getting pelted. we got the smiski sunday series and i got the kitty one and they glow in the dark (tears of joy).",
+    highlights: ["Placeholder"],
+  },
+  {
+    id: 9,
+    day: "Day 3 🌤️",
     date: "March 25",
     city: "Tokyo",
     place: "Mitaka",
@@ -84,12 +136,13 @@ const stops = [
     lng: 139.5703,
     zoom: 16,
     emoji: "🍃",
-    title: "ghibli",
+    title: "ghibli museum",
     description:
-      "Trekked out west to Mitaka for the Ghibli Museum — tickets booked months in advance, and worth every second of the wait. The museum is exactly as whimsical and handcrafted as you'd hope, with original animation cels, hand-drawn storyboards, the rooftop Laputa robot, and an exclusive short film shown only here. Pure inner-child joy.",
+      "as a die-hard ghibli fan, i think i ascended to a higher dimension here. standing next to castle in the sky robot made me feel transported into the ghibli universe. we saw first-draft sketches and walked through lovely decorated rooms that showcased the history and context of select movies like kiki's delivery service and arriety. the whole museum felt like a warm hug, helping me rediscover the untainted joy i felt as a kid where the world felt magical and i a confident explorer of it. it definitely is a slow-burn attraction, just a quaint lil building with three floors and some cute exhibits, less interactive but nonetheless plenty of fun and whimsy.",
     highlights: ["Ghibli Museum", "Rooftop Laputa robot", "Exclusive short film", "Cat Bus room", "Mitaka forest walk"],
   },
   {
+    id: 10,
     day: "Day 3 🌙",
     date: "March 25",
     city: "Tokyo",
@@ -98,12 +151,13 @@ const stops = [
     lng: 139.6496,
     zoom: 16,
     emoji: "🎸",
-    title: "koenji",
+    title: "koenji downtown",
     description:
-      "Stopped off in Koenji on the way back — a neighbourhood with a totally different vibe from the rest of Tokyo. Vintage clothing shops, record stores, and the famous Koenji Pure Love Shopping Street (Junjou Shotengai). Grabbed drinks at a jazz bar and browsed secondhand vinyl.",
+      "hella underrated place ngl. this city had so much personality, complete with the niche streetwear stores, cottagecore cafes, vintage record shops, like it felt so full of LIFE! we sat inside a cafe to recharge and just vibed (which wasn't hard to do cause the whole place was a vibe). walked into some clothing stores but they were all designer and rlly expensive so we could only admire them :( this city felt like a low-key, down-to-earth version of shinjuku lol. we got some sashimi on a little bamboo boat that set sail on my taste buds.",
     highlights: ["Pure Love Shopping Street (Junjou Shotengai)", "Vintage clothing stores", "Secondhand record shops", "Jazz bars"],
   },
   {
+    id: 11,
     day: "Day 4 ☀️",
     date: "March 26",
     city: "Kamakura",
@@ -112,68 +166,98 @@ const stops = [
     lng: 139.5468,
     zoom: 16,
     emoji: "🌊",
-    title: "sea day trip",
+    title: "seaside day trip",
     description:
-      "Day trip to Kamakura, the ancient seat of Japan's first shogunate. Hiked the Daibutsu trail through bamboo groves to reach the Great Buddha — a 13-metre bronze giant sitting serenely outdoors for 700 years. Walked down to Yuigahama Beach for a wind-swept stroll along Sagami Bay with views of Mt Fuji just visible on the horizon.",
+      "no not the uc irvine seaside. this is the legit thing.",
     highlights: ["Great Buddha (Kotoku-in)", "Daibutsu hiking trail", "Bamboo grove path", "Yuigahama Beach", "Hase-dera temple"],
   },
   {
-    day: "Day 5 🌙",
-    date: "March 27",
-    city: "Tokyo",
-    place: "Akihabara",
-    lat: 35.6984,
-    lng: 139.773,
-    zoom: 16,
-    emoji: "⚡",
-    title: "electric town",
-    description:
-      "Akihabara — Electric Town. Multi-storey arcades, walls of retro game cartridges, anime figures behind glass, and maid cafés on every floor. Whether or not this is your world, the sheer density of it is a spectacle. Spent way too long in the retro game floors of Super Potato.",
-    highlights: ["Super Potato retro games", "Yodobashi Camera", "Arcades and crane games", "Akihabara street stalls"],
+    id: 12,
+    day: "Day 4 🌤️",
+    date: "March 26",
+    city: "Kamakura",
+    place: "Kanagawa",
+    lat: 35.3192,
+    lng: 139.5468,
+    zoom: 13,
+    emoji: "🚂",
+    title: "enoshima railway",
+    description: "placeholder",
+    highlights: ["Placeholder"],
   },
   {
-    day: "Day 5 🌙",
+    id: 13,
+    day: "Day 4 🌙",
+    date: "March 26",
+    city: "Tokyo",
+    place: "Shibuya",
+    lat: 35.3192,
+    lng: 139.5468,
+    zoom: 13,
+    emoji: "✨",
+    title: "night shibuya",
+    description: "placeholder",
+    highlights: ["Placeholder"],
+  },
+  {
+    id: 14,
+    day: "Day 5 ☀️",
     date: "March 27",
     city: "Tokyo",
     place: "Shinjuku",
-    lat: 35.6896,
-    lng: 139.6917,
-    zoom: 16,
-    emoji: "🌆",
+    lat: 35.6812,
+    lng: 139.7671,
+    zoom: 13,
+    emoji: "🏙️",
     title: "city sightseeing",
-    description:
-      "Headed to the Tokyo Metropolitan Government Building in west Shinjuku for the free observation deck — sweeping 360° views across the entire city, and on a clear day, Mt Fuji in the distance. The twin towers are an architectural statement in themselves. No ticket, no queue, no excuse not to go.",
-    highlights: ["Tokyo Metropolitan Government Building observatory", "Mt Fuji views on clear days", "West Shinjuku skyscraper district", "Free entry"],
+    description: "placeholder",
+    highlights: ["Metropolitan Government Building"],
   },
   {
-    day: "Day 5 🌙",
+    id: 15,
+    day: "Day 5 🌤️",
     date: "March 27",
     city: "Tokyo",
-    place: "Harajuku",
-    lat: 35.6702,
-    lng: 139.7027,
-    zoom: 16,
-    emoji: "🌃",
-    title: "nightlife",
-    description:
-      "Evening in Harajuku and the backstreets of Ura-Harajuku. By night the area trades the Takeshita Street tourist bustle for intimate cocktail bars, hidden izakayas, and low-lit live music venues tucked into the Cat Street side streets. Found a tiny standing bar with excellent natural wine.",
-    highlights: ["Cat Street bars", "Ura-Harajuku side streets", "Izakayas", "Standing cocktail bars"],
+    place: "Shibuya",
+    lat: 35.6812,
+    lng: 139.7671,
+    zoom: 13,
+    emoji: "👘",
+    title: "harajuku",
+    description: "placeholder",
+    highlights: ["Placeholder"],
   },
   {
+    id: 16,
     day: "Day 5 🌙",
     date: "March 27",
     city: "Tokyo",
     place: "Meguro",
-    lat: 35.6446,
-    lng: 139.6993,
+    lat: 35.6984,
+    lng: 139.773,
     zoom: 16,
     emoji: "🌸",
-    title: "sakura stroll",
+    title: "cherry blossoms",
     description:
-      "The Meguro River at cherry blossom time is one of Tokyo's great sights — a tunnel of sakura branches arching over the water, petals drifting down into the canal below. Food and drink stalls line the banks. Picked up a canned beer and joined the slow river of people drifting beneath the blossoms.",
-    highlights: ["Cherry blossom tunnel over Meguro River", "Sakura festival stalls", "Nakameguro canal walk", "Lantern-lit evenings"],
+      "placeholder",
+    highlights: ["Meguro River"],
   },
   {
+    id: 17,
+    day: "Day 6 ☀️",
+    date: "March 28",
+    city: "Itō",
+    place: "Izu",
+    lat: 34.9769,
+    lng: 138.9468,
+    zoom: 13,
+    emoji: "🚄",
+    title: "high speed rail!",
+    description: "placeholder",
+    highlights: ["Placeholder"],
+  },
+  {
+    id: 18,
     day: "Day 6 🌙",
     date: "March 28",
     city: "Itō",
@@ -184,10 +268,11 @@ const stops = [
     emoji: "♨️",
     title: "onsen getaway",
     description:
-      "Escaped the city for a night in Izu Peninsula — Japan's classic onsen retreat, a couple of hours south of Tokyo by train. Checked into a ryokan, changed into a yukata, and spent the evening between the rotenburo outdoor hot spring and a multi-course kaiseki dinner. The kind of reset that makes you feel human again.",
+      "placeholder",
     highlights: ["Rotenburo outdoor onsen", "Ryokan stay", "Kaiseki multi-course dinner", "Izu Peninsula scenery", "Yukata and geta"],
   },
   {
+    id: 19,
     day: "Day 7 ☀️",
     date: "March 29",
     city: "Kyoto",
@@ -198,10 +283,11 @@ const stops = [
     emoji: "🍢",
     title: "kyotoooo",
     description:
-      "Shinkansen from Mishima to Kyoto. Arrived at Colours Guesthouse in Shimogyo — a lively, well-run hostel in the heart of the old city, right near Nishiki Market. Dropped bags, grabbed a paper map, and wandered Nishiki's narrow covered arcade for an evening snack crawl: grilled skewers, dashimaki tamago, pickles.",
+      "placeholder",
     highlights: ["Colours Guesthouse", "Nishiki Market", "Tamagoyaki skewers", "Evening food stall crawl", "Kyoto arrival"],
   },
   {
+    id: 20,
     day: "Day 8 🌙",
     date: "March 30",
     city: "Kyoto",
@@ -212,10 +298,11 @@ const stops = [
     emoji: "🗿",
     title: "philosopher's path",
     description:
-      "A full day in northeast Kyoto. Walked the Philosopher's Path — a canal-side stone walkway lined with cherry trees — from Ginkaku-ji down toward Nanzen-ji. Then took the bus south to Fushimi Inari, arriving in the late afternoon when the tourist crowds thin and the endless tunnels of vermilion torii gates glow in the slanted light.",
+      "placeholder",
     highlights: ["Philosopher's Path", "Ginkaku-ji (Silver Pavilion)", "Nanzen-ji aqueduct", "Fushimi Inari torii gates", "Summit hike at dusk"],
   },
   {
+    id: 21,
     day: "Day 9 🌙",
     date: "March 31",
     city: "Nara",
@@ -226,10 +313,11 @@ const stops = [
     emoji: "🦌",
     title: "deer",
     description:
-      "Day trip to Nara — home to over a thousand wild sika deer who roam freely through the park and bow for crackers. Visited Todai-ji, housing the enormous Great Buddha hall, and wandered the lantern-lined paths of Kasuga Taisha shrine deep in the cedar forest. The deer are absolutely unhinged and we loved every second of it.",
+      "placeholder",
     highlights: ["Nara sika deer", "Todai-ji Great Buddha hall", "Kasuga Taisha shrine", "Deer cracker vendors", "Nara Park stroll"],
   },
   {
+    id: 22,
     day: "Day 9 🌙",
     date: "March 31",
     city: "Kyoto",
@@ -240,10 +328,11 @@ const stops = [
     emoji: "🍵",
     title: "matcha village",
     description:
-      "Stopped in Uji on the way back to Kyoto — Japan's matcha heartland. The town sits along the Uji River and the air practically smells green. Tried matcha soft serve, proper tencha ice cream, and sat in the garden of Byodoin temple, a 10th-century hall so beautiful it appears on the 10-yen coin.",
+      "placeholder",
     highlights: ["Byodoin temple (10-yen coin)", "Matcha soft serve", "Uji River promenade", "Uji Bridge", "Matcha tea shops"],
   },
   {
+    id: 23,
     day: "Day 10 🌙",
     date: "April 1",
     city: "Tokyo",
@@ -254,30 +343,134 @@ const stops = [
     emoji: "✈️",
     title: "last day",
     description:
-      "Back to Tokyo for the final day. Returned to Ginza with no agenda — just slow coffee, a last look at the city, and the particular bittersweetness of a trip ending. Picked up omiyage at the depachika basement food halls, repacked everything that wouldn't fit, and headed to Narita with a bag full of books, ceramics, and snacks.",
+      "placeholder",
     highlights: ["Depachika souvenir shopping", "Final Tokyo coffee", "Ginza department stores", "Narita Express farewell"],
   },
 ];
 
+const catGlassesImage = {
+  src: "/images/japan/optimized/cat_glasses.webp",
+  alt: "Cat wearing glasses",
+  caption: "cat in glasses",
+} satisfies TravelImage;
+
+const foodImages = {
+  udon: { src: "/images/japan/optimized/food/1_udon.webp", alt: "Bowl of udon", caption: "udon" },
+  tempura: { src: "/images/japan/optimized/food/2_tempura.webp", alt: "Tempura", caption: "tempura" },
+  matcha: { src: "/images/japan/optimized/food/3_matcha.webp", alt: "Matcha drink", caption: "matcha" },
+  okonomiyaki: { src: "/images/japan/optimized/food/4_okonomiyaki.webp", alt: "Okonomiyaki", caption: "okonomiyaki" },
+  sandwich: { src: "/images/japan/optimized/food/5_sandwich.webp", alt: "Sandwich", caption: "sandwich" },
+  gyudon: { src: "/images/japan/optimized/food/6_gyudon.webp", alt: "Gyudon bowl", caption: "gyudon" },
+  moreUdon: { src: "/images/japan/optimized/food/7_udon.webp", alt: "Another bowl of udon", caption: "more udon" },
+  bagels: { src: "/images/japan/optimized/food/8_bagels.webp", alt: "Bagels", caption: "bagels" },
+} satisfies Record<string, TravelImage>;
+
+const imageCaptionPlaceholders: Record<string, readonly string[]> = {
+  "day1-evening": [
+    "sakura hotel, jimbocho",
+  ],
+  "day2-morning": [
+    "fish @ tsukiji fish market",
+    "egg rolls @ tsukiji fish market",
+    "breakfast @ tsukiji fish market",
+  ],
+  "day2-morning2": [
+    "hamarikyu gardens",
+    "nakajima no ochaya teahouse",
+  ],
+  "day2-afternoon": [
+  ],
+  "day2-night": [
+  ],
+  "day3-morning": [
+  ],
+  "day3-morning2": [
+  ],
+  "day3-afternoon": [
+  ],
+  "day3-afternoon2": [
+  ],
+  "day3-night": [
+  ],
+  "day4-morning": [
+  ],
+  "day4-afternoon": [
+  ],
+  "day4-night": [
+  ],
+  "day5-morning": [
+  ],
+  "day5-afternoon": [
+  ],
+  "day5-night": [
+  ],
+  "day6-morning": [
+  ],
+  "day6-night": [
+  ],
+};
+
+const imageStackFromFolder = (folder: string, count: number, label: string): TravelImage[] => (
+  Array.from({ length: count }, (_, index) => ({
+    src: `/images/japan/optimized/${folder}/${index + 1}.webp`,
+    alt: `${label}, photo ${index + 1}`,
+    caption: imageCaptionPlaceholders[folder]?.[index] ?? `${label} — photo ${index + 1}`,
+  }))
+);
+
+const japanStopImages: Record<number, TravelImageSet> = {
+  1: imageStackFromFolder("day1-evening", 1, "jimbocho book town"),
+  2: imageStackFromFolder("day2-morning", 3, "tsukiji fish market"),
+  3: imageStackFromFolder("day2-morning2", 2, "hamarikyu gardens"),
+  4: imageStackFromFolder("day2-afternoon", 5, "day 2 afternoon"),
+  5: imageStackFromFolder("day2-night", 4, "day 2 night"),
+  6: imageStackFromFolder("day3-morning", 3, "day 3 morning"),
+  7: imageStackFromFolder("day3-morning2", 5, "day 3 morning 2"),
+  8: imageStackFromFolder("day3-afternoon", 4, "shinjuku downtown"),
+  9: imageStackFromFolder("day3-afternoon2", 6, "shinjuku downtown 2"),
+  10: imageStackFromFolder("day3-night", 3, "day 3 night"),
+  11: imageStackFromFolder("day4-morning", 4, "day 4 morning"),
+  12: imageStackFromFolder("day4-afternoon", 2, "enoshima railway"),
+  13: imageStackFromFolder("day4-night", 3, "night shibuya"),
+  14: imageStackFromFolder("day5-morning", 3, "gvt metropolitan building"),
+  15: imageStackFromFolder("day5-afternoon", 4, "harajuku"),
+  16: imageStackFromFolder("day5-night", 3, "day 5 night"),
+  17: imageStackFromFolder("day6-morning", 3, "high speed rail!"),
+  18: imageStackFromFolder("day6-night", 4, "day 6 night"),
+  19: catGlassesImage,
+  20: catGlassesImage,
+  21: catGlassesImage,
+  22: catGlassesImage,
+  23: catGlassesImage,
+};
+
+const stops: TravelStop[] = stopDetails.map((stop) => ({
+  ...stop,
+  highlights: ["placeholder"],
+  image: japanStopImages[stop.id],
+}));
+
 export const japanFavoriteEats = [
-  { emoji: "🍜", caption: "late-night ramen", border: "#ef6f6c", fill: "#ffe3c3" },
-  { emoji: "🍣", caption: "the tiniest sushi", border: "#4ca8a6", fill: "#d8f2ef" },
-  { emoji: "🍵", caption: "matcha everything", border: "#799a5a", fill: "#eaf3c8" },
-  { emoji: "🍡", caption: "market snack break", border: "#c57bb3", fill: "#fae0f3" },
-  { emoji: "🍛", caption: "cozy curry", border: "#e1a53b", fill: "#fff0bd" },
-  { emoji: "🍓", caption: "strawberry soft serve", border: "#ed7792", fill: "#ffe0e7" },
+  { caption: "tempura udon", border: "#ef6f6c", fill: "#ffe3c3", image: foodImages.udon, mapHref: "https://share.google/BXlgjUOMf59Bm3rUA" },
+  { caption: "shrimp tempura + matcha salt", border: "#4ca8a6", fill: "#d8f2ef", image: foodImages.tempura, mapHref: "https://maps.app.goo.gl/4gg4UXsf5TnYfCKx9" },
+  { caption: "matcha/hojicha parfaits", border: "#799a5a", fill: "#eaf3c8", image: foodImages.matcha, mapHref: "https://maps.app.goo.gl/eMd1Pziy3ftopf5XA" },
+  { caption: "kyoto okonomiyaki", border: "#c57bb3", fill: "#fae0f3", image: foodImages.okonomiyaki, mapHref: "https://maps.app.goo.gl/QgUeEt2Y9gDMQwcC9" },
+  { caption: "conbini fruit sandwiches", border: "#e1a53b", fill: "#fff0bd", image: foodImages.sandwich, mapHref: "https://maps.app.goo.gl/asy1qzJ4v5cdPfCQ7" },
+  { caption: "yummy gyudon", border: "#ed7792", fill: "#ffe0e7", image: foodImages.gyudon, mapHref: "https://maps.app.goo.gl/mjyJ1tf8aiEPQFTL9" },
+  { caption: "corporate soba", border: "#7f9bd1", fill: "#e0eaff", image: foodImages.moreUdon, mapHref: "https://maps.app.goo.gl/E96ei8jZsjeatxui6" },
+  { caption: "strawberry bagels", border: "#d88957", fill: "#ffe2bd", image: foodImages.bagels, mapHref: "https://maps.app.goo.gl/aGea8TptVnsVE9sh6" },
 ] satisfies readonly TravelFoodFavorite[];
 
 export const japanRecommendations = [
-  { name: "Jimbocho Book Town", emoji: "📚", color: "#f2b45d", detail: "Rows and rows of tiny bookshops, plus a very good excuse to lose track of time.", mapHref: "/" },
-  { name: "Hamarikyu Gardens", emoji: "🌿", color: "#75b69e", detail: "A quiet green pocket with tidal ponds and matcha breaks beside Tokyo Bay.", mapHref: "/" },
-  { name: "Ginza", emoji: "🛍️", color: "#d989a6", detail: "For stationery, window shopping, and a slow wander through polished side streets.", mapHref: "/" },
-  { name: "teamLab Planets", emoji: "🪐", color: "#8674bd", detail: "Bare feet, immersive light, and rooms that feel like another planet.", mapHref: "/" },
-  { name: "Suga Shrine", emoji: "⛩️", color: "#d76758", detail: "A tiny shrine staircase with a big movie-magic payoff.", mapHref: "/" },
-  { name: "Ghibli Museum", emoji: "🍃", color: "#93aa5c", detail: "Handmade details everywhere, including the rooftop robot and a little cinema.", mapHref: "/" },
-  { name: "Kamakura", emoji: "🌊", color: "#6ba7c9", detail: "Temple trails, a giant Buddha, and the sea all in one dreamy day trip.", mapHref: "/" },
-  { name: "Akihabara", emoji: "⚡", color: "#e6a33f", detail: "Retro games, arcades, and enough neon to power a whole afternoon.", mapHref: "/" },
-  { name: "Fushimi Inari", emoji: "🦊", color: "#e26c47", detail: "The torii gates are even better when you keep walking past the first crowd.", mapHref: "/" },
+  { name: "placeholder", color: "#f2b45d", detail: "placeholder", mapHref: "/", image: catGlassesImage },
+  { name: "placeholder", color: "#75b69e", detail: "placeholder", mapHref: "/", image: catGlassesImage },
+  { name: "placeholder", color: "#d989a6", detail: "placeholder", mapHref: "/", image: catGlassesImage },
+  { name: "placeholder", color: "#8674bd", detail: "placeholder", mapHref: "/", image: catGlassesImage },
+  { name: "placeholder", color: "#d76758", detail: "placeholder", mapHref: "/", image: catGlassesImage },
+  { name: "placeholder", color: "#93aa5c", detail: "placeholder", mapHref: "/", image: catGlassesImage },
+  { name: "placeholder", color: "#6ba7c9", detail: "placeholder", mapHref: "/", image: catGlassesImage },
+  { name: "placeholder", color: "#e6a33f", detail: "placeholder", mapHref: "/", image: catGlassesImage },
+  { name: "placeholder", color: "#e26c47", detail: "placeholder", mapHref: "/", image: catGlassesImage },
 ] satisfies readonly TravelRecommendation[];
 
 export const japanTrip = {
@@ -285,35 +478,5 @@ export const japanTrip = {
   title: "Japan",
   nativeTitle: "日本",
   dates: "March 23 - April 2, 2025",
-  intro: "spin the clock through each day, afternoon, and night.",
-  // heroCharacter: "旅",
-  accentColor: "#c0392b",
   stops,
-  afterRoute: {
-    eyebrow: "After The Route",
-    title: "Food, Reflection, and Favorites",
-    description: "The map tells the route, but these are the moments that lingered after the trip: the meals, the small surprises, and what I would do differently next time.",
-    cards: [
-      {
-        eyebrow: "Food",
-        title: "Best Things I Ate",
-        description: "Midnight ramen in Shinjuku, smoky yakitori in Omoide Yokocho, and the surprisingly delicate kaiseki dinner in Kyoto.",
-      },
-      {
-        eyebrow: "Reflection",
-        title: "What Stayed With Me",
-        description: "The rhythm of early mornings, long walks, and tiny neighborhood details made the trip feel calm even on busy days.",
-      },
-      {
-        eyebrow: "Favorites",
-        title: "Top Moments",
-        description: "Dawn in Arashiyama, the first blossom along Shirakawa Canal, and watching Shibuya Crossing from above before joining the crowd.",
-      },
-      {
-        eyebrow: "Next Time",
-        title: "What I'd Change",
-        description: "I would add one slower day between city transfers and book a countryside onsen stay to balance the city pace.",
-      },
-    ],
-  },
 } satisfies TravelItineraryConfig;
