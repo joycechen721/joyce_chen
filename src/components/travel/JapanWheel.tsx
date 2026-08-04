@@ -350,7 +350,19 @@ export default function JapanWheel({
           </h2>
           <p className={styles.description}>{stop.description}</p>
           <ul>
-            {highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
+            {highlights.map((highlight) => (
+              <li key={highlight.label}>
+                <a
+                  className={styles.highlightLink}
+                  href={highlight.mapHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Open ${highlight.label} in Google Maps`}
+                >
+                  {highlight.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </article>
       </section>
@@ -361,10 +373,14 @@ export default function JapanWheel({
         </div>
         <div className={styles.foodGrid}>
           {favoriteEats.map((food, index) => (
-            <figure
+            <a
               key={food.caption}
               className={`${styles.foodCard} ${styles[`foodCard${index + 1}`]}`}
               style={{ "--frame-color": food.border, "--frame-fill": food.fill } as CSSProperties}
+              href={food.mapHref}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Open the location for ${food.caption}`}
             >
               <div className={styles.foodPlaceholder}>
                 <Image
@@ -377,11 +393,11 @@ export default function JapanWheel({
                   className={styles.tripImage}
                 />
               </div>
-              <figcaption>
+              <span className={styles.foodCaption}>
                 {food.caption}
-                <a className={styles.foodLocationLink} href={food.mapHref} target="_blank" rel="noreferrer" aria-label={`Open the location for ${food.caption}`}>📍</a>
-              </figcaption>
-            </figure>
+                <span aria-hidden="true"> 📍</span>
+              </span>
+            </a>
           ))}
         </div>
       </section>

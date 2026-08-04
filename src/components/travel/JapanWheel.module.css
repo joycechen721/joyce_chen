@@ -221,7 +221,9 @@
 .stopTitle { margin: 0 0 13px; color: #7d6660; font-size: 13px; font-weight: 700; text-transform: capitalize; }
 .description { margin: 15px 0 15px 0; color: #5f514e; font-size: 14px; line-height: 1.66; text-align: left; }
 .detailsPopout ul { display: flex; flex-wrap: wrap; gap: 7px; margin: 18px 0 0; padding: 0; list-style: none; }
-.detailsPopout li { padding: 5px 8px; border-radius: 999px; background: #fff0eb; color: #bd3637; font-size: 11px; font-weight: 700; }
+.detailsPopout li { overflow: hidden; border-radius: 999px; background: #fff0eb; font-size: 11px; font-weight: 700; }
+.highlightLink { display: block; padding: 5px 8px; color: #bd3637; text-decoration: none; transition: background-color .18s ease, transform .18s ease; }
+.highlightLink:hover, .highlightLink:focus-visible { background: #ffdeda; outline: none; transform: translateY(-1px); }
 
 .favEats {
   box-sizing: border-box;
@@ -241,7 +243,7 @@
 .favEatsHeading p { margin: 0 0 8px; color: #c45b76; font-size: 12px; font-weight: 800; letter-spacing: .17em; text-align: center; text-transform: uppercase; }
 .favEatsHeading h2 { margin-bottom: 20px; color: #ec3b3b; font-size: clamp(30px, 4vw, 47px); font-weight: 500; line-height: .9; text-align: center; letter-spacing: -0.025em}
 .foodGrid { width: min(1200px, 100%); flex: 1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: clamp(18px, 2.4vw, 32px); max-width: 1200px; margin: 0 auto; }
-.foodCard { position: relative; min-height: 0; display: flex; flex-direction: column; margin: 0; transform: rotate(-2deg); transform-origin: 50% -15px; transition: transform .38s cubic-bezier(.22, .8, .25, 1); will-change: transform; }
+.foodCard { position: relative; min-height: 0; display: flex; flex-direction: column; margin: 0; color: inherit; text-decoration: none; transform: rotate(-2deg); transform-origin: 50% -15px; transition: transform .38s cubic-bezier(.22, .8, .25, 1); will-change: transform; }
 .foodCard:nth-child(even) { transform: rotate(3deg); }
 .foodCard:nth-child(1):hover { transform: rotate(-7deg); }
 .foodCard:nth-child(2):hover { transform: rotate(9deg); }
@@ -288,9 +290,7 @@
 .foodCard6 .foodPlaceholder { border-radius: 44% 56% 34% 66%; }
 .foodCard7 .foodPlaceholder { border-radius: 62% 38% 46% 54% / 42% 58% 42% 58%; }
 .foodCard8 .foodPlaceholder { border-radius: 34px 58px 44px 64px; }
-.foodCard figcaption { margin-top: 8px; color: #463939; font-size: clamp(12px, 1.3vw, 16px); font-weight: 600; text-align: center; text-transform: lowercase; }
-.foodLocationLink { display: inline-block; margin-left: 5px; text-decoration: none; transition: transform .18s ease; }
-.foodLocationLink:hover { transform: translateY(-2px) scale(1.12); }
+.foodCaption { margin-top: 8px; color: #463939; font-size: clamp(12px, 1.3vw, 16px); font-weight: 600; text-align: center; text-transform: lowercase; }
 
 .recommendations {
   position: relative;

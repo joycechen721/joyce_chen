@@ -8,6 +8,11 @@ export type TravelImage = {
 
 export type TravelImageSet = TravelImage | readonly TravelImage[];
 
+export type TravelHighlight = {
+  label: string;
+  mapHref: string;
+};
+
 export type TravelStop = {
   id: number;
   day: string;
@@ -20,7 +25,7 @@ export type TravelStop = {
   emoji: string;
   title: string;
   description: string;
-  highlights: string[];
+  highlights: TravelHighlight[];
   image: TravelImageSet;
   timeOfDay?: TravelTimeOfDay;
 };
