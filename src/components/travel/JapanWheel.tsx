@@ -146,9 +146,34 @@ export default function JapanWheel({
   const dialWrapRef = useRef<HTMLDivElement>(null);
   const dialDragRef = useRef<number | null>(null);
   const dialAngleRef = useRef(0);
+  const recommendationPointerRef = useRef<number | null>(null);
   const [activeStop, setActiveStop] = useState(0);
   const [dialAngle, setDialAngle] = useState(0);
   const [flippedRecommendations, setFlippedRecommendations] = useState<Set<number>>(() => new Set());
+  const [hoveredRecommendation, setHoveredRecommendation] = useState<number | null>(null);
+
+  const toggleRecommendationPin = useCallback((cardIndex: number) => {
+    setFlippedRecommendations((previous) => {
+      const next = new Set(previous);
+      if (next.has(cardIndex)) next.delete(cardIndex);
+      else next.add(cardIndex);
+      return next;
+    });
+    setHoveredRecommendation((current) => current === cardIndex ? null : current);
+  }, []);
+
+  const handleRecommendationPointerDown = useCallback((cardIndex: number) => {
+    recommendationPointerRef.current = cardIndex;
+    toggleRecommendationPin(cardIndex);
+  }, [toggleRecommendationPin]);
+
+  const handleRecommendationClick = useCallback((cardIndex: number) => {
+    if (recommendationPointerRef.current === cardIndex) {
+      recommendationPointerRef.current = null;
+      return;
+    }
+    toggleRecommendationPin(cardIndex);
+  }, [toggleRecommendationPin]);
 
   const setDialAngleImmediately = useCallback((angle: number) => {
     dialAngleRef.current = angle;
@@ -395,7 +420,7 @@ export default function JapanWheel({
               </div>
               <span className={styles.foodCaption}>
                 {food.caption}
-                <span aria-hidden="true"> 📍</span>
+                <span className={styles.foodPin} aria-hidden="true"> 📍</span>
               </span>
             </a>
           ))}
@@ -404,7 +429,7 @@ export default function JapanWheel({
 
       <section className={styles.recommendations} aria-labelledby="reccs-heading">
         <div className={styles.favEatsHeading}>
-          <h2 id="reccs-heading">reccs</h2>
+          <h2 id="reccs-heading">reccs & funs</h2>
         </div>
         {[recommendations.slice(0, 5), recommendations.slice(5)].map((row, rowIndex) => (
           <div className={`${styles.stringRow} ${rowIndex === 0 ? styles.topStringRow : styles.bottomStringRow}`} key={`recommendation-row-${rowIndex}`}>
@@ -416,12 +441,14 @@ export default function JapanWheel({
             <div className={styles.recommendationRow}>
               {row.map((recommendation, index) => {
                 const cardIndex = rowIndex === 0 ? index : index + 5;
-                const isFlipped = flippedRecommendations.has(cardIndex);
+                const isFlipped = flippedRecommendations.has(cardIndex) || hoveredRecommendation === cardIndex;
                 return (
                   <article
-                    key={recommendation.name}
+                    key={cardIndex}
                     className={`${styles.recommendationCard} ${isFlipped ? styles.recommendationCardFlipped : ""}`}
                     style={{ "--card-color": recommendation.color } as CSSProperties}
+                    onMouseEnter={() => setHoveredRecommendation(cardIndex)}
+                    onMouseLeave={() => setHoveredRecommendation((current) => current === cardIndex ? null : current)}
                   >
                     <span className={styles.fairyBulb} aria-hidden="true" />
                     <div className={styles.recommendationInner}>
@@ -430,7 +457,8 @@ export default function JapanWheel({
                           type="button"
                           className={styles.recommendationToggle}
                           aria-label={`Show details for ${recommendation.name}`}
-                          onClick={() => setFlippedRecommendations((previous) => new Set(previous).add(cardIndex))}
+                          onPointerDown={() => handleRecommendationPointerDown(cardIndex)}
+                          onClick={() => handleRecommendationClick(cardIndex)}
                         >
                           <div className={styles.recommendationImage}>
                             <Image
@@ -443,26 +471,26 @@ export default function JapanWheel({
                             />
                           </div>
                         </button>
-                        <a className={styles.recommendationLink} href={recommendation.mapHref} onClick={(event) => event.stopPropagation()}>
-                          {recommendation.name}
-                        </a>
+                        <p className={styles.recommendationTitle}>{recommendation.name}</p>
                       </div>
                       <div className={styles.recommendationBack}>
                         <button
                           type="button"
                           className={styles.recommendationToggle}
                           aria-label={`Hide details for ${recommendation.name}`}
-                          onClick={() => setFlippedRecommendations((previous) => {
-                            const next = new Set(previous);
-                            next.delete(cardIndex);
-                            return next;
-                          })}
+                          onPointerDown={() => handleRecommendationPointerDown(cardIndex)}
+                          onClick={() => handleRecommendationClick(cardIndex)}
                         >
-                          <p>why i&apos;d recommend it</p>
-                          <strong>{recommendation.name}</strong>
-                          <span>{recommendation.detail}</span>
-                          <small>click to flip back</small>
+                          <p>{recommendation.detail}</p>
                         </button>
+                        <a
+                          className={styles.recommendationLocationLink}
+                          href={recommendation.mapHref}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          view location 📍
+                        </a>
                       </div>
                     </div>
                   </article>

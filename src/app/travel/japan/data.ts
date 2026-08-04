@@ -377,11 +377,17 @@ const stopDetails = [
   },
 ];
 
-const catGlassesImage = {
-  src: "/images/japan/optimized/cat_glasses.webp",
-  alt: "Cat wearing glasses",
-  caption: "cat in glasses",
-} satisfies TravelImage;
+const recommendationImages = {
+  jimbocho: { src: "/images/japan/optimized/reccs/1.webp", alt: "Bookshelves in Jimbocho", caption: "Jimbocho bookshop" },
+  shrine: { src: "/images/japan/optimized/reccs/2.webp", alt: "Prayer plaques at a shrine", caption: "shrine prayer plaques" },
+  ghibli: { src: "/images/japan/optimized/reccs/3.webp", alt: "Ghibli merchandise", caption: "Ghibli goods" },
+  matcha: { src: "/images/japan/optimized/reccs/4.webp", alt: "Matcha tea", caption: "matcha break" },
+  enoshima: { src: "/images/japan/optimized/reccs/5.webp", alt: "Enoshima street art", caption: "Enoshima" },
+  brushes: { src: "/images/japan/optimized/reccs/6.webp", alt: "Japanese calligraphy brushes", caption: "calligraphy brushes" },
+  flowers: { src: "/images/japan/optimized/reccs/7.webp", alt: "Dried flower shop", caption: "flower shop" },
+  cafe: { src: "/images/japan/optimized/reccs/8.webp", alt: "Cafe interior", caption: "cafe" },
+  deer: { src: "/images/japan/optimized/reccs/9.webp", alt: "Deer at a shrine", caption: "Nara deer" },
+} satisfies Record<string, TravelImage>;
 
 const foodImages = {
   udon: { src: "/images/japan/optimized/food/1_udon.webp", alt: "Bowl of udon", caption: "udon" },
@@ -743,15 +749,15 @@ export const japanFavoriteEats = [
 ] satisfies readonly TravelFoodFavorite[];
 
 export const japanRecommendations = [
-  { name: "placeholder", color: "#f2b45d", detail: "placeholder", mapHref: "/", image: catGlassesImage },
-  { name: "placeholder", color: "#75b69e", detail: "placeholder", mapHref: "/", image: catGlassesImage },
-  { name: "placeholder", color: "#d989a6", detail: "placeholder", mapHref: "/", image: catGlassesImage },
-  { name: "placeholder", color: "#8674bd", detail: "placeholder", mapHref: "/", image: catGlassesImage },
-  { name: "placeholder", color: "#d76758", detail: "placeholder", mapHref: "/", image: catGlassesImage },
-  { name: "placeholder", color: "#93aa5c", detail: "placeholder", mapHref: "/", image: catGlassesImage },
-  { name: "placeholder", color: "#6ba7c9", detail: "placeholder", mapHref: "/", image: catGlassesImage },
-  { name: "placeholder", color: "#e6a33f", detail: "placeholder", mapHref: "/", image: catGlassesImage },
-  { name: "placeholder", color: "#e26c47", detail: "placeholder", mapHref: "/", image: catGlassesImage },
+  { name: "jimbocho bookstores", color: "#f2b45d", detail: "placeholder", mapHref: "/", image: recommendationImages.jimbocho },
+  { name: "suga shrine", color: "#75b69e", detail: "placeholder", mapHref: "/", image: recommendationImages.shrine },
+  { name: "kamakura ghibli store", color: "#d989a6", detail: "placeholder", mapHref: "/", image: recommendationImages.ghibli },
+  { name: "bamboo grove matcha", color: "#8674bd", detail: "placeholder", mapHref: "/", image: recommendationImages.matcha },
+  { name: "kamakura knitted birds", color: "#d76758", detail: "placeholder", mapHref: "/", image: recommendationImages.enoshima },
+  { name: "jimbocho artisan shops", color: "#93aa5c", detail: "placeholder", mapHref: "/", image: recommendationImages.brushes },
+  { name: "flower green days", color: "#6ba7c9", detail: "placeholder", mapHref: "/", image: recommendationImages.flowers },
+  { name: "cafe de whoje", color: "#e6a33f", detail: "placeholder", mapHref: "/", image: recommendationImages.cafe },
+  { name: "nara park", color: "#e26c47", detail: "placeholder", mapHref: "/", image: recommendationImages.deer },
 ] satisfies readonly TravelRecommendation[];
 
 export const japanTrip = {
